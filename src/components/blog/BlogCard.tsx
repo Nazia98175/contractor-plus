@@ -1,5 +1,5 @@
 import { Blog } from "@/types";
-import { tagColors, variantsBlogCard } from "@/utils/getVariants";
+import { variantsBlogCard } from "@/utils/getVariants";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { CardArrowIcon } from "../common/MainIcon";
@@ -9,8 +9,6 @@ interface BlogCardProps {
   variant?: "large" | "small";
   onClick?: () => void;
 }
-
-const defaultColor = { bg: "bg-gray-500", text: "text-white" };
 
 const BlogCard: React.FC<BlogCardProps> = ({
   article,
@@ -42,7 +40,6 @@ const BlogCard: React.FC<BlogCardProps> = ({
     if (href) router.push(href);
   };
 
-  console.log(article?.tags, "tags");
   return href ? (
     <Link
       href={href}
@@ -77,29 +74,6 @@ const BlogCard: React.FC<BlogCardProps> = ({
             {article.shortDescription}
           </p>
         )}
-
-        {article?.tags?.length ? (
-          <div className="flex flex-wrap gap-2">
-            {article.tags.slice(0, 2).map((tag, idx) => {
-              const colorSet = tag?.list
-                ? tagColors[tag.list] || defaultColor
-                : defaultColor;
-              return (
-                <span
-                  key={tag?.id ?? idx}
-                  className={`rounded-2xl px-2 py-0.5 text-sm font-medium capitalize ${colorSet.bg} ${colorSet.text}`}
-                >
-                  {tag?.list ?? "tag"}
-                </span>
-              );
-            })}
-            {article.tags.length > 2 && (
-              <span className="rounded-2xl bg-gray-200 px-2 py-0.5 text-sm font-medium text-gray-600">
-                +{article.tags.length - 2} more
-              </span>
-            )}
-          </div>
-        ) : null}
       </div>
     </Link>
   ) : (
@@ -138,29 +112,6 @@ const BlogCard: React.FC<BlogCardProps> = ({
             {article.shortDescription}
           </p>
         )}
-
-        {article?.tags?.length ? (
-          <div className="flex flex-wrap gap-2">
-            {article.tags.slice(0, 2).map((tag, idx) => {
-              const colorSet = tag?.list
-                ? tagColors[tag.list] || defaultColor
-                : defaultColor;
-              return (
-                <span
-                  key={tag?.id ?? idx}
-                  className={`rounded-2xl px-2 py-0.5 text-sm font-medium capitalize ${colorSet.bg} ${colorSet.text}`}
-                >
-                  {tag?.list ?? "tag"}
-                </span>
-              );
-            })}
-            {article.tags.length > 2 && (
-              <span className="rounded-2xl bg-gray-200 px-2 py-0.5 text-sm font-medium text-gray-600">
-                +{article.tags.length - 2} more
-              </span>
-            )}
-          </div>
-        ) : null}
       </div>
     </div>
   );

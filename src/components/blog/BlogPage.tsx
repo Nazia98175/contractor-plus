@@ -23,31 +23,29 @@ const normalize = (s?: string) =>
   (s ?? "").toString().trim().toLowerCase().replace(/\s+/g, "-");
 
 const getBlogCategories = (blog: Blog) => {
-  const cats = new Set<string>();
+  const categories = new Set<string>();
 
-  const list = blog?.categoryListForFilter?.list ?? [];
+  const list = blog?.tags ?? [];
   for (const item of list) {
-    if (item?.text) cats.add(normalize(item.text));
+    if (item?.list) categories.add(normalize(item.list));
   }
 
-  if (typeof blog?.category === "string") {
-    cats.add(normalize(blog.category));
-  } else if (Array.isArray(blog?.category)) {
-    for (const c of blog.category) {
-      if (typeof c === "string") cats.add(normalize(c));
-      else if ((c as any)?.text) cats.add(normalize((c as any).text));
-      else if ((c as any)?.name) cats.add(normalize((c as any).name));
+  if (Array.isArray(blog?.tags)) {
+    for (const c of blog.tags) {
+      if (typeof c === "string") categories.add(normalize(c));
+      else if ((c as any)?.text) categories.add(normalize((c as any).text));
+      else if ((c as any)?.name) categories.add(normalize((c as any).name));
     }
   }
 
   if (Array.isArray(blog?.tags)) {
     for (const t of blog.tags) {
-      if (typeof t === "string") cats.add(normalize(t));
-      else if ((t as any)?.text) cats.add(normalize((t as any).text));
+      if (typeof t === "string") categories.add(normalize(t));
+      else if ((t as any)?.text) categories.add(normalize((t as any).text));
     }
   }
 
-  return Array.from(cats);
+  return Array.from(categories);
 };
 
 const BlogPage = ({
@@ -71,12 +69,12 @@ const BlogPage = ({
       const matchesSearch = q.length === 0 || hay.includes(q);
 
       const catTokens = getBlogCategories(b);
-      const wanted = selectedCategory;
+      const wanted = normalize(selectedCategory);
       const matchesCategory = wanted === "all" || catTokens.includes(wanted);
 
       return matchesSearch && matchesCategory;
     });
-  }, [blogsData, selectedCategory]);
+  }, [blogsData, selectedCategory, searchTerm]);
 
   const handleClick = (name: string) => router.push(`/blogs/${name}`);
 

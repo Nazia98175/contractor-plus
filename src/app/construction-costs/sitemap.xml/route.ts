@@ -29,7 +29,7 @@ const CATEGORIES = [
 
 export async function GET() {
   const baseUrl =
-    process.env.NEXT_PUBLIC_DOMAIN || "https://v2site.contractorplus.app";
+    process.env.NEXT_PUBLIC_DOMAIN || "https://contractorplus.app";
 
   console.log("🏗️ Generating construction costs sitemap index...");
 

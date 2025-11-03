@@ -49,6 +49,62 @@ export const getAllEvents = async (
   }
 };
 
+export const getPastsEvents = async (
+  locale: string,
+): Promise<EventDirectory[] | []> => {
+  try {
+    const currentDate = new Date().toISOString();
+    const response = await axiosInstance.get(
+      `events-directories?locale=${locale}&filters[startDate][$lt]=${currentDate}&populate=*`,
+    );
+    const { data } = response.data;
+    if (!data) {
+      return [];
+    }
+    return data;
+  } catch (error) {
+    console.error("Error fetching events", error);
+    return [];
+  }
+};
+
+export const getUpcomingEvents = async (
+  locale: string,
+): Promise<EventDirectory[] | []> => {
+  try {
+    const currentDate = new Date().toISOString();
+    const response = await axiosInstance.get(
+      `events-directories?locale=${locale}&filters[startDate][$gt]=${currentDate}&populate=*`,
+    );
+    const { data } = response.data;
+    if (!data) {
+      return [];
+    }
+    return data;
+  } catch (error) {
+    console.error("Error fetching events", error);
+    return [];
+  }
+};
+
+export const getFeaturedEvents = async (
+  locale: string,
+): Promise<EventDirectory[] | []> => {
+  try {
+    const response = await axiosInstance.get(
+      `events-directories?locale=${locale}&filters[mustAttend][$eq]=${true}&populate=*`,
+    );
+    const { data } = response.data;
+    if (!data) {
+      return [];
+    }
+    return data;
+  } catch (error) {
+    console.error("Error fetching events", error);
+    return [];
+  }
+};
+
 export const getEventDetails = async (locale: string) => {
   try {
     const response = await axiosInstance.get(

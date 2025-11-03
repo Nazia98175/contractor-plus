@@ -3,7 +3,12 @@ import AllEventCard from "@/components/eventsdirectory/AllEventCard";
 import EventsDirectoryHero from "@/components/eventsdirectory/EventsDirectoryHero";
 import { getCommonData } from "@/services/common/commonData";
 import { getSeoDataCommon } from "@/services/common/seoMeta";
-import { getAllEvents, getEventList } from "@/services/events/getEventData";
+import {
+  getEventList,
+  getFeaturedEvents,
+  getPastsEvents,
+  getUpcomingEvents
+} from "@/services/events/getEventData";
 import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { notFound } from "next/navigation";
 
@@ -28,16 +33,24 @@ const EventsDirectoryPage = async ({
   params: Promise<{ locale: string }>;
 }) => {
   const { locale } = await params;
-  const [events, eventList, commonData] = await Promise.all([
-    getAllEvents(locale),
-    getEventList(locale),
-    getCommonData(locale),
-  ]);
+  const [featuredEvents, pastEvents, upcomingEvents, eventList, commonData] =
+    await Promise.all([
+      getFeaturedEvents(locale),
+      getPastsEvents(locale),
+      getUpcomingEvents(locale),
+      getEventList(locale),
+      getCommonData(locale),
+    ]);
 
   return (
     <main id="home-page-wrapper-2">
-      <EventsDirectoryHero events={events} />
-      <AllEventCard eventList={eventList} events={events} />
+      <EventsDirectoryHero events={upcomingEvents} />
+      <AllEventCard
+        eventList={eventList}
+        pastEvents={pastEvents}
+        upcomingEvents={upcomingEvents}
+        featuredEvents={featuredEvents}
+      />
       <div className="mx-auto w-full max-w-[898px]">
         <CommonFormField
           className="mt-[79px]"

@@ -6,7 +6,7 @@ import Copy from "../common/Copy";
 import { CustomSliderIcon } from "../common/Icons";
 import PricingCard from "./PricingCard";
 
-const EventPricing = ({ eventDetail, eventList }: any) => {
+const EventPricing = ({ eventDetail }: any) => {
   return (
     <section className="px-2 py-10">
       <div className="flex justify-between sm:hidden">

@@ -1,11 +1,7 @@
-import React from "react";
-import { EventDetailIcon, SeatIcon } from "../common/Icons";
 import CardReveal from "../common/CardReveal";
-import Image from "next/image";
+import { EventDetailIcon } from "../common/Icons";
 
 const PricingCard = ({ pricing }: { pricing: any }) => {
-  console.log(pricing, "pricing details");
-
   return (
     <article className="card-shine-2 !bg-jetBlack h-full w-full overflow-hidden rounded-xl">
       {/* {pricing?.image && (
@@ -22,14 +18,9 @@ const PricingCard = ({ pricing }: { pricing: any }) => {
       <CardReveal delay={0.5} distance={50} className="h-full">
         <div className="flex h-full flex-col justify-between p-3">
           <div>
-            <div className="flex items-center justify-between gap-2">
-              <h3 className="font-2xl text-pantone3 font-semibold">
-                {pricing?.title ?? ""}
-              </h3>
-              <span>
-                <SeatIcon seatCount={pricing?.seatCount ?? 0} />
-              </span>
-            </div>
+            <h3 className="font-2xl text-pantone3 font-semibold">
+              {pricing?.title ?? ""}
+            </h3>
 
             <p className="text-flintstone pt-2 pb-4 text-base">
               {pricing?.subTitle ?? ""}

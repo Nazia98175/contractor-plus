@@ -1,9 +1,8 @@
-import React from "react";
-import { ActivationIcon, LineIcon, ListIcon } from "../common/Icons";
-import PlanButton from "./PlanButton";
-import { Span } from "next/dist/trace";
-import { usePathname } from "next/navigation";
 import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
+import { usePathname } from "next/navigation";
+import React from "react";
+import { LineIcon, ListIcon } from "../common/Icons";
+import PlanButton from "./PlanButton";
 
 interface PlanData {
   title: string;
@@ -46,18 +45,7 @@ interface PlanCardProps {
   index?: number;
 }
 
-const PlanCard: React.FC<PlanCardProps> = ({
-  plan,
-  isAnnual,
-  activeTab,
-  index,
-}) => {
-  // const priceValue =
-  //   isAnnual && plan.annualPrice !== undefined
-  //     ? Number(plan.annualPrice)
-  //     : Number(plan.monthlyPrice);
-  // const formattedPrice = `$${priceValue.toFixed(0)}`;
-  console.log(plan, "plan details");
+const PlanCard: React.FC<PlanCardProps> = ({ plan, activeTab, index }) => {
   let priceValue2 = 0;
 
   if (activeTab === "annual") {
@@ -72,9 +60,8 @@ const PlanCard: React.FC<PlanCardProps> = ({
   }
 
   const formattedPrice2 = `$${priceValue2.toLocaleString("en-US")}`;
-  console.log(index, "number");
   const pathname = usePathname();
-  const { loading, handleRedirect } = useOneLinkRedirect();
+  const { handleRedirect } = useOneLinkRedirect();
   return (
     <article
       className={`font-myriad group xs:max-w-[317px] w-full cursor-pointer rounded-lg bg-white pb-6 shadow-xl duration-100 hover:-translate-y-2 ${plan.cardClass ?? ""} relative`}
@@ -91,7 +78,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
           </div>
           {plan?.ctaStyle === "proTeam" && (
             <span className="font-myriad bg-luchGray absolute top-0 right-0 rounded-[8px] px-2 py-1 text-[10px] font-semibold text-white">
-              Only 500 licenses available!
+              Most Popular!
             </span>
           )}
         </div>
@@ -133,9 +120,6 @@ const PlanCard: React.FC<PlanCardProps> = ({
         <ul className="space-y-4">
           {activeTab === "monthly" &&
             (plan?.monthlyFeatures ?? []).map((feature: any, idx: number) => {
-              // const isAdditionalUser = feature === "additionalUser";
-              // const userPrice = isAnnual ? plan.annuallyPrice : plan.monthlyPrice;
-
               return (
                 <li
                   key={idx}
@@ -143,17 +127,11 @@ const PlanCard: React.FC<PlanCardProps> = ({
                 >
                   <ListIcon />
                   {feature.label}
-                  {/* {isAdditionalUser
-                    ? `$${userPrice}/month per additional user`
-                    : feature} */}
                 </li>
               );
             })}
           {activeTab === "annual" &&
             (plan?.annualFeatures ?? []).map((feature: any, idx: number) => {
-              // const isAdditionalUser = feature === "additionalUser";
-              // const userPrice = isAnnual ? plan.annuallyPrice : plan.monthlyPrice;
-
               return (
                 <li
                   key={idx}
@@ -161,17 +139,11 @@ const PlanCard: React.FC<PlanCardProps> = ({
                 >
                   <ListIcon />
                   {feature.label}
-                  {/* {isAdditionalUser
-                    ? `$${userPrice}/month per additional user`
-                    : feature} */}
                 </li>
               );
             })}
           {activeTab === "lifetime" &&
             (plan?.lifetimeFeatures ?? []).map((feature: any, idx: number) => {
-              // const isAdditionalUser = feature === "additionalUser";
-              // const userPrice = isAnnual ? plan.annuallyPrice : plan.monthlyPrice;
-
               return (
                 <li
                   key={idx}
@@ -179,13 +151,10 @@ const PlanCard: React.FC<PlanCardProps> = ({
                 >
                   <ListIcon />
                   {feature.label}
-                  {/* {isAdditionalUser
-                    ? `$${userPrice}/month per additional user`
-                    : feature} */}
                 </li>
               );
             })}
-          {index === 2 && (
+          {/* {index === 2 && (
             <div>
               <h4 className="font-myriad text-roboMaster text-center text-lg font-semibold">
                 <span className="text-customgreen">$53,400</span> more revenue
@@ -194,7 +163,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
                 (and this is just a conservative estimate)
               </p>
             </div>
-          )}
+          )} */}
         </ul>
       </div>
     </article>

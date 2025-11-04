@@ -95,6 +95,6 @@ export const fetchFilteredProjects = async (
 export const fetchProjectDetail = async (
   slug: string,
 ): Promise<ProjectDetail> => {
-  const response = await axios.get<ProjectDetail>(`${BASE_URL}/${slug}`);
+  const response = await axios.get<ProjectDetail>(`${BASE_URL}/labor-index/project/${slug}`);
   return response.data;
 };

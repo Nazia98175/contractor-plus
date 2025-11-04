@@ -36,7 +36,7 @@ export async function generateMetadata({
   const page = await getSeoData(
     "solutions",
     resolvedParams.locale,
-    "field-service-management&populate[seoMetaData][populate]=*",
+    "field-service-management",
   );
 
   if (!page) notFound();

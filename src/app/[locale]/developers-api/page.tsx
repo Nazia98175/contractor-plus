@@ -39,7 +39,6 @@ export default async function DevelopersApiPage({
   // Use locale directly
   const { hero, whatYouCanBuild, goBeyond } = await DevelopersApiData(locale);
 
-  console.log(hero, whatYouCanBuild, goBeyond);
   return (
     <>
       <div id="home-page-view-port-screen" className="opacity-0">
@@ -68,6 +67,7 @@ export default async function DevelopersApiPage({
             slackButtonText="Join us on Slack"
             slackLinkText="Need help integrating?"
             slackLinkHref="https://join.slack.com/t/contractorapisupport/shared_invite/zt-3hc04uiiq-w4KYFmUX1NMm9CTgyb1XYg"
+            buttonLink="https://developer.contractorplus.app/"
           />
         </Suspense>
         <Suspense fallback={<LoadingFallback />}>

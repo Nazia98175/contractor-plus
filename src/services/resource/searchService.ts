@@ -1,7 +1,4 @@
-// src/services/searchService.ts
-// import axios from "axios";
-
-const API_BASE_URL = "https://reshubapi.contractorplus.app/materials";
+const API_BASE_URL = `${(process.env.RES_HUB_API_BASE_URL as string) ?? process.env.NEXT_PUBLIC_RES_HUB_API_BASE_URL}/materials`;
 
 interface SearchParams {
   query: string;
@@ -37,7 +34,7 @@ export const performApiSearch = async (params: SearchParams) => {
 
   url.searchParams.append(
     "include_out_of_stock",
-    String(params.includeOutOfStock)
+    String(params.includeOutOfStock),
   );
 
   const res = await fetch(url.toString(), {

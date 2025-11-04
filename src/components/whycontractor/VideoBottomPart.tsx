@@ -77,8 +77,8 @@ const VideoBottomPart: React.FC<PropList> = ({ list }) => {
         }
         
         .video-section-wrapper.scroll-active svg path {
-          fill: #fff !important;
-          stroke: #fff !important;
+          fill: #f21314 !important;
+          stroke: #f21314 !important;
         }
         
         .video-section-wrapper .icon-span {

@@ -33,11 +33,19 @@ const nextConfig: import("next").NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "v2site.contractorplus.app",
+        hostname: "contractorplus.app",
       },
       {
         protocol: "https",
-        hostname: "contractor-plus-beige.vercel.app",
+        hostname: "contractorplus.app",
+      },
+      {
+        protocol: "https",
+        hostname: "strapiadmin.contractorplus.app",
+      },
+      {
+        protocol: "https",
+        hostname: "contractorplus.app",
       },
     ],
   },

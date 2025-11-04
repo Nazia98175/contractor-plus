@@ -9,7 +9,7 @@ export async function GET() {
 
   const locale = "en";
   const baseUrl =
-    process.env.NEXT_PUBLIC_DOMAIN || "https://v2site.contractorplus.app";
+    process.env.NEXT_PUBLIC_DOMAIN || "https://contractorplus.app";
 
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<?xml-stylesheet type="text/xsl" href="/sitemap-index.xsl"?>\n';
@@ -27,7 +27,7 @@ export async function GET() {
 
         if (slug) {
           xml += "  <url>\n";
-          xml += `    <loc>${baseUrl}/blogs/${slug}</loc>\n`;
+          xml += `    <loc>${baseUrl}/blog/${slug}</loc>\n`;
           xml += `    <lastmod>${publishedAt || new Date().toISOString()}</lastmod>\n`;
           xml += `    <changefreq>monthly</changefreq>\n`;
           xml += `    <priority>0.7</priority>\n`;

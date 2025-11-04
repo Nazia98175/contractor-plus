@@ -2,10 +2,7 @@
 
 export const dynamic = "force-dynamic";
 export const revalidate = 3600;
-
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
 
 export async function GET() {
   console.log("========== COST CALCULATOR SITEMAP ==========");
@@ -18,54 +15,35 @@ export async function GET() {
   xml += '<?xml-stylesheet type="text/xsl" href="/sitemap-index.xsl"?>\n';
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
-  // Cost calculator pages
-  // Discover cost calculator pages by scanning each locale folder under src/app
-  function getCalculatorSlugsFromFilesystem(): string[] {
-    const appDir = path.join(process.cwd(), "src", "app");
-    const found = new Set<string>();
-
-    try {
-      if (!fs.existsSync(appDir)) return [];
-
-      const localeEntries = fs.readdirSync(appDir, { withFileTypes: true });
-
-      for (const localeEntry of localeEntries) {
-        if (!localeEntry.isDirectory()) continue;
-
-        const calcDir = path.join(
-          appDir,
-          localeEntry.name,
-          "resources",
-          "cost-calculator",
-        );
-
-        if (!fs.existsSync(calcDir)) continue;
-
-        const calculators = fs.readdirSync(calcDir, { withFileTypes: true });
-        for (const c of calculators) {
-          if (c.isDirectory()) found.add(c.name);
-        }
-      }
-    } catch (err) {
-      // If something goes wrong, fall back to an empty list and log the error.
-      console.error("Error reading cost calculator folders:", err);
-    }
-
-    return Array.from(found).sort();
-  }
-
-  // Fallback: if nothing found, keep a minimal list so sitemap isn't empty.
-  const discovered = getCalculatorSlugsFromFilesystem();
-  const calculators =
-    discovered.length > 0
-      ? discovered
-      : [
-          "concrete-calculator",
-          "drywall-calculator",
-          "roofing-calculator",
-          "flooring-calculator",
-          "paint-calculator",
-        ];
+  const calculators = [
+    "carpet-cleaning",
+    "commercial-space-cleaning-cost-calculator",
+    "construction-cost-estimator",
+    "custom-woodwork-pricing-calculator",
+    "drywall-materials-calculator",
+    "electrician-cost-per-hour-calculator",
+    "elevator-maintenance-cost",
+    "elevator-maintenance-cost-calculator",
+    "excavation-volume-cost-calculator",
+    "fence-cost-calculator",
+    "flooring-estimator-calculator",
+    "house-cleaning-cost-calculator",
+    "hvac-cfm-calculator",
+    "hvac-markup",
+    "irrigation-system-material-calculator",
+    "labor-cost-calculator",
+    "landscape-design-cost-calculator",
+    "margin-calculator",
+    "multi-service-job-estimator",
+    "painting-cost-estimator",
+    "paver-calculator-price-estimato",
+    "pipe-water-volume-calculator",
+    "plumbing-bid-calculator",
+    "profit-margin-calculator",
+    "renovation-cost-calculator",
+    "roof-square-footage-calculator",
+    "snow-removal-pricing-calculator",
+  ];
 
   calculators.forEach((calculator) => {
     xml += "  <url>\n";
@@ -75,10 +53,6 @@ export async function GET() {
     xml += `    <priority>0.7</priority>\n`;
     xml += "  </url>\n";
   });
-
-  console.log(
-    `✅ Cost calculator sitemap generated with ${calculators.length} URLs`,
-  );
 
   xml += "</urlset>";
 

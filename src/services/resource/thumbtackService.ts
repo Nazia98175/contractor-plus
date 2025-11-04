@@ -25,11 +25,10 @@ export interface IpifyResponse {
 
 const IPIFY_URL = "https://api.ipify.org/?format=json";
 
-const BASE_URL =
-  "https://reshubapi.contractorplus.app/labor-index/thumbtack-data";
+const BASE_URL = `${process.env.RES_HUB_API_BASE_URL ?? process.env.NEXT_PUBLIC_RES_HUB_API_BASE_URL}/labor-index/thumbtack-data`;
 
 export const searchThumbtackBusinesses = async (
-  payload: ThumbtackSearchPayload
+  payload: ThumbtackSearchPayload,
 ) => {
   try {
     const { categoryID, userQuery, zipCode, ip } = payload;
@@ -59,8 +58,8 @@ export const searchThumbtackBusinesses = async (
     console.error("Error searching Thumbtack businesses:", message);
     throw new Error(
       `Request failed with status ${error?.response?.status}: ${JSON.stringify(
-        message
-      )}`
+        message,
+      )}`,
     );
   }
 };

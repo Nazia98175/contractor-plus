@@ -28,7 +28,7 @@ export async function generateMetadata({
   const page = await getSeoData(
     "solutions",
     resolvedParams.locale,
-    "contractor-invoicing-software&populate[seoMetaData][populate]=*",
+    "contractor-invoicing-software",
   );
 
   if (!page) notFound();

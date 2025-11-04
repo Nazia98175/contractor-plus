@@ -63,9 +63,10 @@ export interface ProjectDetail {
 }
 
 // Axios function to fetch projects
+const BASE_URL = `${(process.env.RES_HUB_API_BASE_URL as string) ?? process.env.NEXT_PUBLIC_RES_HUB_API_BASE_URL}`;
 export const fetchProjects = async (): Promise<Project[]> => {
   const response = await axios.get<Project[]>(
-    "https://reshubapi.contractorplus.app/labor-index/projects",
+    `${BASE_URL}/labor-index/projects`,
     {
       headers: {
         "Content-Type": "application/json",
@@ -80,7 +81,7 @@ export const fetchFilteredProjects = async (
   projectName?: string,
 ): Promise<Project[]> => {
   const response = await axios.get<Project[]>(
-    `https://reshubapi.contractorplus.app/labor-index/projects/filter`,
+    `${BASE_URL}/labor-index/projects/filter`,
     {
       params: {
         estimateCategory,
@@ -91,11 +92,9 @@ export const fetchFilteredProjects = async (
   return response.data;
 };
 
-const BASE_URL = "https://reshubapi.contractorplus.app/labor-index/project";
-
 export const fetchProjectDetail = async (
   slug: string,
 ): Promise<ProjectDetail> => {
-  const response = await axios.get<ProjectDetail>(`${BASE_URL}/${slug}`);
+  const response = await axios.get<ProjectDetail>(`${BASE_URL}/labor-index/project/${slug}`);
   return response.data;
 };

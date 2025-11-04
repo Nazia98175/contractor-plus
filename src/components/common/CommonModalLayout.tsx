@@ -57,7 +57,7 @@ const CommonModalLayout: React.FC<CommonModalLayoutProps> = ({
   return createPortal(
     <>
       <div
-        className={`fixed inset-0 z-[998] bg-black/30 transition-opacity duration-300 ease-in-out ${
+        className={`fixed inset-0 z-[998] bg-black/50 transition-opacity duration-300 ease-in-out ${
           animationState ? "opacity-100" : "opacity-0"
         } ${overlayClassName}`}
       />

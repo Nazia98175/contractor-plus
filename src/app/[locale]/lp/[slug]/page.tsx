@@ -26,7 +26,8 @@ export const revalidate = 300;
 export const generateStaticParams = async () => {
   try {
     const data = await getAllLpPages("en");
-    const locales = ["en", "fr", "es"];
+    // const locales = ["en", "fr", "es"];
+    const locales = ["en"];
     const params = [];
 
     if (!data) {

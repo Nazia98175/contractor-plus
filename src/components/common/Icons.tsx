@@ -7391,3 +7391,20 @@ export const LpContractorIcon = () => (
     </defs>
   </svg>
 );
+
+export const EventBackArrowIcon = () => (
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 18 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M11.8313 14.8047C11.6063 15.0651 11.2415 15.0651 11.0165 14.8047L6 9L11.0165 3.19526C11.2415 2.93492 11.6063 2.93492 11.8313 3.19526C12.0562 3.45561 12.0562 3.87772 11.8313 4.13807L7.62956 9L11.8313 13.8619C12.0562 14.1223 12.0562 14.5444 11.8313 14.8047Z"
+      fill="white"
+    />
+  </svg>
+);

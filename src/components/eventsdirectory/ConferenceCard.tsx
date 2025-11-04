@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { Key } from "react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
@@ -71,12 +71,18 @@ const ConferenceCard = ({
         </div>
         <div className="!h-full">
           <Swiper
-            modules={[Pagination, Navigation]}
+            modules={[Pagination, Navigation, Autoplay]}
             pagination={{
               el: `.swiper-pagination-${swiperId}`,
               clickable: true,
               dynamicBullets: true,
             }}
+            autoplay={{
+              delay: 3000, // time between slides (in ms)
+              disableOnInteraction: false, // keeps autoplay running after user interaction
+              pauseOnMouseEnter: true, // optional: pauses autoplay when hovered
+            }}
+            loop={true}
             speed={600}
             navigation={{
               nextEl: `.swiper-button-next-${swiperId}`,

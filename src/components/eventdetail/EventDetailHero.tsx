@@ -6,6 +6,7 @@ import { formatDateRange } from "@/lib/date";
 import ReactMarkdown from "react-markdown";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
+import { CustomSliderIcon } from "../common/Icons";
 
 const EventDetailHero = ({ eventDetail }: any) => {
   console.log(eventDetail, "eventDetail");
@@ -41,13 +42,15 @@ const EventDetailHero = ({ eventDetail }: any) => {
       label: `• ${eventDetail?.location} •`,
     },
   ];
+  console.log(eventdetailitem, "itmr");
+
   return (
     <section
       id="home-page-view-port-screen-events-detail"
       className="relative mt-[90px] opacity-0"
     >
       {eventDetail && (
-        <div className="mx-auto flex w-full max-w-[1120px] items-center justify-between sm:px-4 xl:px-0">
+        <div className="mx-auto w-full max-w-[1309px] px-4 xl:px-0">
           <EventdetailHeroCard item={eventdetailitem[0]} />
         </div>
       )}

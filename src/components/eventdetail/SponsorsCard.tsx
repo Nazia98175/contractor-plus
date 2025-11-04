@@ -27,7 +27,6 @@ const SponsorCard = ({
   if (!image) {
     return null;
   }
-  console.log(invert, "invert");
 
   return (
     <div className={`w-full py-3 sm:py-5 ${borderClasses}`}>

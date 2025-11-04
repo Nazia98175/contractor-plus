@@ -95,7 +95,7 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, activeTab, index }) => {
         <div className="py-1.5">
           <LineIcon />
           <p
-            className={`${index === 2 ? "pb-5" : ""} text-wallStreet font-inter pt-2 text-xs font-medium`}
+            className={`${index === 2 ? "pb-0" : ""} text-wallStreet font-inter pt-2 text-xs font-medium`}
           >
             {plan?.description && plan?.description}
           </p>

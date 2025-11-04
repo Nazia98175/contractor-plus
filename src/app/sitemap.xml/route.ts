@@ -53,6 +53,12 @@ export async function GET() {
   xml += `    <lastmod>${now}</lastmod>\n`;
   xml += "  </sitemap>\n";
 
+  // ===== LP Pages Index =====
+  xml += "  <sitemap>\n";
+  xml += `    <loc>${baseUrl}/lp-pages-sitemap.xml</loc>\n`;
+  xml += `    <lastmod>${now}</lastmod>\n`;
+  xml += "  </sitemap>\n";
+
   xml += "</sitemapindex>";
 
   console.log("✅ Main sitemap index generated with 7 sitemaps");

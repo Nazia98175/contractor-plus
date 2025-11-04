@@ -19,7 +19,7 @@ export async function GET() {
       url: "/project-planning-tools-sitemap.xml",
       name: "Project Planning Tools",
     },
-    { url: "/construction-costs-sitemap.xml", name: "Construction Costs" },
+    { url: "/construction-costs/main-sitemap.xml", name: "Construction Costs" },
     {
       url: "/free-estimate-templates-sitemap.xml",
       name: "Free Estimate Templates",
@@ -28,8 +28,7 @@ export async function GET() {
       url: "/material-price-comparison-sitemap.xml",
       name: "Material Price Comparison",
     },
-    { url: "/usa-labour-rate-sitemap.xml", name: "USA Labour Rates" },
-    { url: "/resources-misc-sitemap.xml", name: "Resource Pages" },
+    { url: "/usa-labor-rate-sitemap.xml", name: "USA Labour Rates" },
   ];
 
   sitemaps.forEach(({ url }) => {

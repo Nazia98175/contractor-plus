@@ -1,11 +1,13 @@
 "use client";
 import { Review } from "@/types";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Marquee from "react-fast-marquee";
 import ReviewModal from "../common/ReviewModal";
 import TrustedServiceCard from "./TrustedServiceCard";
 import Copy from "../common/Copy";
-
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 interface TheReviewProps {
   reviews?: any;
   slug?: string;
@@ -25,8 +27,31 @@ const TrustedService: React.FC<TheReviewProps> = ({
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top 5%",
+        end: "bottom 80%",
+        pin: true,
+        scrub: true,
+        anticipatePin: 1,
+        markers: true,
+      });
+    }, section);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className={`relative overflow-hidden ${className}`}>
+    <section
+      ref={sectionRef}
+      className={`relative flex h-dvh flex-col justify-center overflow-hidden ${className}`}
+    >
       <Copy animateOnScroll={true}>
         <h3 className="section-heading service-text xs:max-w-[98%] relative z-50 mx-auto w-full max-w-[72%] px-2 text-center text-white sm:max-w-[1100px]">
           {reviews?.data?.[0]?.reviews?.title || reviews?.data?.reviews?.title}

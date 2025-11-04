@@ -22,7 +22,7 @@ const SwitchingTool: React.FC<TheSwitchingToolProps> = ({
 
   return (
     <section
-      className={` ${className} relative z-10 px-2 pt-9 md:pt-11`}
+      className={` ${className} relative z-10 px-2 pt-9 md:pt-11 lg:h-dvh`}
       ref={sectionRef}
     >
       <div className="bg-reverse-black absolute top-0 left-0 z-[-5] block h-[160px] w-full md:h-[296px]" />

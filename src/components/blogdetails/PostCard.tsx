@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const PostCard = ({ blogData }: { blogData: any }) => {
   return (
-    <article className="relative z-30 mx-auto flex flex-col gap-5 sm:max-w-[90%] sm:flex-row md:max-w-[80%] xl:max-w-[967px]">
+    <article className="relative z-30 flex flex-col gap-5 sm:max-w-[90%] sm:flex-row md:max-w-[80%] xl:max-w-[967px]">
       <img
         src={`${blogData?.avatar ? blogData?.avatar?.url : "/images/webp/review-profile-7.webp"}`}
         alt="User Profile"

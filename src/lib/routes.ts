@@ -191,4 +191,10 @@ export const redirectsRoutes = [
     destination: "/industries/window-cleaning-business-software",
     permanent: true,
   },
+  //Events Route
+  {
+    source: "/events-directory", //Event Page
+    destination: "/events",
+    permanent: true,
+  },
 ];

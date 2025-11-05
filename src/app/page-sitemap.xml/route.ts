@@ -17,7 +17,6 @@ export async function GET() {
       "/",
       "/accessibility",
       "/affiliates",
-      "/ai-estimating-ads",
       "/ai-estimating-software",
       "/all-features",
       "/contractor-invoicing-software",

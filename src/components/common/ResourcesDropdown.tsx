@@ -19,7 +19,6 @@ const ResourcesDropdown: React.FC<Props> = ({
     label: string;
     href: string;
   }[];
-  console.log(headerSubList, "headl");
 
   const resourceItems = [
     { image: "/images/webp/contractor-hq.webp" },

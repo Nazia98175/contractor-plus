@@ -34,7 +34,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogHeading }) => {
       imageSrc: "/images/webp/blog-image-3.webp",
       imageWidth: "266px",
       backgroundImage: "/images/svg/blog-3.svg",
-      blogUrl: "/blogs",
+      blogUrl: "/resources/usa-labor-rate",
     },
     {
       id: 2,

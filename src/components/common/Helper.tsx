@@ -58,7 +58,7 @@ import {
 
 export const awards = [
   {
-    src: "/images/png/software-advice.png",
+    src: "/images/webp/software-advice.webp",
     alt: "Software Advice Front Runners 2024",
     mt: "mt-3",
     width: 100,

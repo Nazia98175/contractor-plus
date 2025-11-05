@@ -1,5 +1,4 @@
 "use client";
-import { useOneLinkRedirect } from "@/app/lib/handleOneLinkRedirect";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";

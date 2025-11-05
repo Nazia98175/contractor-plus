@@ -2,20 +2,31 @@
 import { useState } from "react";
 import { SearchIcon } from "../common/Icons";
 import IntegrationInfoCard from "./IntegrationInfoCard";
+import { IntegrationItem } from "@/types";
 
 const IntegrationCards = ({
   integrationList,
   integrations,
 }: {
-  integrationList: any;
-  integrations: any[];
+  integrationList: {
+    hero: {
+      searchText: string;
+    };
+  };
+  integrations: IntegrationItem[];
 }) => {
   const [searchTerms, setSearchTerms] = useState<string>("");
-  const filteredIntegrations = integrations.filter((integration) =>
-    integration.integrationName
-      .toLowerCase()
-      .includes(searchTerms.toLowerCase()),
-  );
+
+  const filteredIntegrations =
+    integrations && integrations.length > 0
+      ? integrations
+          .filter((integration) =>
+            integration
+              ?.integrationName!.toLowerCase()
+              ?.includes(searchTerms.toLowerCase()),
+          )
+          .sort((a, b) => a.integrationName!.localeCompare(b.integrationName!))
+      : [];
 
   return (
     <section className="relative z-40 space-y-12 pt-20 md:space-y-14 xl:space-y-[62px]">
@@ -55,7 +66,7 @@ const IntegrationCards = ({
           ))
         ) : (
           <div className="col-span-4 w-full text-center text-xl font-semibold text-white xl:text-2xl">
-            <h4>{searchTerms} Integrations not found</h4>
+            <h4>{searchTerms} Integration not found</h4>
           </div>
         )}
       </div>

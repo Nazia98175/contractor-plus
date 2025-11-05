@@ -1,12 +1,8 @@
-import Image from "next/image";
-import React from "react";
-import {
-  BlocksRenderer,
-  type BlocksContent,
-} from "@strapi/blocks-react-renderer";
-
+import ReactMarkdown from "react-markdown";
+import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
 type Integration = {
-  description?: BlocksContent | null;
+  description?: string | null;
 };
 
 const IntegrationContent = ({ integration }: { integration?: Integration }) => {
@@ -15,73 +11,57 @@ const IntegrationContent = ({ integration }: { integration?: Integration }) => {
   if (!content) return null;
 
   return (
-    <section className="w-full text-white">
-      <BlocksRenderer
-        content={content as BlocksContent}
-        blocks={{
-          paragraph: ({ children }) => (
-            <p className="my-3 max-w-none !text-white">{children}</p>
+    <section className="w-full">
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeSlug]}
+        components={{
+          h1: ({ node, ...props }) => (
+            <h1
+              className="mt-5 text-2xl font-bold text-white md:mt-6 md:text-[28px]"
+              {...props}
+            />
           ),
-          heading: ({ children, level }) => {
-            // @ts-ignore
-            const Tag = `h${level}` as unknown as keyof JSX.IntrinsicElements;
-            return (
-              // @ts-ignore
-              <Tag className="mt-4 mb-2 max-w-none font-semibold">
-                {children}
-              </Tag>
-            );
-          },
-          list: ({ children, format }) =>
-            format === "ordered" ? (
-              <ol className="my-3 max-w-none list-decimal pl-6">{children}</ol>
-            ) : (
-              <ul className="my-3 max-w-none list-disc pl-6">{children}</ul>
-            ),
-          quote: ({ children }) => (
-            <blockquote className="my-4 max-w-none italic">
-              {children}
-            </blockquote>
+          h2: ({ node, ...props }) => (
+            <h2
+              className="mt-5 text-lg font-semibold text-white md:mt-6 md:text-2xl"
+              {...props}
+            />
           ),
-          code: ({ children }) => (
-            <pre className="my-4 max-w-none overflow-auto">
-              <code>{children}</code>
-            </pre>
+          h3: ({ node, ...props }) => (
+            <h3
+              className="mt-4 text-base font-bold text-white md:text-2xl"
+              {...props}
+            />
           ),
-          image: ({ image }) => {
-            const url = image?.url ?? "";
-            const alt = image?.alternativeText ?? "";
-            const width = image?.width ?? 1200;
-            const height = image?.height ?? 800;
-
-            if (!url) return null;
-
-            return (
-              <figure className="my-6">
-                <Image
-                  src={url}
-                  alt={alt}
-                  width={width}
-                  height={height}
-                  style={{ width: "100%", height: "auto" }}
-                  unoptimized
-                  priority={false}
-                />
-                {alt ? (
-                  <figcaption className="mt-2 text-sm text-gray-400">
-                    {alt}
-                  </figcaption>
-                ) : null}
-              </figure>
-            );
-          },
-          link: ({ children, url }) => (
-            <a href={url} className="underline underline-offset-2">
-              {children}
-            </a>
+          p: ({ node, ...props }) => (
+            <p
+              className="mt-3 text-base leading-[160%] font-medium text-white lg:text-lg"
+              {...props}
+            />
+          ),
+          ul: ({ node, ...props }) => (
+            <ul
+              className="mt-3 ml-7 list-disc space-y-3 text-white md:ml-12"
+              {...props}
+            />
+          ),
+          ol: ({ node, ...props }) => (
+            <ol
+              className="mt-3 ml-5 list-decimal space-y-3 text-white md:ml-9"
+              {...props}
+            />
+          ),
+          a: ({ node, ...props }) => (
+            <a
+              className="w-full font-medium text-blue-500 transition-all duration-300 ease-in-out hover:text-red-600"
+              {...props}
+            />
           ),
         }}
-      />
+      >
+        {content}
+      </ReactMarkdown>
     </section>
   );
 };

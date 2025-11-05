@@ -15,7 +15,6 @@ gsap.registerPlugin(ScrollTrigger);
 const BlogsContent = ({
   blogData,
   appfeatures,
-  blogsList,
 }: {
   blogData: any;
   appfeatures: any;

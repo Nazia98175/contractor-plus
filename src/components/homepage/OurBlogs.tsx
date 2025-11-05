@@ -44,7 +44,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogHeading }) => {
       imageSrc: "/images/png/local-construction.png",
       imageWidth: "315px",
       backgroundImage: "/images/svg/bi_mic-fill_animated.svg",
-      blogUrl: "/blogs",
+      blogUrl: "/resources/construction-costs",
     },
     {
       id: 3,

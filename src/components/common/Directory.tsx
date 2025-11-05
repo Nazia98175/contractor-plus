@@ -28,34 +28,25 @@ const Directory: React.FC<DirectoryProps> = ({ item }) => {
   const openModal = () => {
     setIsModalOpen(true);
   };
+
   return (
     <>
-      <div className="relative mx-auto flex max-h-[600px] w-full max-w-[1309px] flex-col items-center justify-between gap-6 overflow-hidden xl:flex-row">
-        {/* <div className="bg-kuroiBlack pointer-events-none absolute right-[-22%] bottom-[-6%] h-[110%] w-[115px] blur-[9px] sm:right-[-13%] sm:block sm:blur-[15px] md:w-[130px]"></div>
-      <div className="bg-kuroiBlack pointer-events-none absolute bottom-[-6%] left-[-22%] h-[110%] w-[115px] blur-[9px] sm:left-[-13%] sm:block sm:blur-[15px] md:w-[130px]"></div>
-      <div className="bg-kuroiBlack xs:bottom-[-15%] pointer-events-none absolute right-0 bottom-[-22%] h-[77px] w-[110%] blur-[9px] sm:bottom-[-13%] sm:block sm:blur-[15px] md:h-[90px]"></div>
-      <div className="bg-kuroiBlack xs:top-[-15%] pointer-events-none absolute top-[-22%] right-0 h-[77px] w-[110%] blur-[9px] sm:top-[-13%] sm:block sm:blur-[15px] md:h-[90px]"></div> */}
-        <div
+      <div className="img-overlay relative mx-auto flex max-h-[600px] w-full max-w-[811px] flex-col items-center justify-center overflow-hidden">
+        <div className="bg-kuroiBlack pointer-events-none absolute right-[-22%] bottom-[-6%] h-[110%] w-[115px] blur-[9px] sm:right-[-13%] sm:block sm:blur-[15px] md:w-[130px]"></div>
+        <div className="bg-kuroiBlack pointer-events-none absolute bottom-[-6%] left-[-22%] h-[110%] w-[115px] blur-[9px] sm:left-[-13%] sm:block sm:blur-[15px] md:w-[130px]"></div>
+        <div className="bg-kuroiBlack xs:bottom-[-15%] pointer-events-none absolute right-0 bottom-[-22%] h-[77px] w-[110%] blur-[9px] sm:bottom-[-13%] sm:block sm:blur-[15px] md:h-[130px]"></div>
+        <div className="bg-kuroiBlack xs:top-[-15%] pointer-events-none absolute top-[-22%] right-0 h-[77px] w-[110%] blur-[9px] sm:top-[-13%] sm:block sm:blur-[15px] md:h-[90px]"></div>
+        <Image
           onClick={openModal}
-          className="relative w-full max-w-[480px] cursor-pointer"
-        >
-          <Image
-            className="h-full w-full rounded-lg object-cover"
-            src={item.imgUrl}
-            alt={item.heading}
-            width={811}
-            height={449}
-          />
-          <img
-            className="pointer-events-none absolute bottom-0 left-0 z-10 h-full w-full"
-            src="/images/webp/event-post-overlay.webp"
-            alt="overlay"
-          />
-        </div>
-
+          className="h-full max-h-[449px] w-full cursor-pointer rounded-lg object-cover"
+          src={item.imgUrl}
+          alt={item.heading}
+          width={811}
+          height={449}
+        />
         {/* Overlay for better text visibility */}
-        {/* <div className="absolute inset-0 rounded-lg bg-[#00000075]"></div> */}
-        <div className="-mt-[15px] flex w-full flex-col items-center justify-center sm:-mt-0">
+        <div className="pointer-events-none absolute inset-0 rounded-lg bg-[#00000075]"></div>
+        <div className="absolute bottom-[0px] z-30 flex w-full flex-col items-center justify-center">
           <b className="text-decemberSky line-clamp-1 text-center text-sm sm:text-base lg:text-lg">
             {item.place}
           </b>
@@ -76,10 +67,10 @@ const Directory: React.FC<DirectoryProps> = ({ item }) => {
       <CommonModalLayout
         open={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        className="sm:max-h-auto max-h-[350px] w-full max-w-[600px] rounded-lg sm:p-3 md:p-4"
+        className="max-h-[400px] w-full max-w-[600px] rounded-lg sm:p-3 md:p-4"
       >
         <Image
-          className="h-full w-full rounded-lg object-cover"
+          className="h-auto w-full rounded-lg object-cover"
           src={item.imgUrl}
           alt={item.heading}
           width={811}

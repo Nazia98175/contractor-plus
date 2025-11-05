@@ -1,11 +1,28 @@
 "use client";
 import useGsapFadeIn from "@/hooks/useGsapFadeIn";
 import { TermsServiceData } from "@/types";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import BlocksRender from "../common/BlocksRender";
-
+import gsap from "gsap";
 const Accessibility: FC<{ data: TermsServiceData.Data }> = ({ data }) => {
-  useGsapFadeIn(["#common-homepage-wrapper", "#home-page-view-port-screen"]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      gsap.to("#home-page-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-header-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+      gsap.to("#home-page-footer-view-port-screen", {
+        opacity: 1,
+        duration: 1,
+      });
+    }, 1000);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white py-20">
       <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">

@@ -1856,6 +1856,7 @@ button {
   background-size: cover;
   content: "";
   background: #0c0d1169;
+  pointer-events: none;
 }
 .mac-os-blur-events {
   -webkit-filter: blur(10px);

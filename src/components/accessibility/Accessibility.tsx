@@ -1,9 +1,8 @@
 "use client";
-import useGsapFadeIn from "@/hooks/useGsapFadeIn";
 import { TermsServiceData } from "@/types";
+import gsap from "gsap";
 import { FC, useEffect } from "react";
 import BlocksRender from "../common/BlocksRender";
-import gsap from "gsap";
 const Accessibility: FC<{ data: TermsServiceData.Data }> = ({ data }) => {
   useEffect(() => {
     window.scrollTo(0, 0);

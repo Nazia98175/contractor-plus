@@ -38,7 +38,7 @@ export const getAllIntegration = async (
   try {
     if (!isr) {
       const response = await axiosInstance.get(
-        `integrations?locale=${locale}&populate=*`,
+        `integrations?locale=${locale}&fields[0]=id&fields[1]=documentId&fields[2]=integrationName&fields[3]=integrationSubTitle&fields[4]=subDescription&fields[5]=slug&populate[thumbnailImage][fields][0]=url&populate[image][fields][0]=url&populate[tags][fields][0]=id&populate[tags][fields][1]=title`,
       );
       const data = response?.data?.data || response?.data;
 
@@ -52,7 +52,7 @@ export const getAllIntegration = async (
       `integrations?locale=${locale}&fields[0]=slug&fields[1]=integrationName&pagination[pageSize]=100`,
     );
     const data = response?.data?.data || response?.data;
-    
+
     if (!data) {
       return null;
     }

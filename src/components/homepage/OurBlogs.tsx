@@ -41,7 +41,7 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogHeading }) => {
       title: "Local Construction Costs",
       description:
         "Get accurate construction cost estimates for any project. Compare material and labor pricing across major US cities.",
-      imageSrc: "/images/png/local-construction.png",
+      imageSrc: "/images/webp/local-construction.webp",
       imageWidth: "315px",
       backgroundImage: "/images/svg/bi_mic-fill_animated.svg",
       blogUrl: "/resources/construction-costs",

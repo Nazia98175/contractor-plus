@@ -58,7 +58,7 @@ const GroupOfComponents: React.FC<GroupOfComponentsProps> = ({
     <>
       <div
         id="home-page-view-port-screen"
-        className="relative bg-[url('/images/png/why-contractor-hero-bg.png')] bg-contain bg-no-repeat sm:bg-cover"
+        className="relative bg-[url('/images/webp/why-contractor-hero-bg.webp')] bg-contain bg-no-repeat sm:bg-cover"
       >
         <PricingHero
           onScroll={scrollToPlans}

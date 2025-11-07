@@ -136,7 +136,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                 <Image
                   width={100}
                   height={104}
-                  src="/images/png/get-app-homepage.png"
+                  src="/images/webp/get-app-homepage.webp"
                   alt="Get App"
                   className="finally-custom-drop-img h-full w-full object-cover"
                 />
@@ -164,7 +164,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                 <Image
                   width={100}
                   height={104}
-                  src="/images/png/get-app-homepage.png"
+                  src="/images/webp/get-app-homepage.webp"
                   alt="Get App"
                   className="h-full w-full object-cover drop-shadow-2xl md:drop-shadow-none"
                 />
@@ -193,7 +193,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
               <Image
                 height={600}
                 width={715}
-                src="/images/png/ipad-mobile-view.png"
+                src="/images/webp/ipad-mobile-view.webp"
                 alt="Ipad Design"
                 className="block max-h-full w-full object-center md:hidden lg:max-w-[715px]"
                 priority
@@ -201,7 +201,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
               <Image
                 height={300}
                 width={300}
-                src="/images/png/mobile-view.png"
+                src="/images/webp/mobile-view.webp"
                 alt="Mobile Design"
                 className="absolute top-[20%] right-0 block max-w-[37%] object-contain md:top-[8%] md:hidden lg:max-w-[280px] xl:max-w-[300px]"
                 priority

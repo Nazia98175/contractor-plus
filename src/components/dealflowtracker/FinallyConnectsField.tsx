@@ -159,7 +159,7 @@ const FinallyConnectsField: React.FC<FinallyConnectsFieldProps> = ({
           {/* TOP WHITE BLUR LINE  */}
           <div className="absolute -top-[17%] left-1/2 z-[10000] hidden h-[180px] w-[120%] -translate-x-1/2 rounded-t-full bg-white blur-[20px] sm:block lg:-top-[25%] lg:blur-[25px] xl:h-[250px]"></div>
           <img
-            src="/images/png/initial-cloud.png"
+            src="/images/webp/initial-cloud.webp"
             id="initial-cloud"
             className="absolute top-0 z-[21] h-full w-full object-cover"
             alt="Initial background cloud graphic"
@@ -167,7 +167,7 @@ const FinallyConnectsField: React.FC<FinallyConnectsFieldProps> = ({
 
           {/* STEP 1 CLOUD */}
           <img
-            src="/images/png/step-1-cloud.png"
+            src="/images/webp/step-1-cloud.webp"
             id="step-1-cloud"
             className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
             alt="Cloud graphic for step 1 transition"
@@ -175,7 +175,7 @@ const FinallyConnectsField: React.FC<FinallyConnectsFieldProps> = ({
 
           {/* STEP 2 CLOUD */}
           <img
-            src="/images/png/step-2-cloud.png"
+            src="/images/webp/step-2-cloud.webp"
             id="step-2-cloud"
             className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
             alt="Cloud graphic for step 2 transition"
@@ -183,7 +183,7 @@ const FinallyConnectsField: React.FC<FinallyConnectsFieldProps> = ({
 
           {/* STEP 3 CLOUD */}
           <img
-            src="/images/png/step-3-cloud.png"
+            src="/images/webp/step-3-cloud.webp"
             id="step-3-cloud"
             className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
             alt="Cloud graphic for step 3 transition"
@@ -191,7 +191,7 @@ const FinallyConnectsField: React.FC<FinallyConnectsFieldProps> = ({
 
           {/* STEP 6 CLOUD */}
           <img
-            src="/images/png/step-6-cloud.png"
+            src="/images/webp/step-6-cloud.webp"
             id="step-4-cloud"
             className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
             alt="Cloud graphic for step 6 transition"
@@ -199,7 +199,7 @@ const FinallyConnectsField: React.FC<FinallyConnectsFieldProps> = ({
 
           {/* STEP 7 CLOUD */}
           <img
-            src="/images/png/step-7-cloud.png"
+            src="/images/webp/step-7-cloud.webp"
             id="step-7-cloud"
             className="absolute top-0 z-[21] h-full w-full object-cover opacity-0"
             alt="Cloud graphic for step 7 transition"

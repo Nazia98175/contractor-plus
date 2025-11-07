@@ -17,35 +17,35 @@ const SwitchingTool: React.FC<TheSwitchingToolProps> = ({
   className,
 }) => {
   const sectionRef = useRef(null);
-  const stickySectionRef = useRef<HTMLDivElement | null>(null);
-  useEffect(() => {
-    const section = stickySectionRef.current;
-    if (!section) return;
+  // const stickySectionRef = useRef<HTMLDivElement | null>(null);
+  // useEffect(() => {
+  //   const section = stickySectionRef.current;
+  //   if (!section) return;
 
-    const ctx = gsap.context(() => {
-      ScrollTrigger.matchMedia({
-        "(min-width: 1024px)": function () {
-          ScrollTrigger.create({
-            trigger: section,
-            start: "top 7%",
-            end: "bottom 80%",
-            pin: true,
-            scrub: 1.2,
-            anticipatePin: 1,
-          });
-        },
+  //   const ctx = gsap.context(() => {
+  //     ScrollTrigger.matchMedia({
+  //       "(min-width: 1024px)": function () {
+  //         ScrollTrigger.create({
+  //           trigger: section,
+  //           start: "top 7%",
+  //           end: "bottom 80%",
+  //           pin: true,
+  //           scrub: 1.2,
+  //           anticipatePin: 1,
+  //         });
+  //       },
 
-        "(max-width: 1023px)": function () {
-          ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-        },
-      });
-    }, section);
+  //       "(max-width: 1023px)": function () {
+  //         ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  //       },
+  //     });
+  //   }, section);
 
-    return () => ctx.revert();
-  }, []);
+  //   return () => ctx.revert();
+  // }, []);
 
   return (
-    <section ref={stickySectionRef} className="lg:h-dvh">
+    <section className="lg:h-dvh">
       <div
         className={`${className} relative z-10 px-2 pt-9 md:pt-11 lg:h-dvh`}
         ref={sectionRef}

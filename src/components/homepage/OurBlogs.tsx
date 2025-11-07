@@ -34,17 +34,17 @@ const OurBlogs: React.FC<TheBlogProps> = ({ blogHeading }) => {
       imageSrc: "/images/webp/blog-image-3.webp",
       imageWidth: "266px",
       backgroundImage: "/images/svg/blog-3.svg",
-      blogUrl: "/blogs",
+      blogUrl: "/resources/usa-labor-rate",
     },
     {
       id: 2,
       title: "Local Construction Costs",
       description:
         "Get accurate construction cost estimates for any project. Compare material and labor pricing across major US cities.",
-      imageSrc: "/images/png/local-construction.png",
+      imageSrc: "/images/webp/local-construction.webp",
       imageWidth: "315px",
       backgroundImage: "/images/svg/bi_mic-fill_animated.svg",
-      blogUrl: "/blogs",
+      blogUrl: "/resources/construction-costs",
     },
     {
       id: 3,

@@ -89,7 +89,7 @@ const WhyContractorMain: React.FC<WhyContractorMainProps> = ({ data }) => {
           id="home-page-view-port-screen-why-contractor"
           className="relative opacity-0"
         >
-          <div className="relative bg-[url('/images/png/why-contractor-hero-bg.png')] bg-cover">
+          <div className="relative bg-[url('/images/webp/why-contractor-hero-bg.webp')] bg-cover">
             <Image
               className="absolute top-0 left-0 z-[-1] h-auto w-full"
               src={"/images/webp/why-contractor-hero-bg.webp"}

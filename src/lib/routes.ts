@@ -191,6 +191,16 @@ export const redirectsRoutes = [
     destination: "/industries/window-cleaning-business-software",
     permanent: true,
   },
+  {
+    source: "/mechanical-contracting-software", //Mechanical-contracting-software page
+    destination: "/industries/mechanical-contracting-software",
+    permanent: true,
+  },
+  {
+    source: "/flooring-services-app", //Flooring-services-app page
+    destination: "/industries/flooring-services-app",
+    permanent: true,
+  },
   //Events Route
   {
     source: "/events-directory", //Event Page

@@ -65,9 +65,9 @@ const EventsDirectoryHero = ({ events }: any) => {
 
   return (
     <section className="relative mt-[90px]">
-      <div className="relative mx-auto flex w-full max-w-[1309px] items-center justify-between px-4 xl:px-0">
+      <div className="relative mx-auto flex w-full max-w-[1120px] items-center justify-between px-4 xl:px-0">
         {events && events.length > 1 && (
-          <button className="event-hero-navigation-prev absolute left-[10%] z-20 hidden rotate-180 sm:flex xl:left-[-3%]">
+          <button className="event-hero-navigation-prev hidden rotate-180 sm:flex">
             <CustomSliderIcon />
           </button>
         )}
@@ -89,7 +89,7 @@ const EventsDirectoryHero = ({ events }: any) => {
           ))}
         </Swiper>
         {events && events.length > 1 && (
-          <button className="event-hero-navigation-next absolute right-[10%] z-20 hidden sm:flex xl:right-[-3%]">
+          <button className="event-hero-navigation-next hidden sm:flex">
             <CustomSliderIcon />
           </button>
         )}

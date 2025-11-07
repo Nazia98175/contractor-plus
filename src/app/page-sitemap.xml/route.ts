@@ -5,57 +5,55 @@ export async function GET() {
 
   const baseUrl =
     process.env.NEXT_PUBLIC_DOMAIN || "https://contractorplus.app";
-  const now = new Date().toISOString();
 
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<?xml-stylesheet type="text/xsl" href="/sitemap-index.xsl"?>\n';
-  xml += '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
-  // Static Pages Sitemap
-  xml += "  <sitemap>\n";
-  xml += `    <loc>${baseUrl}/page-sitemap.xml</loc>\n`;
-  xml += `    <lastmod>${now}</lastmod>\n`;
-  xml += "  </sitemap>\n";
+  try {
+    const now = new Date().toISOString();
 
-  // Blog/Post Sitemap
-  xml += "  <sitemap>\n";
-  xml += `    <loc>${baseUrl}/post-sitemap.xml</loc>\n`;
-  xml += `    <lastmod>${now}</lastmod>\n`;
-  xml += "  </sitemap>\n";
+    const paths = [
+      "/",
+      "/accessibility",
+      "/affiliates",
+      "/ai-estimating-software",
+      "/all-features",
+      "/contractor-invoicing-software",
+      "/cookie-policy",
+      "/developers-api",
+      "/field-service-management",
+      "/gdpr",
+      "/local-seo-for-contractors",
+      "/opportunity-tracker",
+      "/podcasts",
+      "/pricing",
+      "/privacy-policy",
+      "/suppliers",
+      "/terms-of-service",
+      "/why-contractor-plus",
+    ];
 
-  // Industry Sitemap
-  xml += "  <sitemap>\n";
-  xml += `    <loc>${baseUrl}/industry-sitemap.xml</loc>\n`;
-  xml += `    <lastmod>${now}</lastmod>\n`;
-  xml += "  </sitemap>\n";
+    const changefreq = "weekly";
+    const priority = "0.8";
 
-  // Feature Sitemap
-  xml += "  <sitemap>\n";
-  xml += `    <loc>${baseUrl}/feature-sitemap.xml</loc>\n`;
-  xml += `    <lastmod>${now}</lastmod>\n`;
-  xml += "  </sitemap>\n";
+    for (const path of paths) {
+      xml += "  <url>\n";
+      xml += `    <loc>${baseUrl}${path}</loc>\n`;
+      xml += `    <lastmod>${now}</lastmod>\n`;
+      xml += `    <changefreq>${changefreq}</changefreq>\n`;
+      xml += `    <priority>${priority}</priority>\n`;
+      xml += "  </url>\n";
+    }
+  } catch (error) {
+    console.error("Error generating sitemap index:", error);
+  }
 
-  // Integration Sitemap
-  xml += "  <sitemap>\n";
-  xml += `    <loc>${baseUrl}/integration-sitemap.xml</loc>\n`;
-  xml += `    <lastmod>${now}</lastmod>\n`;
-  xml += "  </sitemap>\n";
+  xml += "</urlset>";
 
-  // Event Sitemap
-  xml += "  <sitemap>\n";
-  xml += `    <loc>${baseUrl}/event-sitemap.xml</loc>\n`;
-  xml += `    <lastmod>${now}</lastmod>\n`;
-  xml += "  </sitemap>\n";
-
-  // RESOURCE SITEMAP INDEX (Contains all resource sub-sitemaps)
-  xml += "  <sitemap>\n";
-  xml += `    <loc>${baseUrl}/resource-sitemap.xml</loc>\n`;
-  xml += `    <lastmod>${now}</lastmod>\n`;
-  xml += "  </sitemap>\n";
-
-  xml += "</sitemapindex>";
-
-  console.log("✅ Main sitemap index generated with 7 sitemaps");
+  console.log(
+    `✅ Main sitemap index generated with ${xml.includes("<url>") ? (xml.match(/<url>/g)?.length ?? 0) : 0} entries`,
+  );
 
   return new NextResponse(xml, {
     headers: {

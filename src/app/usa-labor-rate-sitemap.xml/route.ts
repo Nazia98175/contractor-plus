@@ -29,7 +29,7 @@ export async function GET() {
   // Add main page
   const now = new Date().toISOString();
   xml += "  <url>\n";
-  xml += `    <loc>${baseUrl}/resources/usa-labour-rate</loc>\n`;
+  xml += `    <loc>${baseUrl}/resources/usa-labor-rate</loc>\n`;
   xml += `    <lastmod>${now}</lastmod>\n`;
   xml += `    <changefreq>weekly</changefreq>\n`;
   xml += `    <priority>0.8</priority>\n`;
@@ -42,7 +42,7 @@ export async function GET() {
     rates.forEach((rate: any) => {
       if (rate?.slug) {
         xml += "  <url>\n";
-        xml += `    <loc>${baseUrl}/resources/usa-labour-rate/${rate.slug}</loc>\n`;
+        xml += `    <loc>${baseUrl}/resources/usa-labor-rate/${rate.slug}</loc>\n`;
         xml += `    <lastmod>${rate.updatedAt || now}</lastmod>\n`;
         xml += `    <changefreq>monthly</changefreq>\n`;
         xml += `    <priority>0.7</priority>\n`;

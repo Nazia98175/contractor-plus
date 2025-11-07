@@ -36,7 +36,6 @@ export async function generateMetadata({
   if (!page) notFound();
 
   return generateSeoMetaData({ page, slug: "/opportunity-tracker" });
-  
 }
 export default async function OpportunityTracker({
   params,

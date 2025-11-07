@@ -28,7 +28,7 @@ export async function GET() {
       features.forEach((feature: any) => {
         if (feature?.slug) {
           xml += "  <url>\n";
-          xml += `    <loc>${baseUrl}/all-features/${feature.slug}</loc>\n`;
+          xml += `    <loc>${baseUrl}/${feature.slug}</loc>\n`;
           xml += `    <lastmod>${new Date().toISOString()}</lastmod>\n`;
           xml += `    <changefreq>weekly</changefreq>\n`;
           xml += `    <priority>0.7</priority>\n`;

@@ -34,9 +34,6 @@ const IntegrationInfoCard: React.FC<IntegrationInfoCardProps> = ({ obj }) => {
     }
   };
 
-
-  console.log(obj?.thumbnailImage?.url,"obj?.thumbnailImage?.url");
-  
   return (
     <Link
       href={`/integrations/${obj.slug}`}

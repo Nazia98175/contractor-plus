@@ -2,7 +2,6 @@
 
 export const dynamic = "force-dynamic";
 export const revalidate = 3600;
-
 import { NextResponse } from "next/server";
 
 export async function GET() {
@@ -16,28 +15,44 @@ export async function GET() {
   xml += '<?xml-stylesheet type="text/xsl" href="/sitemap-index.xsl"?>\n';
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
-  // Cost calculator pages
   const calculators = [
-    "concrete-calculator",
-    "drywall-calculator",
-    "roofing-calculator",
-    "flooring-calculator",
-    "paint-calculator",
-    // Add all your cost calculator slugs here
+    "carpet-cleaning",
+    "commercial-space-cleaning-cost-calculator",
+    "construction-cost-estimator",
+    "custom-woodwork-pricing-calculator",
+    "drywall-materials-calculator",
+    "electrician-cost-per-hour-calculator",
+    "elevator-maintenance-cost",
+    "elevator-maintenance-cost-calculator",
+    "excavation-volume-cost-calculator",
+    "fence-cost-calculator",
+    "flooring-estimator-calculator",
+    "house-cleaning-cost-calculator",
+    "hvac-cfm-calculator",
+    "hvac-markup",
+    "irrigation-system-material-calculator",
+    "labor-cost-calculator",
+    "landscape-design-cost-calculator",
+    "margin-calculator",
+    "multi-service-job-estimator",
+    "painting-cost-estimator",
+    "paver-calculator-price-estimato",
+    "pipe-water-volume-calculator",
+    "plumbing-bid-calculator",
+    "profit-margin-calculator",
+    "renovation-cost-calculator",
+    "roof-square-footage-calculator",
+    "snow-removal-pricing-calculator",
   ];
 
   calculators.forEach((calculator) => {
     xml += "  <url>\n";
-    xml += `    <loc>${baseUrl}/resources/cost-calculators/${calculator}</loc>\n`;
+    xml += `    <loc>${baseUrl}/resources/cost-calculator/${calculator}</loc>\n`;
     xml += `    <lastmod>${now}</lastmod>\n`;
     xml += `    <changefreq>monthly</changefreq>\n`;
     xml += `    <priority>0.7</priority>\n`;
     xml += "  </url>\n";
   });
-
-  console.log(
-    `✅ Cost calculator sitemap generated with ${calculators.length} URLs`,
-  );
 
   xml += "</urlset>";
 

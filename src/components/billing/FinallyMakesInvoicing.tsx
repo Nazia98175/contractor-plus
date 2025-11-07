@@ -122,13 +122,13 @@ const FinallyMakesInvoicing: React.FC<FinallyMakesInvoicingProps> = ({
         ></div>
 
         <img
-          src="/images/png/initial-cloud.png"
+          src="/images/webp/initial-cloud.webp"
           id="initial-cloud"
           className="absolute top-0 z-[21] h-full w-full"
           alt="Initial background cloud"
         />
         <img
-          src="/images/png/step-1-cloud.png"
+          src="/images/webp/step-1-cloud.webp"
           id="step-1-cloud"
           className="absolute top-0 z-[21] h-full w-full opacity-0"
           alt="Cloud step 1"
@@ -140,19 +140,19 @@ const FinallyMakesInvoicing: React.FC<FinallyMakesInvoicingProps> = ({
           alt="Cloud step 2"
         />
         <img
-          src="/images/png/step-3-cloud.png"
+          src="/images/webp/step-3-cloud.webp"
           id="step-3-cloud"
           className="absolute top-0 z-[21] h-full w-full opacity-0"
           alt="Cloud step 3"
         />
         <img
-          src="/images/png/step-4-cloud.png"
+          src="/images/webp/step-4-cloud.webp"
           id="step-4-cloud"
           className="absolute top-0 z-[21] h-full w-full opacity-0"
           alt="Cloud step 4"
         />
         <img
-          src="/images/png/step-6-cloud.png"
+          src="/images/webp/step-6-cloud.webp"
           id="step-6-cloud"
           className="absolute top-0 z-[21] h-full w-full opacity-0"
           alt="Cloud step 6"
@@ -161,37 +161,37 @@ const FinallyMakesInvoicing: React.FC<FinallyMakesInvoicingProps> = ({
         {/* Background Gradients */}
         <img
           id="bg-initial"
-          src="/images/png/initial-step-one.png"
+          src="/images/webp/initial-step-one.webp"
           className="absolute top-0 left-0 h-full w-full"
         />
         <img
           id="bg-step-1"
-          src="/images/png/bg-gradient-step-1.png"
+          src="/images/webp/bg-gradient-step-1.webp"
           className="absolute top-0 left-0 h-full w-full opacity-0"
         />
         <img
           id="bg-step-2"
-          src="/images/png/bg-gradient-step-2.png"
+          src="/images/webp/bg-gradient-step-2.webp"
           className="absolute top-0 left-0 h-full w-full opacity-0"
         />
         <img
           id="bg-step-3"
-          src="/images/png/bg-gradient-step-3.png"
+          src="/images/webp/bg-gradient-step-3.webp"
           className="absolute top-0 left-0 h-full w-full opacity-0"
         />
         <img
           id="bg-step-4"
-          src="/images/png/bg-gradient-step-4.png"
+          src="/images/webp/bg-gradient-step-4.webp"
           className="absolute top-0 left-0 h-full w-full opacity-0"
         />
         <img
           id="bg-step-5"
-          src="/images/png/bg-gradient-step-5.png"
+          src="/images/webp/bg-gradient-step-5.webp"
           className="absolute top-0 left-0 h-full w-full opacity-0"
         />
         <img
           id="bg-step-6"
-          src="/images/png/bg-gradient-step-6.png"
+          src="/images/webp/bg-gradient-step-6.webp"
           className="absolute top-0 left-0 h-full w-full opacity-0"
         />
 

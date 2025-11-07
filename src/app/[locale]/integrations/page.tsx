@@ -32,6 +32,7 @@ const IntegrationPage = async ({
   params: Promise<{ locale: string }>;
 }) => {
   const { locale } = await params;
+
   const [integrations, integrationList] = await Promise.all([
     getAllIntegration(locale),
     getIntegrationList(locale),

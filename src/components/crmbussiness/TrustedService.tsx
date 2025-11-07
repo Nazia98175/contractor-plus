@@ -27,37 +27,37 @@ const TrustedService: React.FC<TheReviewProps> = ({
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
-  const sectionRef = useRef<HTMLDivElement | null>(null);
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
+  // const sectionRef = useRef<HTMLDivElement | null>(null);
+  // useEffect(() => {
+  //   const section = sectionRef.current;
+  //   if (!section) return;
 
-    const ctx = gsap.context(() => {
-      ScrollTrigger.matchMedia({
-        "(min-width: 1024px)": function () {
-          ScrollTrigger.create({
-            trigger: section,
-            start: "top 5%",
-            end: "bottom 80%",
-            pin: true,
-            scrub: 1.2,
-            anticipatePin: 1,
-          });
-        },
+  //   const ctx = gsap.context(() => {
+  //     ScrollTrigger.matchMedia({
+  //       "(min-width: 1024px)": function () {
+  //         ScrollTrigger.create({
+  //           trigger: section,
+  //           start: "top 5%",
+  //           end: "bottom 80%",
+  //           pin: true,
+  //           scrub: 1.2,
+  //           anticipatePin: 1,
+  //         });
+  //       },
 
-        "(max-width: 1023px)": function () {
-          ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-        },
-      });
-    }, section);
+  //       "(max-width: 1023px)": function () {
+  //         ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  //       },
+  //     });
+  //   }, section);
 
-    return () => ctx.revert();
-  }, []);
+  //   return () => ctx.revert();
+  // }, []);
 
   return (
     <section
-      ref={sectionRef}
-      className={`relative flex flex-col justify-center overflow-hidden lg:h-dvh ${className}`}
+      // ref={sectionRef}
+      className={`relative flex flex-col justify-center overflow-hidden ${className}`}
     >
       <Copy animateOnScroll={true}>
         <h3 className="section-heading service-text xs:max-w-[98%] relative z-50 mx-auto w-full max-w-[72%] px-2 text-center text-white sm:max-w-[1100px]">

@@ -85,7 +85,8 @@ export async function fetchYouTubeFeed() {
 
   const entries = result.feed.entry || [];
   const videos = Array.isArray(entries) ? entries : [entries];
-  const updatedVideos = videos.map((v: any) => ({
+
+  const allVideos = videos.map((v: any) => ({
     id: v["yt:videoId"],
     title: v.title,
     link: v?.link["$"]?.href || "",
@@ -98,17 +99,28 @@ export async function fetchYouTubeFeed() {
     isYoutube: true,
   }));
 
-  const mindsetMonday = updatedVideos
-    .filter(
-      (v) =>
-        v.title?.includes("Mindset Monday") ||
-        new Date(v.published || "").getUTCDay() === 1,
-    )
-    .map((v) => ({ ...v, update: "Mindset Monday" }));
+  const filteredVideos: any[] = [];
 
-  const ownersPerspective = updatedVideos
-    .filter((v) => v.title?.includes("The Owners Perspective"))
-    .map((v) => ({ ...v, update: "The Owners Perspective" }));
+  allVideos.forEach((v) => {
+    const titleLower = v.title?.toLowerCase() || "";
 
-  return [...mindsetMonday, ...ownersPerspective];
+    if (titleLower.includes("mindset monday")) {
+      filteredVideos.push({ ...v, update: "Mindset Monday" });
+    } else if (
+      titleLower.includes("the owner's perspective") ||
+      titleLower.includes("the owners perspective") ||
+      titleLower.includes("owner's perspective") ||
+      titleLower.includes("owners perspective")
+    ) {
+      filteredVideos.push({ ...v, update: "The Owner's Perspective" });
+    } else if (
+      titleLower.includes("contractor+ product update") ||
+      titleLower.includes("contractor + product update") ||
+      titleLower.includes("contractor product update")
+    ) {
+      filteredVideos.push({ ...v, update: "Contractor+ Product Update" });
+    }
+  });
+
+  return filteredVideos;
 }

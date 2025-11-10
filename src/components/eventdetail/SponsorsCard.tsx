@@ -30,7 +30,7 @@ const SponsorCard = ({
 
   return (
     <div className={`w-full py-3 sm:py-5 ${borderClasses}`}>
-      <Link href={`${link ? link : "#"}`} target="_blank">
+      <Link href={`${link ? link : "#"}`} rel="nofollow" target="_blank">
         <div className={`aspect-[4/3] w-full`}>
           <img
             className={`ios-image h-full w-full object-contain ${

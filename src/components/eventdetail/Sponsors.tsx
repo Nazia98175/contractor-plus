@@ -10,7 +10,7 @@ import { sponsorLogo } from "../common/Helper";
 import { CustomSliderIcon } from "../common/Icons";
 import SponsorCard from "./SponsorsCard";
 
-const Sponsors = ({ eventDetail, eventList }: any) => {
+const Sponsors = ({ eventDetail }: any) => {
   const [firstVisible, setFirstVisible] = useState<number>(0);
   const [lastVisible, setLastVisible] = useState<number>(0);
   const swiperRef = useRef<SwiperType | null>(null);

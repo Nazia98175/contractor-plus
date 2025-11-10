@@ -48,44 +48,111 @@ const OurPodcastCard: React.FC<{ Item: PodcastDataResponse.show }> = ({
     const u = (it?.update || "").toLowerCase();
     const link = (it?.link || "").toLowerCase();
 
+    // Check for Mindset Monday
     if (u.includes("mindset monday") || t.includes("mindset monday")) {
       return "Every Monday · 1 PM EST";
     }
 
-    if (t.includes("hard hat chat") || link.includes("share.transistor.fm")) {
+    // Check for Hard Hat Chat
+    if (t.includes("hard hat chat") || link.includes("hard-hat-chat")) {
       return "Monthly";
     }
 
-    if (t.includes("owner’s perspective") || t.includes("owners perspective")) {
-      return "Weekly";
+    // Check for The Owner's Perspective (bi-weekly)
+    if (
+      t.includes("owner's perspective") ||
+      t.includes("owners perspective") ||
+      t.includes("the owners perspective")
+    ) {
+      return "Bi-Weekly";
     }
 
+    // Check for Contractor+ Product Update
+    if (
+      t.includes("contractor+ product update") ||
+      t.includes("contractor + product update") ||
+      t.includes("contractor product update") ||
+      t.includes("contractor+ podcast") ||
+      t.includes("contractor + podcast") ||
+      t.includes("contractor podcast")
+    ) {
+      return "Monthly Updates";
+    }
+
+    // Default fallback
     return "Monthly Updates";
+  };
+
+  // Get the proper show title for display
+  const getShowTitle = (it: PodcastDataResponse.show): string => {
+    // If it's static data, return the title directly
+    if ((it as any)?.isStatic) {
+      return it?.title ?? "";
+    }
+
+    const t = (it?.title || "").toLowerCase();
+    const u = (it?.update || "").toLowerCase();
+    const link = (it?.link || "").toLowerCase();
+
+    if (u.includes("mindset monday") || t.includes("mindset monday")) {
+      return "Mindset Monday";
+    }
+    if (t.includes("hard hat chat") || link.includes("hard-hat-chat")) {
+      return "Hard Hat Chat";
+    }
+    if (
+      t.includes("owner's perspective") ||
+      t.includes("owners perspective") ||
+      t.includes("the owners perspective")
+    ) {
+      return "The Owner's Perspective";
+    }
+    if (
+      t.includes("contractor+ product update") ||
+      t.includes("contractor + product update") ||
+      t.includes("contractor product update") ||
+      t.includes("contractor+ podcast") ||
+      t.includes("contractor + podcast") ||
+      t.includes("contractor podcast")
+    ) {
+      return "Contractor+ Product Update";
+    }
+
+    return Item?.title ?? "";
   };
 
   return (
     <article className="bg-lightBlack card-shine-2 p-3 md:p-5">
       {/* Thumbnail Section */}
       <div className="relative flex h-fit max-h-[180px] items-center justify-center overflow-hidden md:max-h-[260px]">
-        <Image
-          className="absolute z-10 max-h-[180px] w-full object-cover blur-sm md:max-h-[260px]"
-          src={Item?.thumbnail}
-          alt={Item?.title}
-          fill
-          priority
-          fetchPriority="high"
-        />
-        <div className="p-2.5">
-          <Image
-            className="relative z-20 w-full max-w-[240px] object-cover"
-            src={Item?.thumbnail}
-            alt={Item?.title}
-            width={240}
-            height={240}
-            priority
-            fetchPriority="high"
-          />
-        </div>
+        {Item?.thumbnail ? (
+          <>
+            <Image
+              className="absolute z-10 max-h-[180px] w-full object-cover blur-sm md:max-h-[260px]"
+              src={Item.thumbnail}
+              alt={getShowTitle(Item)}
+              fill
+              priority
+              fetchPriority="high"
+            />
+            <div className="p-2.5">
+              <Image
+                className="relative z-20 w-full max-w-[240px] object-cover"
+                src={Item.thumbnail}
+                alt={getShowTitle(Item)}
+                width={240}
+                height={240}
+                priority
+                fetchPriority="high"
+              />
+            </div>
+          </>
+        ) : (
+          // Placeholder for missing thumbnails
+          <div className="flex h-[180px] w-full items-center justify-center bg-gray-800 md:h-[260px]">
+            <span className="text-gray-400">Podcast Thumbnail</span>
+          </div>
+        )}
       </div>
 
       {/* Info Section */}
@@ -93,7 +160,7 @@ const OurPodcastCard: React.FC<{ Item: PodcastDataResponse.show }> = ({
         <div className="mt-[35px] flex items-center justify-between gap-2">
           <p className="text-secondary text-sm font-semibold">
             {getUpdateLabel(Item)}
-          </p>{" "}
+          </p>
           <span className="flex items-center gap-3">
             {iconsArray.map((Icon, index) => (
               <span key={index}>{Icon}</span>
@@ -101,9 +168,9 @@ const OurPodcastCard: React.FC<{ Item: PodcastDataResponse.show }> = ({
           </span>
         </div>
 
-        {/* Title */}
+        {/* Title - Use the show title instead of episode title */}
         <b className="my-[6px] text-lg tracking-[-0.56px] text-white md:text-xl lg:text-2xl xl:text-[28px]">
-          {Item?.title ?? ""}
+          {getShowTitle(Item)}
         </b>
 
         {/* Description */}

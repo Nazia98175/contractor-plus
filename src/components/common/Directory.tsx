@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Button from "./Button";
 import { EventDetailIcon } from "./Icons";
 import CommonModalLayout from "./CommonModalLayout";
+import { isValidLink } from "@/lib/helpers";
 
 interface DirectoryItem {
   imgUrl: string;
@@ -20,15 +21,24 @@ interface DirectoryProps {
 
 const Directory: React.FC<DirectoryProps> = ({ item }) => {
   const router = useRouter();
-  const handleRedirect = (link: string | undefined) => {
-    if (!link) return;
-    router.push(`/events/${link}`);
+
+  const handleRedirect = (item: DirectoryItem) => {
+    if (!item) return;
+    if (isValidLink(item.button)) {
+      const formattedLink = item.button.startsWith("http")
+        ? item.button
+        : `http://${item.button}`;
+      window.open(formattedLink, "_blank");
+    } else {
+      router.push(`/events/${item.url}`);
+    }
   };
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const openModal = () => {
     setIsModalOpen(true);
   };
 
+  console.log("item", item);
   return (
     <>
       <div className="img-overlay relative mx-auto flex max-h-[600px] w-full max-w-[811px] flex-col items-center justify-center overflow-hidden">
@@ -57,7 +67,7 @@ const Directory: React.FC<DirectoryProps> = ({ item }) => {
             {item.description}
           </p>
           <Button
-            onClick={() => handleRedirect(item.url)}
+            onClick={() => handleRedirect(item)}
             className="w-full max-w-[189px]"
           >
             {item.button} <EventDetailIcon />

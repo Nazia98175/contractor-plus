@@ -13,6 +13,9 @@ import "swiper/css/pagination";
 import "./globals.css";
 import "./resources.css";
 import "./style.css";
+import BugHerdScript from "@/components/scripts/BugHerd";
+import GoogleTagManager from "@/components/scripts/GoogleTagManager";
+import MetaPixel from "@/components/scripts/MetaPixel";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -20,14 +23,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       lang="en"
       className={`${inter.variable} ${montserrat.variable} ${plusJakartaSans.variable} ${spaceGrotesk.variable}`}
     >
-      <Head>
-        <script
-          defer
-          type="text/javascript"
-          src="https://www.bugherd.com/sidebarv2.js?apikey=nre7tlm6cnhon4wmpdkbvq"
-          async={true}
-        ></script>
-      </Head>
+      <head>
+        <BugHerdScript />
+        <GoogleTagManager />
+        <MetaPixel />
+      </head>
       <body className="font-jakarta">
         {children}
         <PushLapScript />

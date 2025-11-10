@@ -1,12 +1,11 @@
 "use client";
+import { formatDateRange } from "@/lib/date";
 import gsap from "gsap";
 import { useEffect } from "react";
-import EventdetailHeroCard from "./EventdetailHeroCard";
-import { formatDateRange } from "@/lib/date";
 import ReactMarkdown from "react-markdown";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
-import { CustomSliderIcon } from "../common/Icons";
+import EventdetailHeroCard from "./EventdetailHeroCard";
 
 const EventDetailHero = ({ eventDetail }: any) => {
   console.log(eventDetail, "eventDetail");
@@ -37,12 +36,11 @@ const EventDetailHero = ({ eventDetail }: any) => {
       heading: eventDetail?.eventName ?? "",
       place: `${formatDateRange(eventDetail?.startDate, eventDetail?.endDate) + " • " + eventDetail?.location}`,
       description: `${eventDetail?.location}`,
-      button: "Event Details",
+      button: eventDetail?.eventBtn ?? "#",
       tag: eventDetail?.mustAttend ? "Must Attend" : "",
       label: `• ${eventDetail?.location} •`,
     },
   ];
-  console.log(eventdetailitem, "itmr");
 
   return (
     <section

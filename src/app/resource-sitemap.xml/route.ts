@@ -19,7 +19,7 @@ export async function GET() {
       url: "/project-planning-tools-sitemap.xml",
       name: "Project Planning Tools",
     },
-    { url: "/construction-costs/main-sitemap.xml", name: "Construction Costs" },
+    { url: "/construction-project-costs-sitemap.xml", name: "Construction Costs" },
     {
       url: "/free-estimate-templates-sitemap.xml",
       name: "Free Estimate Templates",

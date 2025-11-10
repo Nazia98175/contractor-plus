@@ -1,13 +1,11 @@
 import Image from "next/image";
-import React, { useState } from "react";
-import {
-  CustomSliderIcon,
-  EventBackArrowIcon,
-  EventDetailIcon,
-} from "../common/Icons";
-import Button from "../common/Button";
 import Link from "next/link";
+import React, { useState } from "react";
+import Button from "../common/Button";
 import CommonModalLayout from "../common/CommonModalLayout";
+import { EventBackArrowIcon, EventDetailIcon } from "../common/Icons";
+import { isValidLink } from "@/lib/helpers";
+import { useRouter } from "next/navigation";
 
 interface EventdetailHeroCard {
   imgUrl: string;
@@ -26,10 +24,23 @@ interface DirectoryProps {
 
 const EventdetailHeroCard: React.FC<DirectoryProps> = ({ item }) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const router = useRouter();
   const openModal = () => {
     setIsModalOpen(true);
   };
 
+  const handleRedirect = (item: EventdetailHeroCard) => {
+    if (!item) return;
+    if (isValidLink(item.button)) {
+      const formattedLink = item.button.startsWith("http")
+        ? item.button
+        : `http://${item.button}`;
+      window.open(formattedLink, "_blank");
+    } else {
+      router.push(`/#`);
+    }
+  };
+  console.log(item, "item in hero card");
   return (
     <>
       <div className="mx-auto flex max-w-[1309px] items-center justify-start gap-4 px-4 py-5 xl:px-0">
@@ -69,8 +80,11 @@ const EventdetailHeroCard: React.FC<DirectoryProps> = ({ item }) => {
           <p className="text-decemberSky my-3 line-clamp-1 text-center text-sm sm:text-base lg:text-lg">
             {item.description}
           </p>
-          <Button className="relative z-20 w-full max-w-[189px]">
-            {item.button} <EventDetailIcon />
+          <Button
+            onClick={() => handleRedirect(item)}
+            className="relative z-20 w-full max-w-[189px]"
+          >
+            Event Details <EventDetailIcon />
           </Button>
         </div>
       </div>

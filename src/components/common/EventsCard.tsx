@@ -80,7 +80,7 @@ const EventsCard: React.FC<EventsCardProps> = ({ Item, onClick }) => {
       <Copy delay={0.5}>
         <div className="font-montserrat mt-4 px-2 py-1.5 text-xs leading-[142.857%] font-extrabold tracking-[0.1px] text-white lg:text-sm xl:my-4 xl:px-3">
           <i className="!flex items-center gap-1">
-            {Item?.linkPath ?? Item?.eventBtn}
+            {"Event Details"}
             <EventDetailIcon />
           </i>
         </div>

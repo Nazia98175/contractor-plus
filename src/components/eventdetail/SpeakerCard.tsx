@@ -6,7 +6,7 @@ const SpeakerCard = ({ member }: { member: any }) => {
   return (
     <>
       <CardReveal delay={0.1} distance={50}>
-        <article className="group relative h-full max-h-[380px] min-h-[380px] w-full cursor-pointer overflow-hidden rounded-lg transition-colors duration-300 md:max-h-[390px] md:min-h-[390px]">
+        <article className="group relative h-full max-h-[380px] min-h-[380px] w-full overflow-hidden rounded-lg transition-colors duration-300 md:max-h-[390px] md:min-h-[390px]">
           {member?.avatar && (
             <Image
               height={500}

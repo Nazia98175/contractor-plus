@@ -1,10 +1,9 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import { RedClipIcon, SlackIcon } from "../common/Icons";
+import { RedClipIcon, SideIcon, SlackIcon } from "../common/Icons";
 import CardReveal from "../common/CardReveal";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import Copy from "../common/Copy";
-import FreeTrialButton from "../common/FreeTrialButton";
 import Link from "next/link";
 import useGsapFadeIn from "@/hooks/useGsapFadeIn";
 import gsap from "gsap";
@@ -12,12 +11,13 @@ interface mainItems {
   heroSubTitle?: string;
   heroTitle?: string;
   heroDescription?: string;
+  btnText?: string;
 }
 interface DevelopersApiHeroProps {
   mainItems: mainItems;
 }
 const DevelopersApiHero: React.FC<DevelopersApiHeroProps> = ({ mainItems }) => {
-  const { heroSubTitle, heroTitle, heroDescription } = mainItems;
+  const { heroSubTitle, heroTitle, heroDescription, btnText } = mainItems;
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     gsap.to(wrapperRef.current, {
@@ -60,7 +60,12 @@ const DevelopersApiHero: React.FC<DevelopersApiHeroProps> = ({ mainItems }) => {
         </Copy>
         <CardReveal distance={50} delay={0.5}>
           <div className="flex w-full flex-col items-center justify-center gap-2 sm:flex-row">
-            <FreeTrialButton showIcon={true} text={"View API Reference"} />
+            <Link
+              href={"https://developer.contractorplus.app"}
+              className="secondary-btn bg-red-linear h-10 gap-2"
+            >
+              {btnText || "View API Reference"} <SideIcon />
+            </Link>
             <Link
               href={
                 "https://contractorapisupport.slack.com/join/shared_invite/zt-3hc04uiiq-w4KYFmUX1NMm9CTgyb1XYg#/shared-invite/email"

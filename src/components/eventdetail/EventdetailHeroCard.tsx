@@ -56,10 +56,10 @@ const EventdetailHeroCard: React.FC<DirectoryProps> = ({ item }) => {
         </h2>
       </div>
       <div className="img-overlay relative mx-auto flex max-h-[600px] w-full max-w-[811px] flex-col items-center justify-center overflow-hidden">
-        <div className="bg-kuroiBlack pointer-events-none absolute right-[-22%] bottom-[-6%] h-[110%] w-[115px] blur-[9px] sm:right-[-13%] sm:block sm:blur-[15px] md:w-[130px]"></div>
+        {/* <div className="bg-kuroiBlack pointer-events-none absolute right-[-22%] bottom-[-6%] h-[110%] w-[115px] blur-[9px] sm:right-[-13%] sm:block sm:blur-[15px] md:w-[130px]"></div>
         <div className="bg-kuroiBlack pointer-events-none absolute bottom-[-6%] left-[-22%] h-[110%] w-[115px] blur-[9px] sm:left-[-13%] sm:block sm:blur-[15px] md:w-[130px]"></div>
         <div className="bg-kuroiBlack xs:bottom-[-15%] pointer-events-none absolute right-0 bottom-[-22%] h-[77px] w-[110%] blur-[9px] sm:bottom-[-13%] sm:block sm:blur-[15px] md:h-[90px]"></div>
-        <div className="bg-kuroiBlack xs:top-[-15%] pointer-events-none absolute top-[-22%] right-0 h-[77px] w-[110%] blur-[9px] sm:top-[-13%] sm:block sm:blur-[15px] md:h-[90px]"></div>
+        <div className="bg-kuroiBlack xs:top-[-15%] pointer-events-none absolute top-[-22%] right-0 h-[77px] w-[110%] blur-[9px] sm:top-[-13%] sm:block sm:blur-[15px] md:h-[90px]"></div> */}
         <Image
           onClick={openModal}
           className="h-full max-h-[449px] w-full cursor-pointer rounded-lg object-cover"
@@ -82,7 +82,7 @@ const EventdetailHeroCard: React.FC<DirectoryProps> = ({ item }) => {
           </p>
           <Button
             onClick={() => handleRedirect(item)}
-            className="relative z-20 w-full max-w-[189px]"
+            className="relative z-20 w-full max-w-[189px] mb-3"
           >
             Event Details <EventDetailIcon />
           </Button>

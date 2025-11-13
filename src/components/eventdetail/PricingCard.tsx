@@ -30,9 +30,9 @@ const PricingCard = ({ pricing }: { pricing: any }) => {
             <h3 className="text-sm font-extrabold text-white">
               {pricing?.currency ?? ""} {pricing?.price ?? ""}
             </h3>
-            <span>
+            {/* <span>
               <EventDetailIcon />
-            </span>
+            </span> */}
           </div>
         </div>
       </CardReveal>

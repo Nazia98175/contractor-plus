@@ -118,7 +118,7 @@ const EstimaticHero: React.FC<EstimaticHeroProps> = ({
             />
             {estimaticTagTitle}
           </div>
-          <div className="relative overflow-hidden pb-10">
+          <div className="relative h-full max-h-[410px] overflow-hidden pb-10">
             <Image
               width={730}
               height={410}

@@ -37,9 +37,13 @@ const ServiceContractorsMarquee: React.FC<TheReviewProps> = ({
     <section
       className={`${className} custom-shadow relative pb-9 md:pb-12 lg:pb-[60px] xl:pb-[78px]`}
     >
-      <Copy delay={0.2}>
-        <h3 className="section-heading gradient-white xs:max-w-[70%] relative z-50 mx-auto mb-4.5 max-w-[250px] text-center sm:mb-8 md:mb-10 lg:mb-12 xl:max-w-full">
-          {reviews.data?.[0].reviews.title}
+      <Copy
+        className="xs:max-w-[70%] mx-auto max-w-[250px] xl:max-w-full"
+        delay={0.2}
+      >
+        <h3 className="section-heading gradient-white relative z-50 mb-4.5 block w-full text-center sm:mb-8 md:mb-10 lg:mb-12">
+          {reviews.data?.[0].reviews.title} Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Eligendi, eveniet!
         </h3>
       </Copy>
       <Marquee
@@ -62,6 +66,7 @@ const ServiceContractorsMarquee: React.FC<TheReviewProps> = ({
           />
         ))}
       </Marquee>
+      x
       <ReviewModal
         videoUrl={selectedVideoUrl || ""}
         isOpen={isModalOpen}

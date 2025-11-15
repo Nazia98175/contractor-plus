@@ -42,8 +42,7 @@ const ServiceContractorsMarquee: React.FC<TheReviewProps> = ({
         delay={0.2}
       >
         <h3 className="section-heading gradient-white relative z-50 mb-4.5 block w-full text-center sm:mb-8 md:mb-10 lg:mb-12">
-          {reviews.data?.[0].reviews.title} Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Eligendi, eveniet!
+          {reviews.data?.[0].reviews.title}
         </h3>
       </Copy>
       <Marquee

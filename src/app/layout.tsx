@@ -13,7 +13,6 @@ import "swiper/css/pagination";
 import "./globals.css";
 import "./resources.css";
 import "./style.css";
-import BugHerdScript from "@/components/scripts/BugHerd";
 import GoogleTagManager from "@/components/scripts/GoogleTagManager";
 import MetaPixel from "@/components/scripts/MetaPixel";
 
@@ -24,7 +23,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={`${inter.variable} ${montserrat.variable} ${plusJakartaSans.variable} ${spaceGrotesk.variable}`}
     >
       <head>
-        <BugHerdScript />
         <GoogleTagManager />
         <MetaPixel />
       </head>

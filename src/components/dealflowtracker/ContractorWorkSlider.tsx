@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { Autoplay, Controller, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Slidericon } from "../common/Icons";
-import LottieAnimation from "../common/LottieAnimation";
 interface SliderItem {
   title: string;
   description: string;
@@ -28,7 +27,7 @@ const ContractorWorkSlider: React.FC<Props> = ({ sliderData }) => {
   }, [topSwiper, bottomSwiper]);
 
   return (
-    <div className="custom-pagination custom-active-slider relative z-50 mx-auto w-full max-w-[1414px]">
+    <div className="custom-pagination custom-active-slider relative z-50 mx-auto w-full max-w-[1920px]">
       {/* Top Image Slider */}
       <Swiper
         centeredSlides={true}
@@ -52,7 +51,7 @@ const ContractorWorkSlider: React.FC<Props> = ({ sliderData }) => {
                 // sizes="(max-width: 768px) 835px, (min-width: 769px) 50vw"
                 src={"/images/webp/deal-flow-hero.webp"}
                 alt="Slide Image"
-                className="shadow-c3 rounded-3xl object-cover xl:rounded-[45px]"
+                className="shadow-c3 relative rounded-3xl object-cover xl:rounded-[45px]"
               />
             </div>
           </div>
@@ -104,7 +103,7 @@ const ContractorWorkSlider: React.FC<Props> = ({ sliderData }) => {
         </SwiperSlide>
         <SwiperSlide className="relative sm:h-[537px]">
           <div className="relative mx-auto overflow-hidden">
-            {/* <div className="absolute top-[0px] h-[52px] w-full rotate-180 bg-white blur-3xl"></div> */}
+            <div className="absolute top-[0px] h-[52px] w-full rotate-180 bg-white blur-3xl"></div>
             <Image
               unoptimized
               sizes="(max-width: 768px) 571px, (min-width: 769px) 571px"
@@ -115,7 +114,6 @@ const ContractorWorkSlider: React.FC<Props> = ({ sliderData }) => {
               alt="Slide Image"
               className="mx-auto max-h-[537px] w-full object-cover md:max-w-[571px]"
             />
-
             <div className="slider-img-gradient absolute bottom-[0px] h-[152px] w-full max-w-full rotate-180"></div>
           </div>
         </SwiperSlide>

@@ -27,11 +27,6 @@ const ServiceContractorsMarquee: React.FC<TheReviewProps> = ({
     setSelectedVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     textSplit("#review-title");
-  //   }, 3000);
-  // }, []);
 
   return (
     <section

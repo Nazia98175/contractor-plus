@@ -29,7 +29,7 @@ const LottieAnimation = forwardRef<LottieAnimationRef, LottieAnimationProps>(
     useImperativeHandle(ref, () => ({
       play: () => {
         if (animationRef.current) {
-          animationRef.current.goToAndPlay(0, true);
+          animationRef.current.play();
         }
       },
       stop: () => {
@@ -56,12 +56,10 @@ const LottieAnimation = forwardRef<LottieAnimationRef, LottieAnimationProps>(
 
     useEffect(() => {
       if (containerRef.current && animationData) {
-        // Clean up previous animation
         if (animationRef.current) {
           animationRef.current.destroy();
         }
 
-        // Create new animation
         animationRef.current = lottie.loadAnimation({
           container: containerRef.current,
           renderer: "svg",
@@ -71,7 +69,6 @@ const LottieAnimation = forwardRef<LottieAnimationRef, LottieAnimationProps>(
         });
       }
 
-      // Cleanup function
       return () => {
         if (animationRef.current) {
           animationRef.current.destroy();

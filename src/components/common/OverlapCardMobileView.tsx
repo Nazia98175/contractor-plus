@@ -28,7 +28,7 @@ const OverlapCardMobileView: React.FC<OverlapCardMobileViewProps> = ({
 }) => {
   const lottieRefs = useRef<(LottieAnimationRef | null)[]>([]);
 
-  const setLottieRef = useCallback(
+  const mobileLottieAnimation = useCallback(
     (index: number) => (el: LottieAnimationRef | null) => {
       if (lottieRefs.current) {
         lottieRefs.current[index] = el;
@@ -186,7 +186,7 @@ const OverlapCardMobileView: React.FC<OverlapCardMobileViewProps> = ({
             <FieldServiceCard
               slug={slug}
               idx={index}
-              setLottieRef={setLottieRef}
+              mobileLottieAnimation={mobileLottieAnimation}
               service={service}
               theme={theme}
               apiData={apiData}

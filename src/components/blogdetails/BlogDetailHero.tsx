@@ -1,5 +1,5 @@
 "use client";
-import { formatDateWithOrdinal } from "@/lib/date";
+import { formatDateWithOrdinal, formateDateInText } from "@/lib/date";
 import gsap from "gsap";
 import { useEffect } from "react";
 
@@ -58,6 +58,14 @@ const BlogDetailHero = ({ blogData }: { blogData: any }) => {
                 : new Date(blogData?.publishedAt),
             )}
           </div>
+          <span className="text-stonewall text-sm font-medium md:text-xs">
+            Updated on :
+            {formateDateInText(
+              blogData?.updatedAt
+                ? new Date(blogData?.updatedAt)
+                : new Date(blogData?.publishedAt),
+            )}
+          </span>
         </article>
       </div>
     </section>

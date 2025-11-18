@@ -9,7 +9,7 @@ export const generateSeoMetadata = ({
   page,
   slug,
 }: GenerateSeoMetadataOptions): Metadata => {
-  const baseUrl = process.env.NEXT_PUBLIC_DOMAIN;
+  const baseUrl = process.env.NEXT_PUBLIC_DOMAIN || 'https://contractorplus.app';
   const title =
     page?.seoMetaData?.metaTitle ||
     page?.hero?.heroTitle ||
@@ -28,6 +28,12 @@ export const generateSeoMetadata = ({
     title,
     description,
     keywords,
+    // These two lines are ALL you need for favicon:
+    metadataBase: new URL(baseUrl),
+    icons: {
+      icon: '/favicon.ico',
+      shortcut: '/favicon.ico',
+    },
     alternates: {
       canonical,
     },
@@ -38,7 +44,7 @@ export const generateSeoMetadataBlogs = ({
   page,
   slug,
 }: GenerateSeoMetadataOptions): Metadata => {
-  const baseUrl = process.env.NEXT_PUBLIC_DOMAIN;
+  const baseUrl = process.env.NEXT_PUBLIC_DOMAIN || 'https://contractorplus.app';
   const title =
     page?.SeoMetaData?.metaTitle || (slug ? `Contractor+ ${slug}` : "");
 
@@ -55,6 +61,12 @@ export const generateSeoMetadataBlogs = ({
     title,
     description,
     keywords,
+    // These two lines are ALL you need for favicon:
+    metadataBase: new URL(baseUrl),
+    icons: {
+      icon: '/favicon.ico',
+      shortcut: '/favicon.ico',
+    },
     alternates: {
       canonical,
     },
@@ -65,7 +77,7 @@ export const generateSeoMetadataEvent = ({
   page,
   slug,
 }: GenerateSeoMetadataOptions): Metadata => {
-  const baseUrl = process.env.NEXT_PUBLIC_DOMAIN;
+  const baseUrl = process.env.NEXT_PUBLIC_DOMAIN || 'https://contractorplus.app';
   const title =
     page?.SeoMetaData?.metaTitle || (slug ? `Contractor+ ${slug}` : "");
 
@@ -81,6 +93,12 @@ export const generateSeoMetadataEvent = ({
     title,
     description,
     keywords,
+    // These two lines are ALL you need for favicon:
+    metadataBase: new URL(baseUrl),
+    icons: {
+      icon: '/favicon.ico',
+      shortcut: '/favicon.ico',
+    },
     alternates: {
       canonical,
     },
@@ -91,7 +109,7 @@ export const generateSeoMetaData = ({
   page,
   slug,
 }: GenerateSeoMetadataOptions): Metadata => {
-  const baseUrl = process.env.NEXT_PUBLIC_DOMAIN;
+  const baseUrl = process.env.NEXT_PUBLIC_DOMAIN || 'https://contractorplus.app';
   const title =
     page?.seoData?.metaTitle ||
     page?.seoMetaData?.metaTitle ||
@@ -147,6 +165,12 @@ export const generateSeoMetaData = ({
     title,
     description,
     keywords,
+    // These two lines are ALL you need for favicon:
+    metadataBase: new URL(baseUrl),
+    icons: {
+      icon: '/favicon.ico',
+      shortcut: '/favicon.ico',
+    },
     openGraph: openGraph,
     alternates: {
       canonical,

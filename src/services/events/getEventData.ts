@@ -91,8 +91,9 @@ export const getFeaturedEvents = async (
   locale: string,
 ): Promise<EventDirectory[] | []> => {
   try {
+    const currentDate = new Date().toISOString();
     const response = await axiosInstance.get(
-      `events-directories?locale=${locale}&filters[mustAttend][$eq]=${true}&populate=*`,
+      `events-directories?locale=${locale}&filters[mustAttend][$eq]=${true}&filters[startDate][$gt]=${currentDate}&populate=*`,
     );
     const { data } = response.data;
     if (!data) {

@@ -13,19 +13,26 @@ const AllEventCard = ({
       sectionId: "conference-events",
       sectionHeading: `${eventList?.mostAttendTitle ?? ""}`,
       events: featuredEvents
-        ? featuredEvents.map((itm: any) => {
-            return {
-              id: itm.id,
-              imgPath: itm?.eventImages
-                ? itm?.eventImages[0].url
-                : "/images/webp/snow.webp",
-              role: `${formatDateRange(itm?.startDate, itm?.endDate) + " • " + itm?.location}`,
-              heading: `${itm?.eventName ?? ""}`,
-              description: `${itm?.shortDescription ?? ""}`,
-              linkPath: `${itm?.eventBtn ?? ""}`,
-              slug: `${itm?.eventUrl ?? ""}`,
-            };
-          })
+        ? featuredEvents
+            .map((itm: any) => {
+              return {
+                id: itm.id,
+                imgPath: itm?.eventImages
+                  ? itm?.eventImages[0].url
+                  : "/images/webp/snow.webp",
+                role: `${formatDateRange(itm?.startDate, itm?.endDate) + " • " + itm?.location}`,
+                heading: `${itm?.eventName ?? ""}`,
+                description: `${itm?.shortDescription ?? ""}`,
+                linkPath: `${itm?.eventBtn ?? ""}`,
+                slug: `${itm?.eventUrl ?? ""}`,
+                sDate: `${itm?.startDate ?? ""}`,
+              };
+            })
+            .sort((a: any, b: any) => {
+              const dateA = new Date(a.sDate).getTime();
+              const dateB = new Date(b.sDate).getTime();
+              return dateA - dateB;
+            })
         : [],
     },
     {

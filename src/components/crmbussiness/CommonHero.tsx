@@ -52,7 +52,7 @@ const CommonHero: React.FC<TheHeroProps> = ({
     <>
       <section
         ref={wrapperRef}
-        className="relative z-10 pt-[46px] pb-10 opacity-0 sm:pt-20 md:pb-0 lg:pt-[139px] xl:pt-[154px]"
+        className="relative z-10 overflow-hidden pt-[46px] pb-10 opacity-0 sm:pt-20 md:pb-0 lg:pt-[139px] xl:pt-[154px]"
       >
         {isShowHeroImg && (
           <div className="bg-kuroiBlack absolute bottom-[-10px] left-0 z-40 hidden h-[100px] w-full blur-[30px] md:block"></div>

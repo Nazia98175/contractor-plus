@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, ReactNode, ReactElement } from "react";
+import React, { useRef, ReactNode, ReactElement, useEffect } from "react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -26,113 +26,111 @@ function Copy({
   const elementRefs = useRef<HTMLElement[]>([]);
   const splitRefs = useRef<SplitText[]>([]);
   const lines = useRef<HTMLElement[]>([]);
+  const animation = useRef<gsap.core.Tween | null>(null);
 
-  const waitForFonts = async (): Promise<boolean> => {
+  const waitForFonts = async () => {
     try {
       await document.fonts.ready;
-      const customFonts = ["Plus Jakarta Sans", "Myriad Pro"];
-      const fontCheckPromises = customFonts.map((fontFamily: string) => {
-        return document.fonts.check(`16px ${fontFamily}`);
-      });
-      await Promise.all(fontCheckPromises);
-      await new Promise((resolve) => setTimeout(resolve, 100));
-      console.log("all fonts loaded");
+      await new Promise((res) => setTimeout(res, 10));
       return true;
-    } catch (error) {
-      console.warn("Font loading check failed, proceeding anyway:", error);
-      await new Promise((resolve) => setTimeout(resolve, 200));
+    } catch {
+      await new Promise((res) => setTimeout(res, 100));
       return true;
     }
   };
 
-  useGSAP(
-    () => {
-      if (!containerRef.current) return;
-      //   if (window.innerWidth < 600) return;
+  const clearSplit = () => {
+    splitRefs.current.forEach((split) => split?.revert());
+    splitRefs.current = [];
+    elementRefs.current = [];
+    lines.current = [];
+    animation.current?.kill();
+  };
 
-      const initializeSplitText = async () => {
-        await waitForFonts();
-        splitRefs.current = [];
-        lines.current = [];
-        elementRefs.current = [];
+  const setupSplit = async () => {
+    if (!containerRef.current) return;
+    await waitForFonts();
 
-        let elements: HTMLElement[] = [];
-        if (containerRef.current!.hasAttribute("data-copy-wrapper")) {
-          elements = Array.from(
-            containerRef.current!.children,
-          ) as HTMLElement[];
-        } else {
-          elements = [containerRef.current!];
-        }
+    clearSplit();
 
-        elements.forEach((element: HTMLElement) => {
-          elementRefs.current.push(element);
-          const split = SplitText.create(element, {
-            type: "lines",
-            mask: "lines",
-            linesClass: "line",
-            lineThreshold: 0.1,
-          }) as SplitText;
-          splitRefs.current.push(split);
+    let elements: HTMLElement[] = [];
 
-          const computedStyle = window.getComputedStyle(element);
-          const textIndent = computedStyle.textIndent;
-          if (textIndent && textIndent !== "0px") {
-            if (split.lines.length > 0) {
-              (split.lines[0] as HTMLElement).style.paddingLeft = textIndent;
-            }
-            (element as HTMLElement).style.textIndent = "0";
-          }
-          lines.current.push(...(split.lines as HTMLElement[]));
-        });
+    // Multi child container
+    if (containerRef.current.hasAttribute("data-copy-wrapper")) {
+      elements = Array.from(containerRef.current.children) as HTMLElement[];
+    } else {
+      elements = [containerRef.current];
+    }
 
-        gsap.set(lines.current, { y: "100%" });
+    elements.forEach((el) => {
+      elementRefs.current.push(el);
 
-        const animationProps = {
-          y: "0%",
-          stagger: 0.1,
-          ease: "power4.out",
-          delay: delay,
-          duration: 1.8,
-        };
+      const split = new SplitText(el, {
+        type: "lines",
+        linesClass: "line",
+        mask: "lines",
+      });
 
-        if (animateOnScroll) {
-          gsap.to(lines.current, {
-            ...animationProps,
-            scrollTrigger: {
-              trigger: containerRef.current,
-              start: "top 85%",
-              once: true,
-            },
-          });
-        } else {
-          gsap.to(lines.current, animationProps);
-        }
-      };
-
-      initializeSplitText();
-
-      return () => {
-        splitRefs.current.forEach((split: SplitText) => {
-          if (split) {
-            split.revert();
-          }
-        });
-      };
-    },
-    { scope: containerRef, dependencies: [animateOnScroll, delay] },
-  );
-
-  if (React.Children.count(children) === 1) {
-    return React.cloneElement(children as ReactElement<any>, {
-      ref: containerRef,
+      splitRefs.current.push(split);
+      lines.current.push(...(split.lines as HTMLElement[]));
     });
+
+    gsap.set(lines.current, { y: "100%" });
+
+    const animationProps = {
+      y: "0%",
+      stagger: 0.1,
+      ease: "power4.out",
+      delay,
+      duration: 1.6,
+    };
+
+    if (animateOnScroll) {
+      animation.current = gsap.to(lines.current, {
+        ...animationProps,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 85%",
+          once: true,
+        },
+      });
+    } else {
+      animation.current = gsap.to(lines.current, animationProps);
+    }
+  };
+
+  useGSAP(() => {
+    setupSplit();
+
+    return () => clearSplit();
+  }, [animateOnScroll, delay]);
+
+  // ⭐ Refresh SplitText on screen resize (debounced)
+  useEffect(() => {
+    let resizeTimer: any;
+
+    const handleResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        setupSplit(); // re-split lines on resize
+      }, 150);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Clone if single child
+  if (React.Children.count(children) === 1 && React.isValidElement(children)) {
+    const child = children as ReactElement;
+    // Cast props to any to allow adding a ref to the cloned element
+    return React.cloneElement(child, { ref: containerRef } as any);
   }
 
   return (
     <div
       aria-label={ariaLabel}
-      className={`${className}`}
+      className={className}
       ref={containerRef}
       data-copy-wrapper="true"
     >

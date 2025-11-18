@@ -12,6 +12,7 @@ interface Blog {
   blogImg: { url: string }[];
   publishedAt?: string;
   blogUrl: string;
+  postedOn?: string;
   shortDescription?: string;
   category: { text: string; id: number }[];
 }
@@ -28,7 +29,7 @@ const BlogArticle: React.FC<BlogArticleProps> = ({
   textClass = "",
 }) => {
   const getDateLabel = () => {
-    const raw = blog?.publishedAt ?? blog?.createdAt;
+    const raw = blog?.postedOn || blog?.publishedAt;
     if (!raw) return "";
 
     let d = parseISO(raw);

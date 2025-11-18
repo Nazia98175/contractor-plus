@@ -27,7 +27,7 @@ export const getBlogsByCategory = async (
     const allResults: any[] = [];
 
     for (const kw of keywords) {
-      const url = `blogs?filters[tags][list][$containsi]=${kw}&locale=${locale}&publicationState=live&fields[0]=blogTitle&fields[1]=blogUrl&fields[2]=shortDescription&populate[blogImg][fields][0]=url${isLimit ? "&pagination[limit]=3" : ""}`;
+      const url = `blogs?filters[tags][list][$containsi]=${kw}&locale=${locale}&publicationState=live&fields[0]=blogTitle&fields[1]=blogUrl&fields[2]=shortDescription&fields[3]=postedOn&fields[4]=publishedAt&populate[blogImg][fields][0]=url${isLimit ? "&pagination[limit]=3" : ""}`;
       const res: AxiosResponse<HomePageResponse> = await axiosInstance.get(url);
       if (res.data?.data?.length) {
         allResults.push(...res.data.data);

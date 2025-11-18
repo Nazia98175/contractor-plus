@@ -1,7 +1,7 @@
-import { getBlogs } from "@/services/blogs";
-import { getSolutionPage } from "./solution";
+import { getBlogsByCategory } from "@/services/blogs";
 import { getCommonData } from "../common/commonData";
 import { getIntegrationList } from "../integation/getIntegrationData";
+import { getSolutionPage } from "./solution";
 
 export interface CrmLikePageDataResponse {
   solutionPageContent: any | null;
@@ -12,12 +12,11 @@ export interface CrmLikePageDataResponse {
   comparisonList: any | null;
   teamsUsingContractor: any | null;
   faqs: any | null;
-  blogsList: any | null;
-  blogs?: any | null;
   thousandReviews: any | null;
   commonData?: any | null;
   integrationList?: any | null;
   hero?: any | null;
+  blogsByCategory?: any | null;
 }
 
 export const getSolutionPageData = async (
@@ -34,10 +33,10 @@ export const getSolutionPageData = async (
     comparisonListRes,
     teamsUsingContractorRes,
     faqsRes,
-    blogs,
     thousandReviewsRes,
     commonData,
     integrationList,
+    blogsByCategoryRes,
   ] = await Promise.all([
     getSolutionPage(slug, locale, "&populate=*"),
     getSolutionPage(slug, locale, "&populate[hero][populate]=heroImg"),
@@ -70,7 +69,6 @@ export const getSolutionPageData = async (
     ),
     getSolutionPage(slug, locale, "&populate[resultsStatsSection][populate]=*"),
     getSolutionPage(slug, locale, "&populate[faqs][populate]=faq"),
-    getBlogs(locale, "&sort=publishedAt:desc&pagination[limit]=3"),
     getSolutionPage(
       slug,
       locale,
@@ -79,6 +77,7 @@ export const getSolutionPageData = async (
 
     getCommonData(locale),
     getIntegrationList(locale),
+    getBlogsByCategory(locale, slug),
   ]);
   return {
     solutionPageContent: pageContentRes || null,
@@ -92,10 +91,10 @@ export const getSolutionPageData = async (
     teamsUsingContractor:
       teamsUsingContractorRes?.data?.[0]?.resultsStatsSection || null,
     faqs: faqsRes?.data?.[0] || null,
-    blogsList: blogs || null,
     thousandReviews: thousandReviewsRes?.data?.[0]?.reviewTrustSection || null,
     commonData: commonData || null,
     integrationList: integrationList?.hero || null,
     hero: heroRes?.data?.[0]?.hero || null,
+    blogsByCategory: blogsByCategoryRes?.data || null,
   };
 };

@@ -24,6 +24,8 @@ const OurPodcast: FC<{
         "Monthly updates on the latest features, improvements, and innovations to the Contractor+ platform.",
       update: "Contractor+ Product Update",
       isStatic: true,
+      isYoutube: true,
+      link: "https://youtube.com/@contractorplusapp",
     },
     {
       id: "mindset-monday",
@@ -33,6 +35,8 @@ const OurPodcast: FC<{
         "Join Gerritt Bake every Monday at 1 PM EST for powerful contractors' mindset tips and motivation to start your week strong.",
       update: "Mindset Monday",
       isStatic: true,
+      isYoutube: true,
+      link: "https://youtube.com/@contractorplusapp/live",
     },
     {
       id: "owners-perspective",
@@ -42,6 +46,8 @@ const OurPodcast: FC<{
         "Bi-weekly interviews with successful contractors sharing their journey, challenges, and insights from the owner's seat.",
       update: "The Owner's Perspective",
       isStatic: true,
+      isYoutube: true,
+      link: "https://youtube.com/@contractorplusapp",
     },
     {
       id: "hard-hat-chat",
@@ -51,6 +57,9 @@ const OurPodcast: FC<{
         "A monthly discussion on the realities of construction, sharing practical insights and no-BS advice for contractors.",
       update: "Hard Hat Chat",
       isStatic: true,
+      podcastLink:
+        "https://podcasts.apple.com/us/podcast/hard-hat-chat-no-bs-construction-discussion-with/id1793175437",
+      spotifyLink: "https://open.spotify.com/show/3kEYENshpy8ufwzjDbS8SK",
     },
   ];
 
@@ -130,10 +139,12 @@ const OurPodcast: FC<{
   });
 
   const recentEpisodes =
-    transistorData?.filter((item) => {
-      const show = detectShow(item);
-      return show !== "";
-    }) ?? [];
+    transistorData
+      ?.filter((item) => {
+        const show = detectShow(item);
+        return show !== "";
+      })
+      .sort((a, b) => asTime(b.published) - asTime(a.published)) ?? [];
 
   return (
     <section className="custom-pagination-2 w-full px-2">

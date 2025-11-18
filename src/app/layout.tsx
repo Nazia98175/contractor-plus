@@ -1,8 +1,11 @@
 import { inter, montserrat, plusJakartaSans, spaceGrotesk } from "@/app/fonts";
 import AccessibilityWidget from "@/components/scripts/AccessibilityWidget";
+import BugHerdScript from "@/components/scripts/BugHerd";
 import CookieBanner from "@/components/scripts/CookieBanner";
+import GoogleTagManager from "@/components/scripts/GoogleTagManager";
+import MetaPixel from "@/components/scripts/MetaPixel";
 import PushLapScript from "@/components/scripts/PushLapScript";
-import Head from "next/head";
+import { Metadata } from "next";
 import { ReactNode } from "react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -13,10 +16,12 @@ import "swiper/css/pagination";
 import "./globals.css";
 import "./resources.css";
 import "./style.css";
-import BugHerdScript from "@/components/scripts/BugHerd";
-import GoogleTagManager from "@/components/scripts/GoogleTagManager";
-import MetaPixel from "@/components/scripts/MetaPixel";
 
+export const metadata: Metadata = {
+  icons: {
+    icon: "./favicon.ico",
+  },
+};
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html

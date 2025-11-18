@@ -60,10 +60,10 @@ const FieldServicesPage = async ({ params }: Params) => {
     comparisonList,
     teamsUsingContractor,
     faqs,
-    blogs,
     thousandReviews,
     commonData,
     integrationList,
+    blogsByCategory,
   } = await getSolutionPageData("field-service-management", useParams?.locale);
 
   const ip = (await cookies()).get("user-ip")?.value;
@@ -156,8 +156,8 @@ const FieldServicesPage = async ({ params }: Params) => {
       </Suspense>
       <Suspense fallback={<LoadingFallback />}>
         <BlogPosts
-          data={blogs}
-          blogs={solutionPageContent?.data?.[0]?.blogs}
+          data={blogsByCategory || []}
+          blogs={blogsByCategory || []}
           className="pb-8 sm:pb-12 md:mt-9 md:pb-16 lg:pb-20 xl:pb-[99px]"
         />
       </Suspense>

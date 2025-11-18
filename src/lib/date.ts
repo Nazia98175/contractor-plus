@@ -19,6 +19,19 @@ export function formatDateWithOrdinal(date = new Date(), locale = "en-US") {
   return `${month} ${day}${getOrdinal(day)}, ${year}`;
 }
 
+export function formateDateInText(isoDate = new Date()) {
+  const date = new Date(isoDate);
+  const formatted = date.toLocaleString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  });
+
+  return formatted;
+}
 export function formatDateRange(startDate: string, endDate: string) {
   const start = new Date(startDate);
   const end = new Date(endDate);

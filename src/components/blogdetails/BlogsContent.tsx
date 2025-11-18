@@ -117,6 +117,9 @@ const BlogsContent = ({
                     {...props}
                   />
                 ),
+                img: ({ node, ...props }) => (
+                  <img className="mx-auto my-4 h-auto max-w-full" {...props} />
+                ),
               }}
             >
               {blogData?.blogDescription}

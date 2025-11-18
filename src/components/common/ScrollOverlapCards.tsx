@@ -39,8 +39,8 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
   const timelineRef = useRef<any>(null);
   const scrollTriggersRef = useRef<any[]>([]);
 
-  // Memoize setLottieRef to prevent recreating on every render
-  const setLottieRef = useCallback(
+  // Memoize desktopLottieAnimation to prevent recreating on every render
+  const desktopLottieAnimation = useCallback(
     (index: number) => (el: LottieAnimationRef | null) => {
       if (lottieRefs.current) {
         lottieRefs.current[index] = el;
@@ -267,7 +267,7 @@ const ScrollOverlapCards: React.FC<ScrollOverlapCardsProps> = ({
               <FieldServiceCard
                 slug={slug}
                 idx={index}
-                setLottieRef={setLottieRef}
+                desktopLottieAnimation={desktopLottieAnimation}
                 service={service}
                 theme={theme}
                 apiData={apiData}

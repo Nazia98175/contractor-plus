@@ -10,7 +10,8 @@ interface Props {
   idx: any;
   theme: "light" | "dark" | "estimateTheme";
   apiData: boolean;
-  setLottieRef: any;
+  desktopLottieAnimation?: any;
+  mobileLottieAnimation?: any;
 }
 
 const FieldServiceCard: React.FC<Props> = ({
@@ -19,7 +20,8 @@ const FieldServiceCard: React.FC<Props> = ({
   idx,
   theme,
   apiData = true,
-  setLottieRef,
+  desktopLottieAnimation,
+  mobileLottieAnimation,
 }) => {
   const isEstimate = slug === "estimate";
   const features = service?.content || [];
@@ -62,7 +64,11 @@ const FieldServiceCard: React.FC<Props> = ({
                 />
               ) : service?.lottieJson ? (
                 <LottieAnimation
-                  ref={setLottieRef(idx)}
+                  ref={
+                    mobileLottieAnimation
+                      ? mobileLottieAnimation(idx)
+                      : undefined
+                  }
                   loop={service?.isLoop ?? false} // Changed to false since we'll control playback
                   autoplay={false} // Changed to false since we'll control playback
                   animationData={service?.lottieJson}
@@ -143,7 +149,9 @@ const FieldServiceCard: React.FC<Props> = ({
         <div className="hidden w-full max-w-[290px] rounded-lg md:block lg:max-w-[370px] xl:max-w-[518px]">
           {service?.lottieJson ? (
             <LottieAnimation
-              ref={setLottieRef(idx)}
+              ref={
+                desktopLottieAnimation ? desktopLottieAnimation(idx) : undefined
+              }
               loop={service?.isLoop ?? false}
               autoplay={false}
               animationData={service?.lottieJson}

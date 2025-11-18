@@ -16,6 +16,7 @@ import "swiper/css/pagination";
 import "./globals.css";
 import "./resources.css";
 import "./style.css";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   icons: {
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <PushLapScript />
         <CookieBanner />
         <AccessibilityWidget lang="en" position="bottom-left" />
+        <SpeedInsights />
       </body>
     </html>
   );

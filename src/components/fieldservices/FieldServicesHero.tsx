@@ -19,6 +19,7 @@ interface GeolocationData {
   longitude: number;
   city?: string;
   country?: string;
+  state?: string;
 }
 
 const DEFAULT_LOCATION: GeolocationData = {
@@ -26,6 +27,7 @@ const DEFAULT_LOCATION: GeolocationData = {
   longitude: 74.006,
   city: "New York",
   country: "US",
+  state: "NY",
 };
 interface heroProps {
   heroTitle: string;
@@ -74,6 +76,7 @@ const FieldServicesHero: React.FC<Props> = ({
         longitude: geoLocation?.location?.longitude,
         city: geoLocation?.city?.names[locale || "en"],
         country: geoLocation?.country?.iso_code?.toUpperCase() || "",
+        state: geoLocation?.subdivisions[0]?.iso_code?.toUpperCase() || "",
       });
       setMapKey((prev) => prev + 1);
       return;
@@ -90,6 +93,7 @@ const FieldServicesHero: React.FC<Props> = ({
       longitude: location.longitude,
       city: location.city,
       country: location.country,
+      state: location.state,
     };
   }, [location]);
 
@@ -99,7 +103,6 @@ const FieldServicesHero: React.FC<Props> = ({
 
       <FieldServiceMap
         location={processedLocation}
-        // isLoading={isLoading}
         mapKey={mapKey}
         onMapLoad={() => setIsLoading(false)}
         onMapError={(e) => {
@@ -107,7 +110,6 @@ const FieldServicesHero: React.FC<Props> = ({
           setIsLoading(false);
         }}
       />
-      {/* <div className="pointer-events-none absolute inset-0"></div> */}
       {/* Content overlay */}
       <div className="main-container 900:flex-row z-30 flex flex-col-reverse items-center justify-between gap-[30px] pt-[60px] pb-10 sm:pb-16 md:pb-20 lg:pt-[138px] lg:pb-[100px] xl:pb-[171px] 2xl:pt-[150px] 2xl:pb-[190px]">
         <div className="relative z-20 w-full lg:max-w-[732px]">
@@ -119,11 +121,7 @@ const FieldServicesHero: React.FC<Props> = ({
               {hero?.solutionTag}
             </div>
           </Copy>
-          {/* <Copy animateOnScroll={false} delay={0.2}>
-            <h3 className="main-heading gradient-text 900:max-w-[470px] 900:hidden mt-1.5">
-              {hero?.heroTitle}
-            </h3>
-          </Copy> */}
+
           <AdaptiveHeroTitle
             title={hero?.heroTitle || ""}
             className="gradient-text 900:max-w-[470px] 900:hidden mt-1.5 font-extrabold"
@@ -140,11 +138,7 @@ const FieldServicesHero: React.FC<Props> = ({
             maxFontSize={52}
             textAnimation="home-page-view-port-screen-field-service"
           />
-          {/* <Copy animateOnScroll={false} delay={0.3}>
-            <h3 className="main-heading 900:block hidden text-white">
-              {hero?.heroTitle}
-            </h3>
-          </Copy> */}
+
           <p className="hero-description !text-secondary md:!text-decemberSky 900:max-w-[470px] mt-[6px] mb-4 sm:my-[26px] lg:max-w-[532px]">
             {hero?.heroDescription}
           </p>
@@ -202,8 +196,7 @@ const FieldServicesHero: React.FC<Props> = ({
                 <LocationIcon />
                 <b className="text-sm leading-normal text-white lg:text-base">
                   {processedLocation.city}
-                  {processedLocation.country &&
-                    `, ${processedLocation.country}`}
+                  {processedLocation.state && `, ${processedLocation.state}`}
                 </b>
               </div>
             </div>

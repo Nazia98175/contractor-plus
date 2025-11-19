@@ -1,0 +1,51 @@
+/* components/home/ScrollAnimation.module.css */
+
+.container h3 {
+  color: #8a8e91;
+  transition: color 0.3s ease-in-out;
+}
+
+.container h6 {
+  color: #656c73;
+  transition: color 0.3s ease-in-out;
+}
+
+.container .highlightedSpan {
+  color: #d2d4d6;
+  transition: color 0.3s ease-in-out;
+}
+
+.container.scrollActive h3 {
+  color: #fff;
+}
+
+.container.scrollActive h6 {
+  color: #fff;
+}
+
+.container.scrollActive .highlightedSpan {
+  color: #f21314;
+}
+
+/* Plus icon - target svg directly within container */
+.container svg path {
+  fill: #3f464b;
+  stroke: #1c2731;
+  transition: all 0.3s ease-in-out;
+}
+
+.container.scrollActive svg path {
+  fill: #fff;
+  stroke: #fff;
+}
+
+/* Icon rotation */
+.iconSpan {
+  display: flex;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.container.scrollActive .iconSpan {
+  transform: rotate(45deg);
+}

@@ -58,22 +58,22 @@ const WhyContractorMain: React.FC<WhyContractorMainProps> = ({ data }) => {
 
     gsap.to("#why-contractor-hero-section", {
       opacity: 1,
-      duration: 1,
+      duration: 0.7,
     });
 
     gsap.to("#home-page-header-view-port-screen", {
       opacity: 1,
-      duration: 1,
+      duration: 0.7,
     });
 
     gsap.to("#industry-shifted-section", {
       opacity: 1,
-      duration: 1,
+      duration: 0.7,
     });
 
     gsap.to("#home-page-footer-view-port-screen", {
       opacity: 1,
-      duration: 1,
+      duration: 0.7,
     });
 
     return () => {
@@ -106,11 +106,8 @@ const WhyContractorMain: React.FC<WhyContractorMainProps> = ({ data }) => {
           </div>
         </div>
         <main className="relative pt-[67px] sm:pt-[157px]">
-          {/* Background line (gray/wallStreet color) */}
           <main ref={sectionRef} className="relative">
             <span className="bg-wallStreet absolute top-[-250px] left-1/2 z-[1] block h-[97%] w-[1px] translate-x-[-50%] sm:top-[-300px]"></span>
-
-            {/* Animated red dot that moves on scroll - starts at top of gray line */}
             <span
               ref={redDotRef}
               className="from-redPigment to-netherworld absolute top-[-250px] left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br sm:top-[-300px]"
@@ -129,7 +126,32 @@ const WhyContractorMain: React.FC<WhyContractorMainProps> = ({ data }) => {
           image={data?.connectedSystem?.image}
           featuresPlatform={data?.featuresPlatform}
         />
-        {/* <ThousandsReviews
+       
+        <div className="pb-14">
+          <div className="mt-12 mb-8 px-2 md:mb-12 xl:mt-[11px]">
+            <CommonFormField
+              title={data?.emailSign?.title}
+              subTitle={data?.emailSign?.subTitle}
+              placeholder={data?.emailSign?.placeholder}
+              createBtn={data?.commonData?.getStartedFreeBtn}
+              mobileBtn={data?.commonData?.mobileBtn}
+              ncc={data?.commonData?.nccTxt}
+              variant={"tertiary"}
+            />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default WhyContractorMain;
+
+
+
+          {/* <TrustBar  trustBarImages={data?.commonData?.trustedCompaniesWhiteBG} showTrustedSection={false} platforms={platforms} /> */}
+
+ {/* <ThousandsReviews
           data={{
             title: "All unified. All in sync. All in one place.",
             sub_title:
@@ -148,23 +170,3 @@ const WhyContractorMain: React.FC<WhyContractorMainProps> = ({ data }) => {
         {/* <main className="pb-14">
         <TrustBarHvca showTrustedSection={false} platforms={platforms} />
       </main> */}
-        <div className="pb-14">
-          <div className="mt-12 mb-8 px-2 md:mb-12 xl:mt-[11px]">
-            <CommonFormField
-              title={data?.emailSign?.title}
-              subTitle={data?.emailSign?.subTitle}
-              placeholder={data?.emailSign?.placeholder}
-              createBtn={data?.commonData?.getStartedFreeBtn}
-              mobileBtn={data?.commonData?.mobileBtn}
-              ncc={data?.commonData?.nccTxt}
-              variant={"tertiary"}
-            />
-          </div>
-          {/* <TrustBar  trustBarImages={data?.commonData?.trustedCompaniesWhiteBG} showTrustedSection={false} platforms={platforms} /> */}
-        </div>
-      </div>
-    </>
-  );
-};
-
-export default WhyContractorMain;

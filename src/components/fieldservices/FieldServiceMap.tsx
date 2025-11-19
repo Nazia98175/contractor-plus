@@ -1,7 +1,7 @@
 "use client";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
-import Map from "react-map-gl/maplibre";
 import { WIREFRAME_STYLE } from "@/mapStyle/mapStyle";
+import React from "react";
+import Map from "react-map-gl/maplibre";
 
 
 interface GeolocationData {
@@ -10,13 +10,6 @@ interface GeolocationData {
   city?: string;
   country?: string;
 }
-
-const DEFAULT_LOCATION: GeolocationData = {
-  latitude: 28.6139,
-  longitude: 77.209,
-  city: "Delhi",
-  country: "IN",
-};
 
 const FieldServiceMap: React.FC<{
   location: GeolocationData | null;

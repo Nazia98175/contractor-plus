@@ -14,16 +14,6 @@ interface PropReverseVideo {
 const ReverseFrames: React.FC<PropReverseVideo> = ({ reverseVideo }) => {
   return (
     <section className="relative z-[0] bg-black px-2.5">
-      {/* <Image
-        sizes="(max-width: 768px) 1440px, min(768px, 1440px)"
-        width={1440}
-        height={500}
-        ref={imageRef}
-        src={framePaths[currentFrame]}
-        alt={`Frame ${currentFrame + 1}`}
-        className="relative z-[-1] mx-auto h-full w-full max-w-[1440px] object-cover object-top"
-        loading="eager"
-      /> */}
       <ImageSequenceCanvas className="relative z-[-1] mx-auto w-full max-w-[1440px] object-cover object-top" />
 
       <div
@@ -45,7 +35,6 @@ const ReverseFrames: React.FC<PropReverseVideo> = ({ reverseVideo }) => {
           <h2 className="text-center text-lg leading-[127%] font-semibold text-white sm:text-4xl lg:text-5xl xl:text-[52px]">
             {reverseVideo?.description}
           </h2>
-          {/* <p className="">{reverseVideo?.subDescription}</p> */}
           <StrokeText />
         </div>
       </Copy>

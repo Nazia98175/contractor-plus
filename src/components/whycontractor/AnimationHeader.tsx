@@ -24,13 +24,13 @@ const AnimationHeader: React.FC<AnimationProp> = ({ animationHeader }) => {
       </Copy>
 
       <Copy animateOnScroll={true} delay={0}>
-        <h6 className="text-center text-xs leading-[130%] duration-300 lg:text-lg xl:text-[22px]">
+        <h5 className="text-center text-xs leading-[130%] duration-300 lg:text-lg xl:text-[22px]">
           {animationHeader?.[0]?.subTitle1}
           <span className={`${styles.highlightedSpan} font-medium italic duration-300`}>
             {animationHeader?.[0]?.subTitleRed}{" "}
           </span>
           {animationHeader?.[0]?.subTitle2}
-        </h6>
+        </h5>
       </Copy>
 
       <span className={`${styles.iconSpan} mt-[18px] flex justify-center duration-300`}>

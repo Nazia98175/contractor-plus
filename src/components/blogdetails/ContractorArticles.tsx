@@ -28,7 +28,8 @@ const ContractorArticles = ({
       <div className="1xl:pb-12 relative z-30 mx-auto w-full max-w-[1224px] px-2 pt-8 pb-6">
         <div className="flex items-center justify-between pb-4 md:pb-6 lg:pb-8">
           <h2 className="text-eerieBlack text-lg font-semibold sm:text-xl md:text-2xl">
-            {blogList?.relatedBlogsTitle ?? ""}
+            {/* {blogList?.relatedBlogsTitle ?? ""} */}
+            Check out other trending articles from Contractor+ HQ
           </h2>
           <Link
             href="/blogs"

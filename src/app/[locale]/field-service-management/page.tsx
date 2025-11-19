@@ -60,17 +60,16 @@ const FieldServicesPage = async ({ params }: Params) => {
     comparisonList,
     teamsUsingContractor,
     faqs,
-    blogs,
     thousandReviews,
     commonData,
     integrationList,
+    blogsByCategory,
   } = await getSolutionPageData("field-service-management", useParams?.locale);
 
   const ip = (await cookies()).get("user-ip")?.value;
   let geoLocation = null;
 
   geoLocation = await getMaxMindLocation(ip);
-  console.log("comparisonList", comparisonList);
 
   return (
     <main id="home-page-wrapper-2" className="overflow-hidden">
@@ -156,7 +155,7 @@ const FieldServicesPage = async ({ params }: Params) => {
       </Suspense>
       <Suspense fallback={<LoadingFallback />}>
         <BlogPosts
-          data={blogs}
+          data={blogsByCategory || []}
           blogs={solutionPageContent?.data?.[0]?.blogs}
           className="pb-8 sm:pb-12 md:mt-9 md:pb-16 lg:pb-20 xl:pb-[99px]"
         />

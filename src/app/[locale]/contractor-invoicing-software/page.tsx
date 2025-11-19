@@ -1,6 +1,7 @@
 import FinallyMakesInvoicing from "@/components/billing/FinallyMakesInvoicing";
 import OneClearInvoice from "@/components/billing/OneClearInvoice";
 import { integrationLogos, platforms } from "@/components/common/Helper";
+import LoadingFallback from "@/components/common/LoadingFallback";
 import TrustBar from "@/components/common/TrustBar";
 import { billingSliderData } from "@/components/common/Utils";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
@@ -18,6 +19,7 @@ import { getSolutionPageData } from "@/services/solutions/getSolutionPageData";
 import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 
 export async function generateMetadata({
   params,
@@ -49,11 +51,11 @@ const BillingPage = async ({
     comparisonList,
     teamsUsingContractor,
     faqs,
-    blogs,
     thousandReviews,
     commonData,
     integrationList,
     hero,
+    blogsByCategory,
   } = await getSolutionPageData(
     "contractor-invoicing-software",
     useParams?.locale,
@@ -123,11 +125,13 @@ const BillingPage = async ({
             : integrationLogos
         }
       />
-      <BlogPosts
-        data={blogs}
-        blogs={solutionPageContent?.data?.[0]?.blogs}
-        className="pb-8 sm:pb-12 md:mt-9 md:pb-16 lg:pb-20 xl:pb-[99px]"
-      />
+      <Suspense fallback={<LoadingFallback />}>
+        <BlogPosts
+          data={blogsByCategory || []}
+          blogs={solutionPageContent?.data?.[0]?.blogs}
+          className="pb-8 sm:pb-12 md:mt-9 md:pb-16 lg:pb-20 xl:pb-[99px]"
+        />
+      </Suspense>
     </main>
   );
 };

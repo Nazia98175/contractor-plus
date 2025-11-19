@@ -30,13 +30,6 @@ const TableOfContent = ({ markdown }: { markdown: string }) => {
       if (text) items.push({ text, id: slugify(text), level: node.depth ?? 2 });
     });
 
-    visit(tree, "paragraph", (node: any) => {
-      const first = node.children?.[0];
-      if (first?.type !== "strong") return;
-      const text = mdText(first).trim();
-      if (text) items.push({ text, id: slugify(text), level: 2 });
-    });
-
     const seen = new Set<string>();
     return items.filter((it) =>
       seen.has(it.id) ? false : (seen.add(it.id), true),

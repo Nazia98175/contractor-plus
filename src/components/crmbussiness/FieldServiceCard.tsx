@@ -10,7 +10,8 @@ interface Props {
   idx: any;
   theme: "light" | "dark" | "estimateTheme";
   apiData: boolean;
-  setLottieRef: any;
+  desktopLottieAnimation?: any;
+  mobileLottieAnimation?: any;
 }
 
 const FieldServiceCard: React.FC<Props> = ({
@@ -19,7 +20,8 @@ const FieldServiceCard: React.FC<Props> = ({
   idx,
   theme,
   apiData = true,
-  setLottieRef,
+  desktopLottieAnimation,
+  mobileLottieAnimation,
 }) => {
   const isEstimate = slug === "estimate";
   const features = service?.content || [];
@@ -62,9 +64,13 @@ const FieldServiceCard: React.FC<Props> = ({
                 />
               ) : service?.lottieJson ? (
                 <LottieAnimation
-                  ref={setLottieRef(idx)}
-                  loop={service?.isLoop ?? false} // Changed to false since we'll control playback
-                  autoplay={false} // Changed to false since we'll control playback
+                  ref={
+                    mobileLottieAnimation
+                      ? mobileLottieAnimation(idx)
+                      : undefined
+                  }
+                  loop={service?.isLoop ?? false}
+                  autoplay={false}
                   animationData={service?.lottieJson}
                   className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
                 />
@@ -76,7 +82,6 @@ const FieldServiceCard: React.FC<Props> = ({
                   height={302}
                   unoptimized
                   priority
-                  // sizes="(max-width: 768px) 300px, min(768px, 300px)"
                   className="mx-auto h-auto max-h-[150px] min-h-[156px] w-full max-w-[300px] overflow-hidden rounded-lg object-contain sm:max-h-[240px] md:hidden md:h-auto lg:min-h-[200px] xl:min-h-[245px]"
                 />
               )}
@@ -143,7 +148,9 @@ const FieldServiceCard: React.FC<Props> = ({
         <div className="hidden w-full max-w-[290px] rounded-lg md:block lg:max-w-[370px] xl:max-w-[518px]">
           {service?.lottieJson ? (
             <LottieAnimation
-              ref={setLottieRef(idx)}
+              ref={
+                desktopLottieAnimation ? desktopLottieAnimation(idx) : undefined
+              }
               loop={service?.isLoop ?? false}
               autoplay={false}
               animationData={service?.lottieJson}

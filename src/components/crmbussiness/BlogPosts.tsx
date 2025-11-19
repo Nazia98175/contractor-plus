@@ -98,7 +98,8 @@ const BlogPosts: React.FC<Props> = ({
                 )}
                 <div className="relative z-10 px-3 pt-20 xl:px-6">
                   <p className="text-decemberSky font-jakarta text-base font-medium">
-                    Contractor+ | {getTimeAgo(data[0]?.publishedAt)}
+                    Contractor+ |{" "}
+                    {getTimeAgo(data[0]?.postedOn || data[0]?.publishedAt)}
                   </p>
                   <h3 className="font-jakarta line-clamp-1 text-2xl font-extrabold text-white capitalize lg:text-[30px] xl:text-[36px]">
                     {data[0]?.blogTitle ||

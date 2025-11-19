@@ -1,4 +1,5 @@
 import { integrationLogos, platforms } from "@/components/common/Helper";
+import LoadingFallback from "@/components/common/LoadingFallback";
 import TrustBar from "@/components/common/TrustBar";
 import BlogPosts from "@/components/crmbussiness/BlogPosts";
 import CommonHero from "@/components/crmbussiness/CommonHero";
@@ -17,6 +18,7 @@ import { getSolutionPageData } from "@/services/solutions/getSolutionPageData";
 import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 
 interface OpportunityTrackerProps {
   params: Promise<{ locale: string }>;
@@ -50,11 +52,11 @@ export default async function OpportunityTracker({
     comparisonList,
     teamsUsingContractor,
     faqs,
-    blogs,
     thousandReviews,
     commonData,
     integrationList,
     hero,
+    blogsByCategory,
   } = await getSolutionPageData("opportunity-tracker", useParams?.locale);
   return (
     <div className="overflow-x-hidden">
@@ -119,11 +121,14 @@ export default async function OpportunityTracker({
             : integrationLogos
         }
       />
-      <BlogPosts
-        data={blogs}
-        blogs={solutionPageContent?.data?.[0]?.blogs}
-        className="pb-8 sm:pb-12 md:mt-9 md:pb-16 lg:pb-20 xl:pb-[99px]"
-      />
+      <Suspense fallback={<LoadingFallback />}>
+        <BlogPosts
+          data={blogsByCategory || []}
+          blogs={solutionPageContent?.data?.[0]?.blogs}
+          className="mt-7 mb-20 md:mt-9"
+          classMaxwidth="max-w-[90%] xs:max-w-[98%] sm:max-w-full"
+        />
+      </Suspense>
     </div>
   );
 }

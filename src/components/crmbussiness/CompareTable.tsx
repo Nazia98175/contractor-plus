@@ -61,9 +61,17 @@ const CompareTable: React.FC<CompareTableProps> = ({
                 {feature.competitorsNote !== null ? (
                   <i>{feature?.competitorsNote}</i>
                 ) : (
-                  <span className="max-w-5 min-w-5 md:max-w-6 md:min-w-6">
-                    <CloseIcon width={24} height={24} />
-                  </span>
+                  <>
+                    {feature.ourProduct == "available" ? (
+                      <CheckIcon
+                        width={24}
+                        height={24}
+                        className="max-w-5 min-w-5 md:max-w-6 md:min-w-6"
+                      />
+                    ) : (
+                      <CloseIcon width={24} height={24} />
+                    )}
+                  </>
                 )}
               </div>
             </td>

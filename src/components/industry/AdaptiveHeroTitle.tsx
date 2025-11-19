@@ -4,7 +4,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
 
-// Register the plugin
 gsap.registerPlugin(SplitText);
 
 interface AdaptiveHeroTitleProps {
@@ -17,7 +16,7 @@ interface AdaptiveHeroTitleProps {
   maxLines?: number;
   animateOnComplete?: boolean;
   animationDelay?: number;
-  splitAtPeriod?: boolean; // New prop to enable/disable period splitting
+  splitAtPeriod?: boolean;
 }
 
 const AdaptiveHeroTitle: React.FC<AdaptiveHeroTitleProps> = ({
@@ -30,26 +29,25 @@ const AdaptiveHeroTitle: React.FC<AdaptiveHeroTitleProps> = ({
   animateOnComplete = true,
   animationDelay = 0.5,
   textAnimation,
-  splitAtPeriod = false, // Default to false
+  splitAtPeriod = false,
 }) => {
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const splitTextRef = useRef<SplitText | null>(null);
+
+  const [processedTitle, setProcessedTitle] = useState(title);
   const [isAdjusted, setIsAdjusted] = useState(false);
   const [finalFontSize, setFinalFontSize] = useState(maxFontSize);
-  const splitTextRef = useRef<SplitText | null>(null);
-  const [processedTitle, setProcessedTitle] = useState(title);
 
-  // Process title to handle period splitting
+  // ----------------------------------
+  // PERIOD SPLITTING
+  // ----------------------------------
   useEffect(() => {
-    if (splitAtPeriod && title.includes('.')) {
-      // Split at the first period and add line breaks
-      const parts = title.split('.');
+    if (splitAtPeriod && title.includes(".")) {
+      const parts = title.split(".");
       if (parts.length >= 2) {
-        // Take first part before period, and everything after period
-        const firstPart = parts[0].trim();
-        const secondPart = parts.slice(1).join('.').trim();
-        
-        // Set the processed title with line break
-        setProcessedTitle(`${firstPart}.\n${secondPart}`);
+        const first = parts[0].trim();
+        const rest = parts.slice(1).join(".").trim();
+        setProcessedTitle(`${first}.\n${rest}`);
       } else {
         setProcessedTitle(title);
       }
@@ -58,77 +56,67 @@ const AdaptiveHeroTitle: React.FC<AdaptiveHeroTitleProps> = ({
     }
   }, [title, splitAtPeriod]);
 
+  // ----------------------------------
+  // MAIN FONT SIZE LOGIC
+  // ----------------------------------
   const adjustFontSize = () => {
-    if (!titleRef.current || !processedTitle) return;
+    if (!titleRef.current) return;
 
     let currentFontSize = maxFontSize;
-    let lineCount = 0;
 
-    // Set initial font size
-    titleRef.current.style.fontSize = `${currentFontSize}px`;
+    const run = () => {
+      if (splitTextRef.current) splitTextRef.current.revert();
 
-    const adjustLines = () => {
-      // Clean up previous SplitText instance
-      if (splitTextRef.current) {
-        splitTextRef.current.revert();
-      }
+      titleRef.current!.style.fontSize = `${currentFontSize}px`;
 
-      // Create new SplitText instance
       splitTextRef.current = new SplitText(titleRef.current!, {
         type: "lines",
         mask: "lines",
         linesClass: "line",
       });
 
-      lineCount = splitTextRef.current.lines.length;
-      console.log(lineCount);
-      // If more than maxLines, reduce font size and try again
+      const lineCount = splitTextRef.current.lines.length;
+
       if (lineCount > maxLines && currentFontSize > minFontSize) {
         currentFontSize -= fontSizeStep;
-        titleRef.current!.style.fontSize = `${currentFontSize}px`;
-
-        // Use requestAnimationFrame to ensure DOM update before next measurement
-        requestAnimationFrame(adjustLines);
+        requestAnimationFrame(run);
       } else {
-        // Font size adjustment complete
         setFinalFontSize(currentFontSize);
         setIsAdjusted(true);
+
+        // FEEL FREE TO KEEP YOUR EXISTING ANIMATIONS
         if (textAnimation) {
-          gsap.to(textAnimation, {
-            opacity: 1,
-            duration: 1,
-          });
+          gsap.to(textAnimation, { opacity: 1, duration: 1 });
         }
 
         gsap.to("#home-page-header-view-port-screen", {
           opacity: 1,
           duration: 1,
         });
+
         gsap.to("#home-page-footer-view-port-screen", {
           opacity: 1,
           duration: 1,
         });
-        // Animate lines if enabled
-        if (animateOnComplete && splitTextRef.current) {
-          animateLines();
-        }
+
+        if (animateOnComplete) animateLines();
       }
     };
 
-    // Start the adjustment process
-    requestAnimationFrame(adjustLines);
+    requestAnimationFrame(run);
   };
 
+  // ----------------------------------
+  // LINE ANIMATION
+  // ----------------------------------
   const animateLines = () => {
     if (!splitTextRef.current) return;
 
-    // Set initial state for animation
     gsap.set(splitTextRef.current.lines, {
-      y: "100",
+      y: "100%",
       opacity: 0,
     });
 
-    // Animate lines in
     gsap.to(splitTextRef.current.lines, {
       y: 0,
       opacity: 1,
@@ -139,42 +127,51 @@ const AdaptiveHeroTitle: React.FC<AdaptiveHeroTitleProps> = ({
     });
   };
 
+  // ----------------------------------
+  // INIT ON LOAD
+  // ----------------------------------
   useEffect(() => {
-    if (processedTitle && titleRef.current) {
-      // Reset state
-      setIsAdjusted(false);
-      setFinalFontSize(maxFontSize);
+    setIsAdjusted(false);
+    setFinalFontSize(maxFontSize);
 
-      // Start font size adjustment
-      const timer = setTimeout(() => {
-        adjustFontSize();
-      }, 100); // Small delay to ensure DOM is ready
+    const t = setTimeout(() => adjustFontSize(), 80);
 
-      return () => {
-        clearTimeout(timer);
-        if (splitTextRef.current) {
-          splitTextRef.current.revert();
-        }
-      };
-    }
+    return () => {
+      clearTimeout(t);
+      if (splitTextRef.current) splitTextRef.current.revert();
+    };
   }, [processedTitle, maxFontSize, minFontSize, maxLines]);
 
-  // Cleanup on unmount
+  // ----------------------------------
+  // ⭐ NEW: REFRESH ON RESIZE
+  // ----------------------------------
   useEffect(() => {
-    return () => {
-      if (splitTextRef.current) {
-        splitTextRef.current.revert();
-      }
+    let resizeTimer: any;
+
+    const handleResize = () => {
+      clearTimeout(resizeTimer);
+
+      resizeTimer = setTimeout(() => {
+        setIsAdjusted(false); // fade out
+        if (splitTextRef.current) splitTextRef.current.revert();
+
+        adjustFontSize(); // run again
+      }, 200);
     };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Render with line breaks if splitAtPeriod is enabled
+  // ----------------------------------
+  // RENDER
+  // ----------------------------------
   const renderTitle = () => {
-    if (splitAtPeriod && processedTitle.includes('\n')) {
-      return processedTitle.split('\n').map((line, index) => (
-        <React.Fragment key={index}>
+    if (splitAtPeriod && processedTitle.includes("\n")) {
+      return processedTitle.split("\n").map((line, i) => (
+        <React.Fragment key={i}>
           {line}
-          {index < processedTitle.split('\n').length - 1 && <br />}
+          {i < processedTitle.split("\n").length - 1 && <br />}
         </React.Fragment>
       ));
     }
@@ -182,26 +179,18 @@ const AdaptiveHeroTitle: React.FC<AdaptiveHeroTitleProps> = ({
   };
 
   return (
-    <>
-      <h1
-        ref={titleRef}
-        className={`${className} ${!isAdjusted ? "opacity-0" : "opacity-100"} transition-opacity duration-300`}
-        style={{
-          fontSize: `${maxFontSize}px`,
-          whiteSpace: splitAtPeriod ? 'pre-line' : 'normal', // Preserve line breaks when split is enabled
-          // lineHeight: "1.2",
-        }}
-      >
-        {renderTitle()}
-      </h1>
-
-      {/* Debug info - remove in production */}
-      {/* {process.env.NODE_ENV === "development" && isAdjusted && (
-        <div className="mt-2 text-xs text-gray-500">
-          Final font size: {finalFontSize}px | Split at period: {splitAtPeriod ? 'Yes' : 'No'}
-        </div>
-      )} */}
-    </>
+    <h1
+      ref={titleRef}
+      className={`${className} ${
+        !isAdjusted ? "opacity-0" : "opacity-100"
+      } transition-opacity duration-300`}
+      style={{
+        fontSize: `${maxFontSize}px`,
+        whiteSpace: splitAtPeriod ? "pre-line" : "normal",
+      }}
+    >
+      {renderTitle()}
+    </h1>
   );
 };
 

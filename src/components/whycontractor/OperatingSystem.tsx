@@ -1,8 +1,6 @@
-import Image from "next/image";
 import React from "react";
-import CardReveal from "../common/CardReveal";
-import { operatingSystemList } from "../common/Helper";
 import { FooterLogoIcon, WhyContractorGradientIcon } from "../common/Icons";
+import FeaturesGrid from "./FeaturesGrid";
 
 interface PropOperatingSystem {
   image: any;
@@ -40,41 +38,8 @@ const OperatingSystem: React.FC<PropOperatingSystem> = ({
         <p className="industry-shift-text pb-11.5 text-center text-[26px] !leading-[100%] font-light max-lg:text-xl max-md:text-base max-sm:!font-semibold">
           {featuresPlatform?.description}
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-y-[18px]">
-          {featuresPlatform?.features?.map((obj: any, i: number) => {
-            const isSecondLast = i === operatingSystemList.length - 2;
-            const isLast = i === operatingSystemList.length - 1;
-            const isNotFirstInRowDesktop = i % 3 !== 0;
-            const isNotFirstInRowMobile = i % 2 !== 0;
+      <FeaturesGrid features={featuresPlatform?.features} />
 
-            return (
-              <div
-                key={i}
-                className={`relative flex min-h-20 w-1/3 flex-col justify-center rounded-xl max-lg:min-h-18 max-lg:w-1/2 max-md:max-h-16.5 max-md:min-h-16 max-md:max-w-[150px] lg:items-center ${isNotFirstInRowDesktop ? "lg:gradient-grey-border-left" : ""} ${isNotFirstInRowMobile ? "max-lg:gradient-grey-border-left" : ""} ${isSecondLast ? "lg:gradient-grey-border-right w-[50%]" : ""} ${isLast ? "gradient-grey-border-top w-[50%]" : ""} `}
-              >
-                <CardReveal
-                  delay={0.2}
-                  distance={50}
-                  className="flex flex-col items-center justify-center gap-2.5 p-2.5 max-md:mx-auto max-md:max-w-32.5"
-                >
-                  <span>
-                    {obj?.icon !== null && (
-                      <Image
-                        width={obj?.icon?.width}
-                        height={obj?.icon?.height}
-                        alt={obj?.icon?.alternativeText || obj?.icon?.name}
-                        src={obj?.icon?.url}
-                      ></Image>
-                    )}
-                  </span>
-                  <p className="industry-shift-text text-lg leading-[100%] font-bold opacity-80 max-lg:text-center max-lg:text-base max-md:text-sm max-sm:text-xs">
-                    {obj.title}
-                  </p>
-                </CardReveal>
-              </div>
-            );
-          })}
-        </div>
       </div>
     </div>
   );

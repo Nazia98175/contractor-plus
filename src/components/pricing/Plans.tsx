@@ -60,7 +60,7 @@ const Plans: React.FC<PlansProps> = ({ onScroll, pricingPlans }) => {
           </button>
 
           {/* Lifetime Plan */}
-          <button
+          {/* <button
             aria-label="pricing tab lifetime"
             onClick={() => setActiveTab("lifetime")}
             className={`flex min-w-fit items-center justify-center gap-3 rounded-[500px] px-4 py-1 text-base transition-colors duration-300 sm:px-6 sm:text-lg ${
@@ -75,7 +75,7 @@ const Plans: React.FC<PlansProps> = ({ onScroll, pricingPlans }) => {
                 <LifeTimeIcon />
               </span>
             )}
-          </button>
+          </button> */}
         </div>
       </div>
 

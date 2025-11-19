@@ -124,7 +124,7 @@ export default async function OpportunityTracker({
       <Suspense fallback={<LoadingFallback />}>
         <BlogPosts
           data={blogsByCategory || []}
-          blogs={blogsByCategory}
+          blogs={solutionPageContent?.data?.[0]?.blogs}
           className="mt-7 mb-20 md:mt-9"
           classMaxwidth="max-w-[90%] xs:max-w-[98%] sm:max-w-full"
         />

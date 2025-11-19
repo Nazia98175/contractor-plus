@@ -70,7 +70,6 @@ const FieldServicesPage = async ({ params }: Params) => {
   let geoLocation = null;
 
   geoLocation = await getMaxMindLocation(ip);
-  console.log("comparisonList", comparisonList);
 
   return (
     <main id="home-page-wrapper-2" className="overflow-hidden">
@@ -157,7 +156,7 @@ const FieldServicesPage = async ({ params }: Params) => {
       <Suspense fallback={<LoadingFallback />}>
         <BlogPosts
           data={blogsByCategory || []}
-          blogs={blogsByCategory || []}
+          blogs={solutionPageContent?.data?.[0]?.blogs}
           className="pb-8 sm:pb-12 md:mt-9 md:pb-16 lg:pb-20 xl:pb-[99px]"
         />
       </Suspense>

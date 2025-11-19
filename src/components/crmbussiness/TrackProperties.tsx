@@ -32,7 +32,6 @@ const TrackProperties: React.FC<Props> = ({
         sizes="100vw"
       />
 
-      {/* Mobile background image */}
       <Image
         className="absolute top-[-38%] left-0 z-0 flex h-[110%] w-[100%] object-center md:hidden"
         src="/images/webp/finally-desktop-bg-2.webp"

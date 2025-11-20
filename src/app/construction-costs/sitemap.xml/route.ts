@@ -31,8 +31,6 @@ export async function GET() {
   const baseUrl =
     process.env.NEXT_PUBLIC_DOMAIN || "https://contractorplus.app";
 
-  console.log("🏗️ Generating construction costs sitemap index...");
-
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<?xml-stylesheet type="text/xsl" href="/sitemap-index.xsl"?>\n';
   xml += '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
@@ -52,10 +50,6 @@ export async function GET() {
   });
 
   xml += "</sitemapindex>";
-
-  console.log(
-    `✅ Construction costs sitemap index generated with ${CATEGORIES.length + 1} sitemaps`,
-  );
 
   return new NextResponse(xml, {
     headers: {

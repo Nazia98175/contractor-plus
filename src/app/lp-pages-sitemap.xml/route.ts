@@ -4,8 +4,6 @@ import { getAllLpPages } from "@/services/lp/getLpData";
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  console.log("========== POST SITEMAP EN CALLED ==========");
-
   const locale = "en";
   const baseUrl =
     process.env.NEXT_PUBLIC_DOMAIN || "https://contractorplus.app";
@@ -33,8 +31,6 @@ export async function GET() {
           xml += "  </url>\n";
         }
       });
-
-      console.log(`✅ Post sitemap EN completed with ${lpPages.length} URLs`);
     }
   } catch (error: any) {
     console.error("❌ Error generating LP sitemap for EN:", error?.message);

@@ -89,8 +89,6 @@ const getAllEvents = async (locale: string) => {
 };
 
 export async function GET() {
-  console.log("========== EVENT SITEMAP ==========");
-  
   const locale = "en";
   const baseUrl =
     process.env.NEXT_PUBLIC_DOMAIN || "https://contractorplus.app";
@@ -100,7 +98,6 @@ export async function GET() {
 
   try {
     const events = await getAllEvents(locale);
-    console.log(`Found ${events.length} events`);
 
     events.forEach((event: any) => {
       if (event?.slug) {
@@ -113,7 +110,6 @@ export async function GET() {
       }
     });
 
-    console.log(`✅ Event sitemap generated with ${events.length} URLs`);
   } catch (error) {
     console.error("Error generating event sitemap:", error);
   }

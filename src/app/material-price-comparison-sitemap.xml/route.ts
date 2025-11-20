@@ -37,7 +37,6 @@ export async function GET() {
 
   try {
     const materials = await getMaterialPriceComparisons();
-    console.log(`Found ${materials.length} material price comparisons`);
 
     materials.forEach((material: any) => {
       if (material?.slug) {

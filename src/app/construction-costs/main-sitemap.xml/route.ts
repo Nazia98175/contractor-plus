@@ -17,8 +17,6 @@ export async function GET() {
 
   xml += "</urlset>";
 
-  console.log("✅ Construction costs main sitemap generated with 1 URL");
-
   return new NextResponse(xml, {
     headers: {
       "Content-Type": "application/xml; charset=utf-8",

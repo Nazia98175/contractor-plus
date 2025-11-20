@@ -2,11 +2,9 @@ export const dynamic = "force-dynamic";
 export const revalidate = 3600;
 
 import { NextResponse } from "next/server";
-import { getAllIntegration } from "@/services/integation/getIntegrationData"; // ✅ Import existing function
+import { getAllIntegration } from "@/services/integation/getIntegrationData";
 
 export async function GET() {
-  console.log("========== INTEGRATION SITEMAP ==========");
-
   const locale = "en";
   const baseUrl =
     process.env.NEXT_PUBLIC_DOMAIN || "https://contractorplus.app";
@@ -16,10 +14,7 @@ export async function GET() {
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
   try {
-    // ✅ Use existing function with ISR mode for minimal data
     const integrations = await getAllIntegration(locale, true);
-
-    console.log(`Found ${integrations?.length || 0} integrations`);
 
     if (integrations && Array.isArray(integrations)) {
       integrations.forEach((integration: any) => {

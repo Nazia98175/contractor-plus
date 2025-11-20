@@ -1,10 +1,8 @@
 "use client";
 import { PlansProps } from "@/types";
 import React, { useState } from "react";
-import { LifeTimeIcon, SaveArrowIcon, ScrollDownIcon } from "../common/Icons";
+import { LifeTimeIcon, SaveArrowIcon } from "../common/Icons";
 import PlanCard from "./PlanCard";
-import PlanToggle from "./PlanToggle";
-import PlanCard2 from "./PlanCard2";
 
 const Plans: React.FC<PlansProps> = ({ onScroll, pricingPlans }) => {
   const [isAnnual, setIsAnnual] = useState(true);

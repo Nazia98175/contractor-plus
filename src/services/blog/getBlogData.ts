@@ -113,8 +113,6 @@ export const getAllBlogsForSitemap = async (locale: string) => {
     let allBlogs: any[] = [];
     const pageSize = 100;
 
-    console.log(`🔍 Fetching blogs for sitemap (locale: ${locale})`);
-
     // Fetch first page to get total count
     const firstResponse = await axiosInstance.get(
       `blogs?locale=${locale}&fields[0]=blogTitle&fields[1]=blogUrl&fields[2]=postedOn&pagination[page]=1&pagination[pageSize]=${pageSize}`,
@@ -123,7 +121,6 @@ export const getAllBlogsForSitemap = async (locale: string) => {
     const { data: firstData, meta } = firstResponse.data;
 
     if (!firstData || firstData.length === 0) {
-      console.log("⚠️ No blogs found");
       return [];
     }
 
@@ -131,8 +128,6 @@ export const getAllBlogsForSitemap = async (locale: string) => {
 
     const totalPages = meta?.pagination?.pageCount || 1;
     const totalBlogs = meta?.pagination?.total || firstData.length;
-
-    console.log(`📊 Found ${totalBlogs} blogs across ${totalPages} pages`);
 
     // Fetch remaining pages if there are any
     if (totalPages > 1) {
@@ -156,13 +151,9 @@ export const getAllBlogsForSitemap = async (locale: string) => {
         const { data } = response.data;
         if (data && data.length > 0) {
           allBlogs = [...allBlogs, ...data];
-          console.log(`✅ Page ${index + 2}: ${data.length} blogs`);
         }
       });
     }
-
-    console.log(`✅ Total blogs fetched for sitemap: ${allBlogs.length}`);
-    console.log(allBlogs, "allBlogs");
 
     return allBlogs;
   } catch (error: any) {

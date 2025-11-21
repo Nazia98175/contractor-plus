@@ -105,7 +105,6 @@ export const getSeoDataEvent = async (
   slug: string,
 ) => {
   try {
-    console.log(type, locale, slug);
     const response = await axiosInstance.get(
       `${type}?locale=${locale}&filters[eventUrl]=${slug}&populate[SeoMetaData][populate]=*`,
     );

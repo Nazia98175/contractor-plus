@@ -1,4 +1,3 @@
-// LeadGeneration.tsx (page component)
 import CommonFormField from "@/components/common/CommonFormField";
 import CommonLogos from "@/components/common/CommonLogos";
 import { blackPlatforms } from "@/components/common/Helper";
@@ -39,7 +38,7 @@ interface Params {
 }
 
 export default async function LeadGeneration({ params }: Params) {
-  const resolvedParams = await params; // ✅ await before using
+  const resolvedParams = await params;
   const { locale } = resolvedParams;
 
   // Get IP from cookies and fetch geolocation on the server

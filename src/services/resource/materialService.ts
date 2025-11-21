@@ -674,8 +674,6 @@ export const exportMaterialList = async (
   return new Promise((resolve) => {
     // Simulate API delay
     setTimeout(() => {
-      console.log(`Exporting material list in ${format} format`, items);
-
       // Mock response
       resolve({
         success: true,
@@ -690,8 +688,6 @@ export const saveMaterialList = async (items: any[]) => {
   return new Promise((resolve) => {
     // Simulate API delay
     setTimeout(() => {
-      console.log("Saving material list to account", items);
-
       // Mock response
       resolve({
         success: true,

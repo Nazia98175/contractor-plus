@@ -5,8 +5,6 @@ import { NextResponse } from "next/server";
 import { getAllEvents } from "@/services/events/getEventData";
 
 export async function GET() {
-  console.log("========== EVENT SITEMAP ==========");
-
   const locale = "en";
   const baseUrl =
     process.env.NEXT_PUBLIC_DOMAIN || "https://contractorplus.app";
@@ -16,10 +14,7 @@ export async function GET() {
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
   try {
-    // ✅ Use getAll: true for optimized query (only eventName and eventUrl fields)
     const events = await getAllEvents(locale, true);
-
-    console.log(`📦 Found ${events?.length || 0} events`);
 
     if (events && Array.isArray(events)) {
       events.forEach((event: any) => {
@@ -33,8 +28,6 @@ export async function GET() {
           xml += "  </url>\n";
         }
       });
-
-      console.log(`✅ Event sitemap generated with ${events.length} URLs`);
     }
   } catch (error) {
     console.error("❌ Error generating event sitemap:", error);

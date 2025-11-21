@@ -312,15 +312,16 @@ const FeaturesMainPage = async ({
             />
           </Suspense>
         </div>
-
-        <Suspense fallback={<LoadingFallback />}>
-          <BlogPosts
-            data={pageData.blogsByCategory || []}
-            blogs={pageData.blogs}
-            className="mt-7 mb-20 md:mt-9"
-            classMaxwidth="max-w-[90%] xs:max-w-[98%] sm:max-w-full"
-          />
-        </Suspense>
+        {pageData.blogs && (
+          <Suspense fallback={<LoadingFallback />}>
+            <BlogPosts
+              data={pageData.blogsByCategory || []}
+              blogs={pageData.blogs}
+              className="mt-7 mb-20 md:mt-9"
+              classMaxwidth="max-w-[90%] xs:max-w-[98%] sm:max-w-full"
+            />
+          </Suspense>
+        )}
       </div>
     </>
   );

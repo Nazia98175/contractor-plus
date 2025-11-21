@@ -14,8 +14,6 @@ export const getIndustryPage = async (
     const res: AxiosResponse<HomePageResponse> = await axiosInstance.get(url);
     return res.data;
   } catch (error: any) {
-    console.log("Failed to fetch industrypage:", error.response?.data);
-
     if (error.response?.status === 404) {
       return notFound(); // will render 404.tsx
     }

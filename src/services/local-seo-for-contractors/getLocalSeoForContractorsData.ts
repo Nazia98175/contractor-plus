@@ -64,7 +64,6 @@ export const getLocalSeoForContractorsData = async (
     getCommonData(locale),
   ]);
 
-  console.log(problemSolutionSectionRes, "problemSolutionSectionRes");
   return {
     pageContent: pageContentRes?.data || null,
     commonData: commonData || null,

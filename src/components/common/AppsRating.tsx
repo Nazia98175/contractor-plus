@@ -21,7 +21,7 @@ const AppsRating: React.FC<AppsRatingProps> = ({
     <>
       <CardReveal distance={50} delay={delayGoogle}>
         <Link
-          href="https://contractorplus.app/"
+          href="https://play.google.com/store/apps/details?id=contractorplus.app"
           target="_blank"
           className={`mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0 ${className}`}
         >
@@ -44,7 +44,7 @@ const AppsRating: React.FC<AppsRatingProps> = ({
 
       <CardReveal distance={50} delay={delayApple}>
         <Link
-          href="https://apps.apple.com/app/id1516738407"
+          href="https://apps.apple.com/us/app/contractor/id1526947450"
           target="_blank"
           className={`mt-4 flex flex-col-reverse gap-1 sm:flex-col md:mt-0 ${className2}`}
         >

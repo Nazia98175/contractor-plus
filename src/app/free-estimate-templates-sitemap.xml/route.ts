@@ -17,8 +17,6 @@ const getFreeEstimateTemplates = async () => {
 };
 
 export async function GET() {
-  console.log("========== FREE ESTIMATE TEMPLATES SITEMAP ==========");
-
   const baseUrl =
     process.env.NEXT_PUBLIC_DOMAIN || "https://contractorplus.app";
   const now = new Date().toISOString();
@@ -37,7 +35,6 @@ export async function GET() {
 
   try {
     const templates = await getFreeEstimateTemplates();
-    console.log(`Found ${templates.length} free estimate templates`);
 
     templates.forEach((template: any) => {
       if (template?.slug) {

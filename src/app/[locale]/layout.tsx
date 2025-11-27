@@ -37,9 +37,9 @@ export default async function RootLayout({
 
   return (
     <>
-        <link rel="preconnect" href="https://www.youtube.com" />
-        <link rel="dns-prefetch" href="https://www.youtube.com" />
-        
+      <link rel="preconnect" href="https://www.youtube.com" />
+      <link rel="dns-prefetch" href="https://www.youtube.com" />
+
       <SmoothScrollSetup />
       <BackToTop />
       <NextTopLoader

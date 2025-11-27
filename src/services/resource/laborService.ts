@@ -72,12 +72,9 @@ export const getExternalIndustryName = (internalIndustry: string): string => {
 };
 
 export const laborSearchApi = async (params: LaborSearchParams) => {
-  console.log(params, "parms values");
   const url = new URL(`${LABOR_API_BASE_URL}/data`);
 
   const normalizedIndustry = getExternalIndustryName(params.industry);
-
-  console.log(normalizedIndustry, "normalizedIndusty");
 
   url.searchParams.append("industry", normalizedIndustry);
 

@@ -2261,3 +2261,22 @@ body.menu-open .back-to-top {
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
 }
+.gradient-text-os {
+  background: linear-gradient(90deg, #c94ea6, #30a8cd, #3abe4988);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: moveGradient 4s ease infinite;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

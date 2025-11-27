@@ -13,8 +13,8 @@ interface GroupOfComponentsProps {
   commonData: any;
   pricingPlans: any;
   reviews: any;
-  pricingData?: any; // Add this prop for CMS pricing data
-  pricingComparison?: any[]; // Add this prop for CMS pricing data
+  pricingData?: any; 
+  pricingComparison?: any[]; 
 }
 
 const GroupOfComponents: React.FC<GroupOfComponentsProps> = ({

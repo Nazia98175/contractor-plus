@@ -6,7 +6,6 @@ interface estimaticDataParams {
 }
 
 export const estimaticDataApi = async (params: estimaticDataParams) => {
-  console.log(params, "parms values");
   const url = new URL(`${LABOR_API_BASE_URL}/data-estimatic`);
 
   url.searchParams.append("industry", params.industry ?? "");

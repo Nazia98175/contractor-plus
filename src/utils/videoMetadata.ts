@@ -286,8 +286,6 @@ export class VideoMetadataHandler {
     };
 
     // Send to analytics service
-    console.log("Video Event:", eventData);
-
     // You can integrate with your analytics service here
     // Example: analytics.track('video_event', eventData);
 

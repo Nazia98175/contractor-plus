@@ -2,9 +2,8 @@
 import React from "react";
 import PlatformCard from "@/components/homepage/PlatformCard";
 import SliderLayout from "@/components/common/SliderLayout";
-import { Platform } from "@/types";
+// import { Platform } from "@/types";
 import CardReveal from "@/components/common/CardReveal";
-import Copy from "../common/Copy";
 
 interface TrustBarProps {
   platforms: Platform[];

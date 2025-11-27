@@ -5,8 +5,6 @@ import { NextResponse } from "next/server";
 import { getAllFeaturesPages } from "@/services/all-features/allFeatures";
 
 export async function GET() {
-  console.log("========== FEATURE SITEMAP ==========");
-
   const locale = "en";
   const baseUrl =
     process.env.NEXT_PUBLIC_DOMAIN || "https://contractorplus.app";
@@ -22,8 +20,6 @@ export async function GET() {
       "&fields[0]=pageName&fields[1]=slug&pagination[pageSize]=100",
     );
 
-    console.log(`📦 Found ${features?.length || 0} features`);
-
     if (features && Array.isArray(features)) {
       features.forEach((feature: any) => {
         if (feature?.slug) {
@@ -35,8 +31,6 @@ export async function GET() {
           xml += "  </url>\n";
         }
       });
-
-      console.log(`✅ Feature sitemap generated with ${features.length} URLs`);
     }
   } catch (error) {
     console.error("❌ Error generating feature sitemap:", error);

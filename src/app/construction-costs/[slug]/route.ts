@@ -39,22 +39,17 @@ export async function GET(
   try {
     const { slug } = await params;
 
-    console.log("🔍 Dynamic route hit! Full slug received:", slug);
-
     // Extract category from slug
     // URL: /plumbing-sitemap.xml -> slug: "plumbing-sitemap.xml"
     // Remove ".xml" first, then remove "-sitemap"
     let categorySlug = slug.replace(/\.xml$/i, ""); // Remove .xml -> "plumbing-sitemap"
     categorySlug = categorySlug.replace(/-sitemap$/i, ""); // Remove -sitemap -> "plumbing"
 
-    console.log("📝 Extracted category slug:", categorySlug);
-
     // Get the proper category name for the API
     const categoryName = CATEGORY_MAP[categorySlug];
 
     if (!categoryName) {
       console.error(`❌ Category not found for slug: ${categorySlug}`);
-      console.log("Available slugs:", Object.keys(CATEGORY_MAP));
 
       const emptyXml = `<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/sitemap-index.xsl"?>
@@ -73,11 +68,7 @@ export async function GET(
     const baseUrl =
       process.env.NEXT_PUBLIC_DOMAIN || "https://contractorplus.app";
 
-    console.log(
-      `📡 Fetching projects for category: ${categoryName} (slug: ${categorySlug})`,
-    );
     const projects = await fetchFilteredProjects(categoryName);
-    console.log(`✅ Found ${projects.length} projects for ${categoryName}`);
 
     let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
     xml += '<?xml-stylesheet type="text/xsl" href="/sitemap-index.xsl"?>\n';
@@ -104,10 +95,6 @@ export async function GET(
     }
 
     xml += "</urlset>";
-
-    console.log(
-      `✅ Sitemap generated successfully for ${categoryName} with ${urlCount} URLs`,
-    );
 
     return new NextResponse(xml, {
       headers: {

@@ -48,7 +48,7 @@ const AdvertisementCard: React.FC<AdvertisementCardProps> = ({ appfeatures }) =>
       </Link>
 
       <Link
-        href="https://play.google.com/store/apps/details?id=contractorplus.app&hl=en_IN"
+        href="https://play.google.com/store/apps/details?id=contractorplus.app"
         className="hover:bg-kuroiBlack/50 border-jagdwurst mt-2.5 flex h-[42px] w-full items-center justify-center rounded-md border backdrop-blur-[9px] duration-300 hover:border-transparent"
       >
         <Image

@@ -34,7 +34,7 @@ const PodcastHero: FC<{ data: PodcastData }> = ({ data }) => {
       </Link>
       <div className="relative mx-auto mb-[-100px] hidden w-full max-w-[1316px] sm:-mb-[160px] sm:block lg:-mb-[200px]">
         <Image
-          src={data?.image?.url ?? "/images/webp/trader-group.webp"}
+          src={data?.image?.url}
           width={1050}
           height={579}
           priority

@@ -1,4 +1,3 @@
-// LeadGenerationHero.tsx
 "use client";
 import React, { useEffect, useRef } from "react";
 import AppsRating from "../common/AppsRating";
@@ -22,7 +21,7 @@ interface LeadGenerationHeroProps {
   description: string;
   getStartedFreeBtn: string;
   nccTxt: string;
-  location?: ProcessedLocation | null; // Already processed location from server
+  location?: ProcessedLocation | null; 
 }
 
 const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
@@ -31,7 +30,7 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
   description,
   getStartedFreeBtn,
   nccTxt,
-  location, // Now receiving processed location directly from server
+  location,
 }) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {

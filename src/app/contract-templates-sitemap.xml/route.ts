@@ -4,8 +4,6 @@ export const revalidate = 3600;
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  console.log("========== CONTRACT TEMPLATES SITEMAP ==========");
-
   const baseUrl =
     process.env.NEXT_PUBLIC_DOMAIN || "https://contractorplus.app";
   const now = new Date().toISOString();
@@ -27,7 +25,7 @@ export async function GET() {
   ];
 
   contractTemplates.forEach((template) => {
-    xml += "  <url>\n"; // ✅ Now matches urlset
+    xml += "  <url>\n";
     xml += `    <loc>${baseUrl}/resources/contract-templates/${template}</loc>\n`;
     xml += `    <lastmod>${now}</lastmod>\n`;
     xml += `    <changefreq>monthly</changefreq>\n`;
@@ -35,11 +33,7 @@ export async function GET() {
     xml += "  </url>\n";
   });
 
-  console.log(
-    `✅ Contract templates sitemap generated with ${contractTemplates.length} URLs`,
-  );
-
-  xml += "</urlset>"; // ✅ Now matches opening tag
+  xml += "</urlset>";
 
   return new NextResponse(xml, {
     headers: {

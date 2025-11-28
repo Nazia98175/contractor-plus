@@ -68,15 +68,13 @@ const BlogDetails = async ({
 }) => {
   const { locale, slug } = await params;
   const [blogData, blogsList, allBlogs, appfeatures] = await Promise.all([
-    getBlogDataBySlug(locale, slug),
-    getBlogsDetails(locale),
-    getAllBlogs(locale),
-    getIntegrationDetails(locale),
+    getBlogDataBySlug("en", slug),
+    getBlogsDetails("en"),
+    getAllBlogs("en"),
+    getIntegrationDetails("en"),
   ]);
 
-  if (!blogData) {
-    notFound();
-  }
+  if (!blogData || !blogsList) return notFound();
 
   return (
     <main>

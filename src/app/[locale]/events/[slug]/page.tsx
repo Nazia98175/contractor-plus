@@ -58,8 +58,8 @@ const EventsDetailPage = async ({ params }: { params: PromiseParams }) => {
   if (!slug) redirect("/events-directory");
 
   const [eventDetail, eventList] = await Promise.all([
-    getSingleEvent(locale, slug),
-    getEventDetails(locale),
+    getSingleEvent("en", slug),
+    getEventDetails("en"),
   ]);
 
   if (!eventDetail) redirect("/events-directory");

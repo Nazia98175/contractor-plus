@@ -14,7 +14,7 @@ const PostCard = ({ blogData }: { blogData: any }) => {
           <span className="text-lightBlack">{blogData?.authorName ?? ""}</span>{" "}
           -<span className="text-pantone3"> {blogData?.authorRole ?? ""}</span>
         </h5>
-        <p className="text-wallStreet text-sm font-medium tracking-[0.1px] md:text-base">
+        <p className="text-wallStreet text-justify text-sm font-medium tracking-[0.1px] md:text-base">
           {blogData?.authorDescription ?? ""}
         </p>
         {blogData?.authorSocial && blogData?.authorSocial.length > 0 && (

@@ -16,6 +16,7 @@ import "swiper/css/pagination";
 import "./globals.css";
 import "./resources.css";
 import "./style.css";
+import LeadsyScript from "@/components/scripts/Leadsy";
 
 export const metadata: Metadata = {
   icons: {
@@ -28,10 +29,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       lang="en"
       className={`${inter.variable} ${montserrat.variable} ${plusJakartaSans.variable} ${spaceGrotesk.variable}`}
     >
+      <head>
         <link rel="preconnect" href="https://www.youtube.com" />
         <link rel="dns-prefetch" href="https://www.youtube.com" />
-      <head>
         <GoogleTagManager />
+        <LeadsyScript />
         <MetaPixel />
       </head>
       <body className="font-jakarta">

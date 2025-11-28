@@ -113,6 +113,7 @@ const BlogsContent = ({
                 ),
                 a: ({ node, ...props }) => (
                   <a
+                    target="_blank"
                     className="w-full font-medium text-black transition-all duration-300 ease-in-out hover:text-red-600"
                     {...props}
                   />

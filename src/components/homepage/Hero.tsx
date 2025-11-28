@@ -46,16 +46,19 @@ const Hero = ({
         <div className="main-container relative z-10 flex items-end">
           <div className="relative z-30 flex w-full flex-col gap-[6px] md:max-w-[628px] lg:gap-3 xl:gap-6">
             <Copy animateOnScroll={false} delay={1.1}>
-              <AdaptiveHeroTitle
+              {/* <AdaptiveHeroTitle
                 title={heroTitle}
                 className="gradient-text xs:w-full w-full leading-[127%] font-extrabold"
                 minFontSize={28}
                 maxLines={3}
                 maxFontSize={52}
                 textAnimation="home-page-view-port-screen"
-              />
+              /> */}
+              <h1 className="gradient-text xs:w-full w-full text-[28px] leading-[127%] font-extrabold sm:text-[35px] md:text-[45px] lg:text-[52px]">
+                The <span className="gradient-text-os px-1">OS</span> for build
+                & service contractors
+              </h1>
             </Copy>
-
             <Copy animateOnScroll={false} delay={1.2}>
               <p className="text-decemberSky max-w-full text-sm font-semibold sm:max-w-[87%] md:text-base md:font-medium xl:text-lg">
                 {heroDescription}
@@ -68,10 +71,11 @@ const Hero = ({
                 delay={1.3}
                 animateOnMount={true}
               >
-                <FreeTrialButton
+                {/* <FreeTrialButton
                   showIcon={false}
                   text={commonData?.getStartedFreeBtn}
-                />
+                /> */}
+                <FreeTrialButton showIcon={false} text={"Start for FREE"} />
               </CardReveal>
               {/* mobile */}
               <CardReveal
@@ -80,9 +84,14 @@ const Hero = ({
                 delay={1.4}
                 animateOnMount={true}
               >
-                <FreeTrialButton
+                {/* <FreeTrialButton
                   showIcon={false}
                   text={commonData?.mobileBtn}
+                  className="!w-full"
+                /> */}
+                <FreeTrialButton
+                  showIcon={false}
+                  text={"Start for FREE"}
                   className="!w-full"
                 />
               </CardReveal>

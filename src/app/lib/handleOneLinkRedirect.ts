@@ -1,4 +1,3 @@
-// app/lib/useOneLinkRedirect.ts
 "use client";
 
 import { useState } from "react";

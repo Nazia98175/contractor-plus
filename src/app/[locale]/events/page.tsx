@@ -62,6 +62,7 @@ const EventsDirectoryPage = async ({
           ncc={commonData?.nccTxt}
           showTitle={true}
           variant="tertiary"
+             showonlybutton={false}
         />
       </div>
     </main>

@@ -9,6 +9,8 @@ import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import GooglePoster from "./GooglePoster";
 import useGsapFadeIn from "@/hooks/useGsapFadeIn";
 import gsap from "gsap";
+import { SideIcon } from "../common/Icons";
+import Link from "next/link";
 
 interface ProcessedLocation {
   city?: string;
@@ -42,6 +44,9 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
       once: true,
     });
   }, []);
+
+  console.log(getStartedFreeBtn,"getStartedFreeBtn");
+  
   useGsapFadeIn(["#common-homepage-wrapper", "#home-page-view-port-screen"]);
   return (
     <section
@@ -73,11 +78,16 @@ const LeadGenerationHero: React.FC<LeadGenerationHeroProps> = ({
           <AppsRating delayApple={0.3} delayGoogle={0.4} />
           <CardReveal distance={50} delay={0.6} className="w-full sm:w-fit">
             <div className="flex w-full flex-col items-center gap-1.5 px-2 pt-5 sm:w-fit">
-              <FreeTrialButton
-                text={getStartedFreeBtn}
-                showIcon={true}
-                className="!flex"
-              />
+             
+
+              <Link
+              target="_blank"
+        href="https://audit.local.contractorplus.app/"
+        className={`secondary-btn bg-red-linear h-10 gap-2`}
+      >
+       {getStartedFreeBtn}
+            <SideIcon />
+      </Link>
               <CardRequiredButton
                 className="text-wallStreet sm:text-secondary"
                 text={nccTxt}

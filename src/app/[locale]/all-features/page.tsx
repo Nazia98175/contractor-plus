@@ -47,6 +47,7 @@ export default async function SeeAllFeaturesPage({
           mobileBtn={commonData?.mobileBtn}
           ncc={commonData?.nccTxt}
           variantBtn="primary"
+             showonlybutton={false}
         />
         <div className="mt-12 md:mb-[50px]">
           <TrustBar

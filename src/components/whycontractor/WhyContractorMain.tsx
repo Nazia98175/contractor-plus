@@ -222,6 +222,7 @@ const WhyContractorMain: React.FC<WhyContractorMainProps> = ({ data }) => {
               mobileBtn={data?.commonData?.mobileBtn}
               ncc={data?.commonData?.nccTxt}
               variant={"tertiary"}
+                 showonlybutton={false}
             />
           </div>
         </div>

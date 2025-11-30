@@ -63,6 +63,7 @@ const IntegrationPage = async ({
             createBtn="Get Started Free"
             mobileBtn="Download FREE App"
             ncc="No credit card required"
+               showonlybutton={false}
           />
         </div>
         <TrustBar platforms={platforms} className="pb-[91px] sm:pb-10" />

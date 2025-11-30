@@ -75,6 +75,7 @@ export default async function PricingPage({ params }: PricongParams) {
                 createBtn={commonData?.getStartedFreeBtn}
                 mobileBtn={commonData?.mobileBtn}
                 ncc={commonData?.nccTxt}
+                   showonlybutton={false}
               />
             </Suspense>
           </div>

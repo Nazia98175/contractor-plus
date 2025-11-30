@@ -33,6 +33,7 @@ const EntireBusiness: React.FC<TheEntireBusinessProps> = ({
         mobileBtn={mobileBtn}
         ncc={ncc_text}
         variantBtn="light"
+           showonlybutton={false}
       />
     </div>
   );

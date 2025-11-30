@@ -34,6 +34,7 @@ const IndustryService: React.FC<Props> = ({
           variant={variant}
           className={className}
           variantBtn={variantBtn}
+             showonlybutton={false}
         />
       </div>
       {showClouds !== false && (

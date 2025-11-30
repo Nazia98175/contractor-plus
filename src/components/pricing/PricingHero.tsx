@@ -87,6 +87,7 @@ const PricingHero: React.FC<PlansProps> = ({
             showTitle={false}
             variant="secondary"
             showDescription={false}
+               showonlybutton={false}
           />
         </div>
 

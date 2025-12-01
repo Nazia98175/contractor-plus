@@ -139,6 +139,7 @@ const EstimaticAiPage = async ({
           createBtn={commonData?.getStartedFreeBtn || "Get Started Free"}
           mobileBtn={commonData?.mobileBtn || "Download FREE App"}
           ncc={commonData?.nccTxt || "No credit card required"}
+           showonlybutton={false}
         />
       </div>
       <TrustBar

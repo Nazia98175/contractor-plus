@@ -98,6 +98,7 @@ const IntegrationDetails = async ({
             createBtn="Get Started Free"
             mobileBtn="Download FREE App"
             ncc="No credit card required"
+               showonlybutton={false}
           />
         </div>
 

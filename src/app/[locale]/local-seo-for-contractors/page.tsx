@@ -141,6 +141,8 @@ export default async function LeadGeneration({ params }: Params) {
             createBtn={emailSignupSection?.createBtn || "Get free audit"}
             mobileBtn={"Download FREE App"}
             ncc={commonData?.nccTxt}
+            showonlybutton={true}
+            showonlybuttonurl="https://audit.local.contractorplus.app"
           />
         </div>
         <TrustBar

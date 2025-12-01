@@ -165,6 +165,7 @@ const IndustryPage = async ({ params }: { params: PagePromise["params"] }) => {
             mobileBtn={commonData?.mobileBtn}
             ncc={commonData?.nccTxt}
             variantBtn="dark"
+               showonlybutton={false}
           />
         </div>
         <TrustBar platforms={platforms} className="pb-[148px] xl:pb-20" />

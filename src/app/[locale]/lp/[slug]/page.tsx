@@ -143,6 +143,7 @@ const GeneralFsmPage = async ({ params }: { params: PromiseParams }) => {
           createBtn={data?.emailSignupSection?.btnText ?? "Get Started Free"}
           mobileBtn={data?.emailSignupSection?.btnMobile ?? "Download FREE App"}
           ncc={"No credit card required"}
+             showonlybutton={false}
         />
       </div>
       <TrustBar

@@ -8,6 +8,8 @@ import CardRequiredButton from "./CardRequiredButton";
 import CardReveal from "./CardReveal";
 import Copy from "./Copy";
 import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
+import Link  from "next/link";
+import { SideIcon } from "./Icons";
 
 interface CommonFormFieldProps {
   title?: string;
@@ -22,6 +24,8 @@ interface CommonFormFieldProps {
   className?: string;
   variant?: "default" | "primary" | "secondary" | "tertiary" | "white";
   variantBtn?: "default" | "primary" | "light" | "dark" | "muted";
+  showonlybutton?: boolean;
+  showonlybuttonurl?: string;
 }
 
 const CommonFormField: React.FC<CommonFormFieldProps> = ({
@@ -36,6 +40,8 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
   variantBtn = "default",
   className,
   desktopbtn,
+  showonlybutton,
+  showonlybuttonurl
 }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
@@ -98,7 +104,21 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
         </Copy>
         <CardReveal distance={50}>
           {/* Desktop Form - Hidden on Mobile */}
-          <form
+
+          {showonlybutton ?   
+          
+          <div>
+
+             <Link
+              target="_blank"
+        href={showonlybuttonurl ||"#"}
+        className={`secondary-btn bg-red-linear h-10 gap-2 hidden sm:flex items-center justify-center w-full max-w-xs mx-auto`}
+      >
+       {createBtn}
+            <SideIcon />
+      </Link>
+          </div>:    
+           <form
             className="mx-auto hidden w-full max-w-[550px] flex-col items-start justify-center gap-3 sm:flex md:max-w-[657px] md:flex-row"
             onSubmit={handleSubmit}
           >
@@ -129,8 +149,17 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
               <CardRequiredButton text={ncc} variantBtn={variantBtn} />
             </div>
           </form>
-
-          {/* Mobile Button - Direct to App Store */}
+}
+         {showonlybutton ? <div>
+             <Link
+              target="_blank"
+       href={showonlybuttonurl ||"#"}
+        className={`secondary-btn bg-red-linear h-10 gap-2  sm:!hidden flex items-center justify-center w-full max-w-xs mx-auto`}
+      >
+       {createBtn}
+            <SideIcon />
+      </Link>
+          </div> :   
           <div className="flex flex-col items-center gap-3 sm:hidden">
             <button
               aria-label="GetStarted"
@@ -145,7 +174,9 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
             <div className="flex items-center justify-center">
               <CardRequiredButton text={ncc} variantBtn={variantBtn} />
             </div>
-          </div>
+          </div>}
+          {/* Mobile Button - Direct to App Store */}
+       
         </CardReveal>
       </div>
     </>

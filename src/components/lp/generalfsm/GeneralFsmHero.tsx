@@ -68,6 +68,7 @@ const GeneralFsmHero: FC<Props> = ({ data }) => {
                   variant="secondary"
                   showDescription={false}
                   desktopbtn="!min-w-[170px]"
+                     showonlybutton={false}
                 />
               </div>
             </CardReveal>

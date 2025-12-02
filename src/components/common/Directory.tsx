@@ -2,36 +2,16 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import Button from "./Button";
-import { EventDetailIcon } from "./Icons";
 import CommonModalLayout from "./CommonModalLayout";
-import { isValidLink } from "@/lib/helpers";
-
-interface DirectoryItem {
-  imgUrl: string;
-  heading: string;
-  place: string;
-  description: string;
-  button: string;
-  url?: string;
-}
-
-interface DirectoryProps {
-  item: DirectoryItem;
-}
+import { EventDetailIcon } from "./Icons";
+import { DirectoryItem, DirectoryProps } from "@/types";
 
 const Directory: React.FC<DirectoryProps> = ({ item }) => {
   const router = useRouter();
 
   const handleRedirect = (item: DirectoryItem) => {
     if (!item) return;
-    if (isValidLink(item.button)) {
-      const formattedLink = item.button.startsWith("http")
-        ? item.button
-        : `http://${item.button}`;
-      window.open(formattedLink, "_blank");
-    } else {
-      router.push(`/events/${item.url}`);
-    }
+    router.push(`/events/${item.url}`);
   };
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const openModal = () => {

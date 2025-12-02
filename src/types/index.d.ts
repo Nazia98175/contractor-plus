@@ -588,3 +588,17 @@ export type EventDirectory = {
     }[];
   }[];
 };
+
+export interface DirectoryItem {
+  imgUrl: string;
+  heading: string;
+  place: string;
+  description: string;
+  button: string;
+  url?: string;
+}
+
+export interface DirectoryProps {
+  item: DirectoryItem;
+}
+

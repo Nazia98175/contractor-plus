@@ -21,6 +21,7 @@ const ConferenceCard = ({
   swiperId,
 }: ConferenceCardProps) => {
   const router = useRouter();
+
   return (
     <>
       <div className="flex justify-between px-2 sm:hidden">

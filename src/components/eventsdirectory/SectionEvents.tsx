@@ -6,8 +6,19 @@ import gsap from "gsap";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo } from "react";
 import NotFoundFallback from "../common/NotFoundFallback";
+import { formatDateRange } from "@/lib/date";
 
-const SectionEvents = ({ params, events }: { params: string; events: any }) => {
+const SectionEvents = ({
+  params,
+  featuredEvents,
+  pastEvents,
+  upcomingEvents,
+}: {
+  params: string;
+  featuredEvents: any;
+  pastEvents: any;
+  upcomingEvents: any;
+}) => {
   const sectionId = params as string;
   const router = useRouter();
 
@@ -26,17 +37,97 @@ const SectionEvents = ({ params, events }: { params: string; events: any }) => {
 
   const filteredEvents = useMemo(() => {
     if (sectionId === "past-events") {
-      return events.filter(
-        (event: any) => new Date(event.startDate) < new Date(),
-      );
+      return pastEvents
+        ? pastEvents
+            .map((itm: any) => {
+              return {
+                id: itm.id,
+                imgPath: itm?.eventImages
+                  ? itm?.eventImages[0].url
+                  : "/images/webp/snow.webp",
+                role: `${formatDateRange(itm?.startDate, itm?.endDate) + " • " + itm?.location}`,
+                heading: `${itm?.eventName ?? ""}`,
+                description: `${itm?.shortDescription ?? ""}`,
+                linkPath: `${itm?.eventBtn ?? ""}`,
+                slug: `${itm?.eventUrl ?? ""}`,
+                sDate: `${itm?.startDate ?? ""}`,
+              };
+            })
+            .sort((a: any, b: any) => {
+              const dateA = new Date(a.sDate).getTime();
+              const dateB = new Date(b.sDate).getTime();
+              return dateB - dateA;
+            })
+        : [];
     } else if (sectionId === "upcoming-events") {
-      return events.filter(
-        (event: any) => new Date(event.startDate) > new Date(),
-      );
+      return upcomingEvents
+        ? upcomingEvents
+            .map((itm: any) => {
+              return {
+                id: itm.id,
+                imgPath: itm?.eventImages
+                  ? itm?.eventImages[0].url
+                  : "/images/webp/snow.webp",
+                role: `${formatDateRange(itm?.startDate, itm?.endDate) + " • " + itm?.location}`,
+                heading: `${itm?.eventName ?? ""}`,
+                description: `${itm?.shortDescription ?? ""}`,
+                linkPath: `${itm?.eventBtn ?? ""}`,
+                slug: `${itm?.eventUrl ?? ""}`,
+                sDate: `${itm?.startDate ?? ""}`,
+              };
+            })
+            .sort((a: any, b: any) => {
+              const dateA = new Date(a.sDate).getTime();
+              const dateB = new Date(b.sDate).getTime();
+              return dateA - dateB;
+            })
+        : [];
     } else if (sectionId === "conference-events") {
-      return events.filter((event: any) => event.isFeatured === true);
+      return featuredEvents
+        ? featuredEvents
+            .map((itm: any) => {
+              return {
+                id: itm.id,
+                imgPath: itm?.eventImages
+                  ? itm?.eventImages[0].url
+                  : "/images/webp/snow.webp",
+                role: `${formatDateRange(itm?.startDate, itm?.endDate) + " • " + itm?.location}`,
+                heading: `${itm?.eventName ?? ""}`,
+                description: `${itm?.shortDescription ?? ""}`,
+                linkPath: `${itm?.eventBtn ?? ""}`,
+                slug: `${itm?.eventUrl ?? ""}`,
+                sDate: `${itm?.startDate ?? ""}`,
+              };
+            })
+            .sort((a: any, b: any) => {
+              const dateA = new Date(a.sDate).getTime();
+              const dateB = new Date(b.sDate).getTime();
+              return dateA - dateB;
+            })
+        : [];
     } else {
-      return events;
+      return featuredEvents
+        ? featuredEvents
+            .map((itm: any) => {
+              return {
+                id: itm.id,
+                imgPath: itm?.eventImages
+                  ? itm?.eventImages[0].url
+                  : "/images/webp/snow.webp",
+                role: `${formatDateRange(itm?.startDate, itm?.endDate) + " • " + itm?.location}`,
+                heading: `${itm?.eventName ?? ""}`,
+                description: `${itm?.shortDescription ?? ""}`,
+                linkPath: `${itm?.eventBtn ?? ""}`,
+                slug: `${itm?.eventUrl ?? ""}`,
+                sDate: `${itm?.startDate ?? ""}`,
+              };
+            })
+            .sort((a: any, b: any) => {
+              const dateA = new Date(a.sDate).getTime();
+              const dateB = new Date(b.sDate).getTime();
+              return dateA - dateB;
+            })
+        : [];
     }
   }, [sectionId]);
 
@@ -59,6 +150,7 @@ const SectionEvents = ({ params, events }: { params: string; events: any }) => {
   }, []);
 
   function handleEvent(slug: string) {
+    if (!slug) return;
     router.push(`/events/${slug}`);
   }
   return (

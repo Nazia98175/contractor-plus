@@ -8,7 +8,6 @@ import remarkGfm from "remark-gfm";
 import EventdetailHeroCard from "./EventdetailHeroCard";
 
 const EventDetailHero = ({ eventDetail }: any) => {
-  console.log(eventDetail, "eventDetail");
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => {

@@ -201,6 +201,11 @@ export const redirectsRoutes = [
     destination: "/industries/flooring-services-app",
     permanent: true,
   },
+  {
+    source: "/roofing-contractor-software", //Roofing-contractor-software page
+    destination: "/industries/roofing-contractor-software",
+    permanent: true,
+  },
   //Events Route
   {
     source: "/events-directory", //Event Page

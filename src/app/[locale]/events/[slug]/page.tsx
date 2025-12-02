@@ -54,7 +54,7 @@ export async function generateMetadata({
 }
 
 const EventsDetailPage = async ({ params }: { params: PromiseParams }) => {
-  const { locale, slug } = await params;
+  const { slug } = await params;
   if (!slug) redirect("/events-directory");
 
   const [eventDetail, eventList] = await Promise.all([

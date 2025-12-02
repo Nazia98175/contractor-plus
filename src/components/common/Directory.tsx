@@ -37,8 +37,6 @@ const Directory: React.FC<DirectoryProps> = ({ item }) => {
   const openModal = () => {
     setIsModalOpen(true);
   };
-
-  console.log("item", item);
   return (
     <>
       <div className="img-overlay relative mx-auto flex max-h-[600px] w-full max-w-[811px] flex-col items-center justify-center overflow-hidden">
@@ -70,7 +68,7 @@ const Directory: React.FC<DirectoryProps> = ({ item }) => {
             onClick={() => handleRedirect(item)}
             className="w-full max-w-[189px]"
           >
-            {item.button} <EventDetailIcon />
+            Event Details <EventDetailIcon />
           </Button>
         </div>
       </div>

@@ -179,7 +179,7 @@ const SectionEvents = ({
                 <EventsCard
                   key={event.id}
                   Item={event}
-                  onClick={() => handleEvent(event.eventUrl)}
+                  onClick={() => handleEvent(event.slug)}
                 />
               ))}
             </div>

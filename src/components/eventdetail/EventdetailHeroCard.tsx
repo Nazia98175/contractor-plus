@@ -37,10 +37,9 @@ const EventdetailHeroCard: React.FC<DirectoryProps> = ({ item }) => {
         : `http://${item.button}`;
       window.open(formattedLink, "_blank");
     } else {
-      router.push(`/#`);
+      router.push(`#`);
     }
   };
-  console.log(item, "item in hero card");
   return (
     <>
       <div className="mx-auto flex max-w-[1309px] items-center justify-start gap-4 px-4 py-5 xl:px-0">

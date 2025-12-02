@@ -7,7 +7,7 @@ import {
   getEventList,
   getFeaturedEvents,
   getPastsEvents,
-  getUpcomingEvents
+  getUpcomingEvents,
 } from "@/services/events/getEventData";
 import { generateSeoMetaData } from "@/utils/getSeoMeta";
 import { notFound } from "next/navigation";
@@ -15,7 +15,7 @@ import { notFound } from "next/navigation";
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: string; slug: string }>;
+  params: Promise<{ locale: string }>;
 }) {
   const resolvedParams = await params;
   const page = await getSeoDataCommon(
@@ -24,7 +24,7 @@ export async function generateMetadata({
 
   if (!page) notFound();
 
-  return generateSeoMetaData({ page, slug: resolvedParams.slug });
+  return generateSeoMetaData({ page, slug: "/events" });
 }
 
 const EventsDirectoryPage = async ({
@@ -62,7 +62,7 @@ const EventsDirectoryPage = async ({
           ncc={commonData?.nccTxt}
           showTitle={true}
           variant="tertiary"
-             showonlybutton={false}
+          showonlybutton={false}
         />
       </div>
     </main>

@@ -6,7 +6,6 @@ import CardRequiredButton from "../common/CardRequiredButton";
 import CardReveal from "../common/CardReveal";
 import Copy from "../common/Copy";
 import FreeTrialButton from "../common/FreeTrialButton";
-import AdaptiveHeroTitle from "../industry/AdaptiveHeroTitle";
 import HerosectionBackground from "./HerosectionBackground";
 const VideoOptimizer = dynamic(() => import("./VideoOptimizer"), {
   ssr: false,

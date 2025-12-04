@@ -61,7 +61,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
         {/* Background Images - Lazy loaded */}
         <Image
           className="absolute -top-[24%] left-0 z-20 hidden h-full w-full md:block"
-          src="/images/webp/finally-desktop-bg.webp"
+          src="/images/webp/finally-desktop-optimized-bg.webp"
           alt="finally bg"
           loading="lazy"
           height={700}

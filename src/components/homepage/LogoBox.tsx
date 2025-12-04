@@ -19,7 +19,7 @@ interface LogoBoxProps {
   imageHeight: number;
 }
 
-export const LogoBox: React.FC<LogoBoxProps> = ({
+const LogoBox: React.FC<LogoBoxProps> = ({
   refProp,
   logoSrc,
   alt,
@@ -51,3 +51,5 @@ export const LogoBox: React.FC<LogoBoxProps> = ({
     </div>
   );
 };
+
+export default LogoBox;

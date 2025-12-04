@@ -12,10 +12,12 @@ import { integrationLogos } from "../common/Helper";
 import { WhatEverIcon } from "../common/Icons";
 import LogoWithStars from "../common/LogoWithStars";
 import WhateverBackground from "./WhateverBackground";
-import { LogoBox } from "./LogoBox";
+import LogoBox from "./LogoBox";
 import { LEFT_LOGOS_CONFIG, RIGHT_LOGOS_CONFIG } from "./logoConfig";
-import { useScrollAnimationWhatEver } from "@/hooks/useScrollAnimationWhatEver";
 import { useLogoRotation } from "@/hooks/useLogoRotation";
+import { useScrollAnimationWhatEver } from "@/hooks/useScrollAnimationWhatEver";
+
+
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }

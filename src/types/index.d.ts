@@ -289,6 +289,68 @@ export type ResourceHomepage = {
   backgroundImage: string;
   blogUrl: string;
 };
+
+// ===== Contractor Industry Slider Types (from Strapi API) =====
+
+export interface ImageFormat {
+  ext: string;
+  url: string;
+  hash: string;
+  mime: string;
+  name: string;
+  path: string | null;
+  size: number;
+  width: number;
+  height: number;
+  sizeInBytes: number;
+}
+
+export interface ImageFormats {
+  large?: ImageFormat;
+  small?: ImageFormat;
+  medium?: ImageFormat;
+  thumbnail?: ImageFormat;
+}
+
+export interface ImageData {
+  id: number;
+  documentId: string;
+  name: string;
+  alternativeText: string | null;
+  caption: string | null;
+  width: number;
+  height: number;
+  formats: ImageFormats;
+  hash: string;
+  ext: string;
+  mime: string;
+  size: number;
+  url: string;
+  previewUrl: string | null;
+  provider: string;
+  provider_metadata: any;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+}
+
+export interface ImageCard {
+  id: number;
+  imageTitle: string;
+  linkUrl: string;
+  image: ImageData;
+}
+
+export interface ContractorIndustry {
+  title: string;
+  subTitle: string;
+  url?: string | null;
+  btnText?: string | null;
+  imageCard?: ImageCard[];
+}
+
+// ===== End Contractor Industry Types =====
+
 declare global {
   interface Platform {
     name: string;
@@ -601,4 +663,3 @@ export interface DirectoryItem {
 export interface DirectoryProps {
   item: DirectoryItem;
 }
-

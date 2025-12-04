@@ -1,17 +1,30 @@
-import { useTranslations } from "next-intl";
+"use client";
+
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
 import Copy from "../common/Copy";
 import { SliderRedLineIcon } from "../common/Icons";
-import ContractorIndustrySlider from "./ContractorIndustrySlider";
-interface Industry {
-  title: string;
-  subTitle: string;
-  url?: string | null;
-  btnText: string | null;
-  imageCard?: any;
-}
+import type { ContractorIndustry as ContractorIndustryType } from "@/types";
+
+// Lazy load the slider component
+const ContractorIndustrySlider = dynamic(
+  () => import("./ContractorIndustrySlider"),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="relative h-[400px] w-full animate-pulse">
+        <div className="mx-auto flex h-full items-center justify-center gap-4">
+          <div className="bg-lightBlack h-[300px] w-64 rounded-xl" />
+          <div className="bg-lightBlack hidden h-[300px] w-64 rounded-xl md:block" />
+          <div className="bg-lightBlack hidden h-[300px] w-64 rounded-xl lg:block" />
+        </div>
+      </div>
+    ),
+  }
+);
 
 interface TheIndustryProps {
-  contractorIndustry: Industry;
+  contractorIndustry: ContractorIndustryType;
 }
 
 const ContractorIndustry: React.FC<TheIndustryProps> = ({
@@ -37,7 +50,20 @@ const ContractorIndustry: React.FC<TheIndustryProps> = ({
             </h6>
           </Copy>
         </div>
-        <ContractorIndustrySlider imageCard={contractorIndustry?.imageCard} />
+
+        <Suspense
+          fallback={
+            <div className="relative h-[400px] w-full animate-pulse">
+              <div className="mx-auto flex h-full items-center justify-center gap-4">
+                <div className="bg-lightBlack h-[300px] w-64 rounded-xl" />
+                <div className="bg-lightBlack hidden h-[300px] w-64 rounded-xl md:block" />
+                <div className="bg-lightBlack hidden h-[300px] w-64 rounded-xl lg:block" />
+              </div>
+            </div>
+          }
+        >
+          <ContractorIndustrySlider imageCard={contractorIndustry?.imageCard} />
+        </Suspense>
       </div>
     </section>
   );

@@ -1,8 +1,39 @@
 import Image from "next/image";
 import Copy from "../common/Copy";
 import TiltedCardEffect from "../common/TiltedCardEffect";
+import type { ImageCard } from "@/types";
 
-const ContractorIndustrySliderCard = ({ show }: { show: any }) => {
+interface ContractorIndustrySliderCardProps {
+  show: ImageCard;
+  isActive?: boolean;
+  priority?: boolean;
+}
+
+const ContractorIndustrySliderCard: React.FC<
+  ContractorIndustrySliderCardProps
+> = ({ show, isActive = false, priority = false }) => {
+  // Get the best available image URL based on available formats
+  const getImageUrl = (): string => {
+    if (!show?.image) return "";
+
+    if (show.image.formats?.small?.url) {
+      return show.image.formats.small.url;
+    }
+    if (show.image.formats?.medium?.url) {
+      return show.image.formats.medium.url;
+    }
+    if (show.image.formats?.large?.url) {
+      return show.image.formats.large.url;
+    }
+    return show.image.url || "";
+  };
+
+  const imageUrl = getImageUrl();
+
+  if (!imageUrl) {
+    return null; // Don't render if no image URL
+  }
+
   return (
     <TiltedCardEffect
       maxTilt={10}
@@ -20,12 +51,13 @@ const ContractorIndustrySliderCard = ({ show }: { show: any }) => {
         <Image
           width={205}
           height={205}
-          src={show?.image?.formats?.medium?.url ?? show?.image?.url ?? ""}
-          alt={show?.imageTitle ?? ""}
+          src={imageUrl}
+          alt={show?.image?.alternativeText || show?.imageTitle || "Industry card"}
           className="ios-image relative block h-full max-h-[260px] min-h-[260px] w-full rounded-md object-cover"
-          priority
-          loading="eager"
-          unoptimized
+          loading={priority || isActive ? "eager" : "lazy"}
+          priority={priority}
+          quality={80}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 205px"
         />
       </div>
     </TiltedCardEffect>

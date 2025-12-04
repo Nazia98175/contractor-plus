@@ -3,7 +3,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import React, { useEffect } from "react";
-import CloudsAnimation from "../common/CloudsAnimation";
 import Copy from "../common/Copy";
 import { CheckIcon } from "../common/Icons";
 gsap.registerPlugin(ScrollTrigger);
@@ -55,7 +54,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
       <>
         <Image
           className="absolute -top-[24%] left-0 z-20 hidden h-full w-full md:block"
-          src="/images/webp/finally-desktop-bg.webp"
+          src="/images/webp/finally-desktop-optimized-bg.webp"
           alt="finally bg"
           priority
           height={700}
@@ -102,12 +101,8 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
           <div className="relative mt-[45px] flex w-full flex-col-reverse justify-center gap-3 px-3 pb-8 sm:mt-16 md:mt-[83px] lg:flex-row lg:gap-8 lg:px-0 lg:pb-0">
             <div className="absolute bottom-[-10%] left-0 z-20 hidden h-[160px] w-full bg-white blur-[12px] lg:block"></div>
             <div className="pointer-events-none absolute -bottom-8 left-0 z-20 hidden h-[160px] w-full lg:block">
-              {/* <CloudsAnimation
-                cloud1Class="bottom-[61px] sm:bottom-[50px] md:bottom-[53px] lg:bottom-0"
-                cloud2Class="bottom-[57px] sm:bottom-[50px] md:bottom-[55px] lg:bottom-0"
-              /> */}
+             
             </div>
-            {/* <FogGenerator /> */}
             <div
               data-lag="0.8"
               id="finally-icon-wrapper"

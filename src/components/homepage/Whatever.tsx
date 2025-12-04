@@ -15,8 +15,7 @@ import WhateverBackground from "./WhateverBackground";
 import { LogoBox } from "./LogoBox";
 import { LEFT_LOGOS_CONFIG, RIGHT_LOGOS_CONFIG } from "./logoConfig";
 import { useScrollAnimationWhatEver } from "@/hooks/useScrollAnimationWhatEver";
-import { useLogoRotation } from "@/hooks/Uselogorotation";
-
+import { useLogoRotation } from "@/hooks/useLogoRotation";
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }

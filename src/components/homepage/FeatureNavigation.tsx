@@ -65,6 +65,7 @@ const FeatureNavigation = ({
     <div className="flex w-full gap-1.5 overflow-auto bg-white px-2 lg:relative lg:self-start">
       <div className="relative hidden w-fit min-w-[9px] items-center justify-center px-1 lg:flex">
         <button
+          aria-label="Path background"
           className="absolute top-0 left-1/2 z-10 h-3 w-3 rounded-full bg-black transition-all duration-200"
           style={{
             transform: "translate(-50%, 6px)",
@@ -86,6 +87,7 @@ const FeatureNavigation = ({
       >
         {features?.map((feature, index) => (
           <button
+          aria-label={feature}
             style={{ willChange: "color, font-weight" }}
             key={`${feature}-${index}`}
             ref={activeSection === toCamelCase(feature) ? activeLinkRef : null}

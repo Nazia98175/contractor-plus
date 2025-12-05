@@ -94,7 +94,7 @@ export function ResultsPanel({
           <Button asChild>
             <Link
               target="_blank"
-              href="https://my.contractorplus.app/authentication/register"
+              href="https://my.contractorplus.app/auth/register"
             >
               Try Contractor Plus
             </Link>

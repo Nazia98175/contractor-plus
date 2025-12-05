@@ -584,7 +584,7 @@ export default function HouseCleaningCalculator() {
               <Button variant="outline" className="w-full" asChild>
                 <Link
                   target="_blank"
-                  href="https://my.contractorplus.app/authentication/register"
+                  href="https://my.contractorplus.app/auth/register"
                 >
                   Try Contractor Plus
                 </Link>

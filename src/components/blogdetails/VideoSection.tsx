@@ -5,10 +5,18 @@ const VideoSection = ({ blogData }: { blogData: any }) => {
     <div className="w-full overflow-hidden rounded-lg">
       {blogData?.videoUrl ? (
         <div className="aspect-video">
-          <video controls className="h-full w-full rounded-lg object-cover">
+          <iframe
+            className="h-full w-full rounded-lg"
+            src={blogData?.videoUrl}
+            title="Blog video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            loading="lazy"
+          />
+          {/* <video controls className="h-full w-full rounded-lg object-cover">
             <source src={blogData?.videoUrl} type="video/mp4" />
             Your browser does not support the video tag.
-          </video>
+          </video> */}
         </div>
       ) : (
         <div className="aspect-video">

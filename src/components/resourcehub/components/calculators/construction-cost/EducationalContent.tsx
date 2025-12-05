@@ -287,7 +287,7 @@ export function EducationalContent() {
           </p>
           <Button asChild>
             <Link
-              href="https://my.contractorplus.app/authentication/register"
+              href="https://my.contractorplus.app/auth/register"
               target="_blank"
             >
               {" "}

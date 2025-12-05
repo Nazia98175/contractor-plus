@@ -125,7 +125,7 @@ export function ResultsPanel({ calculationResult }: CalculationResultProps) {
           <Button asChild>
             <Link
               target="_blank"
-              href="https://my.contractorplus.app/authentication/register"
+              href="https://my.contractorplus.app/auth/register"
             >
               Try Contractor Plus
             </Link>

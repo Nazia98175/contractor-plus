@@ -327,7 +327,7 @@ export function EducationalContent() {
 
           <Button asChild>
             <Link
-              href="https://my.contractorplus.app/authentication/register"
+              href="https://my.contractorplus.app/auth/register"
               target="_blank"
             >
               Try Contractor+ Today <ArrowRight className="h-4 w-4" />

@@ -295,7 +295,7 @@ export function EducationalContent() {
 
           <Button asChild className="w-fit">
             <Link
-              href="https://my.contractorplus.app/authentication/register"
+              href="https://my.contractorplus.app/auth/register"
               target="_blank"
               rel="noopener"
             >

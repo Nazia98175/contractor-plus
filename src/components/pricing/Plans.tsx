@@ -7,8 +7,10 @@ import PlanCard from "./PlanCard";
 const Plans: React.FC<PlansProps> = ({ onScroll, pricingPlans }) => {
   const [isAnnual, setIsAnnual] = useState(true);
   const [activeTab, setActiveTab] = useState<"annual" | "monthly" | "lifetime">(
-    "monthly",
+    "annual",
   );
+  console.log(activeTab, "active");
+
   console.log(pricingPlans, "pricingPlans");
 
   return (

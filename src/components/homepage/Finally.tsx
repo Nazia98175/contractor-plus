@@ -66,8 +66,9 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
           loading="lazy"
           height={700}
           width={3000}
-          sizes="100vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 3000px"
           quality={75}
+          aria-hidden="true"
         />
         <Image
           fill

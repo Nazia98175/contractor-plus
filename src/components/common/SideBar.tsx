@@ -145,7 +145,7 @@ const SideBar = ({
       >
         <div className="flex grow flex-col overflow-hidden p-2">
           <div className="bg-lightBlack shadow-c1 mb-2 flex items-center justify-between rounded px-3 py-2">
-            <Link className="h-6 w-[130px]" href={""}>
+            <Link className="h-6 w-[130px]" href="/">
               <LogoIcon />
             </Link>
             <button aria-label="cross button" onClick={() => setIsShow(false)}>

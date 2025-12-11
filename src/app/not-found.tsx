@@ -32,7 +32,7 @@ export default function NotFound() {
         className="bg-kuroiBlack relative mx-auto flex h-dvh w-full max-w-[1920px] flex-col items-center justify-center overflow-hidden pt-24 opacity-0"
       >
         <Image
-          className="absolute bottom-[20px] left-0 w-full max-w-[155px]"
+          className="absolute bottom-5 left-0 w-full max-w-[155px]"
           src="/images/webp/404-wires.webp"
           alt="Disconnected wires graphic for 404 error page"
           width={155}
@@ -46,7 +46,7 @@ export default function NotFound() {
             The page you're looking for doesn't exist or has been moved.
           </p>
           <Button
-            className="!w-fit"
+            className="w-fit!"
             type="button"
             onClick={() => router.push("/")}
           >

@@ -97,7 +97,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
       <div className="flex flex-col gap-7 md:gap-[34px]">
         <Copy delay={0.2} ariaLabel="additional description">
           <p
-            className={`paragraph-text mx-auto max-w-[1024px] text-center ${variantStyles.subtitle}`}
+            className={`paragraph-text mx-auto max-w-5xl text-center ${variantStyles.subtitle}`}
           >
             {subTitle}
           </p>
@@ -129,13 +129,13 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
                 required
                 value={email}
                 onChange={handleEmailChange}
-                className={`h-10 w-full rounded-[6px] px-2 outline-none ${variantStyles.input}`}
+                className={`h-10 w-full rounded-md px-2 outline-none ${variantStyles.input}`}
               />
             </div>
             <div className="flex w-full flex-col items-center justify-center md:w-fit">
               <button
                 type="submit"
-                className={`bg-red-linear primary-btn hidden h-10 !w-full min-w-[230px] items-center justify-center sm:flex md:mx-0 md:!w-auto ${desktopbtn}`}
+                className={`bg-red-linear primary-btn hidden h-10 w-full! min-w-[230px] items-center justify-center sm:flex md:mx-0 md:w-auto! ${desktopbtn}`}
                 disabled={loading}
               >
                 {loading ? <ButtonLoader /> : createBtn}
@@ -154,7 +154,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
              <Link
               target="_blank"
        href={showonlybuttonurl ||"#"}
-        className={`secondary-btn bg-red-linear h-10 gap-2  sm:!hidden flex items-center justify-center w-full max-w-xs mx-auto`}
+        className={`secondary-btn bg-red-linear h-10 gap-2  sm:hidden! flex items-center justify-center w-full max-w-xs mx-auto`}
       >
        {createBtn}
             <SideIcon />
@@ -164,7 +164,7 @@ const CommonFormField: React.FC<CommonFormFieldProps> = ({
             <button
               aria-label="GetStarted"
               onClick={handleMobileClick}
-              className="bg-red-linear primary-btn mx-auto h-10 !w-full max-w-[500px]"
+              className="bg-red-linear primary-btn mx-auto h-10 w-full! max-w-[500px]"
               type="button"
             >
               {mobileBtn || "Get started FREE"}

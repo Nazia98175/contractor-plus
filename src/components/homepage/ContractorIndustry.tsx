@@ -1,10 +1,10 @@
 "use client";
 
+import type { ContractorIndustry as ContractorIndustryType } from "@/types";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import Copy from "../common/Copy";
 import { SliderRedLineIcon } from "../common/Icons";
-import type { ContractorIndustry as ContractorIndustryType } from "@/types";
 
 // Lazy load the slider component
 const ContractorIndustrySlider = dynamic(

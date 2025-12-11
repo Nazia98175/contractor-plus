@@ -4,10 +4,10 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Marquee from "react-fast-marquee";
 import CardReveal from "../common/CardReveal";
+import Copy from "../common/Copy";
 import { GroupStartIcon } from "../common/Icons";
 import ReviewCard from "../common/ReviewCard";
 import ReviewModal from "../common/ReviewModal";
-import Copy from "../common/Copy";
 
 interface Reviews {
   title: string;

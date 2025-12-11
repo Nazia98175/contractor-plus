@@ -12,7 +12,7 @@ const Dashboard: React.FC<PropWayToWin> = ({ connectedSystem }) => {
   return (
     <div
       ref={sectionRef}
-      className="relative z-[0] -mt-10 bg-black lg:-mt-16 xl:mt-[-97px]"
+      className="relative z-0 -mt-10 bg-black lg:-mt-16 xl:mt-[-97px]"
     >
       <VideoBackground
         mobileVideoSrc="/video/dashboard-mobile.mp4"

@@ -16,7 +16,7 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
 }) => {
   const [videoUrl, setVideoUrl] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [connectionQuality, setConnectionQuality] = useState<string>("");
+  const [, setConnectionQuality] = useState<string>("");
   useEffect(() => {
     async function checkConnectionAndLoadVideo() {
       setIsLoading(true);
@@ -82,7 +82,7 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
             playsInline
             poster={poster || "/images/webp/hero-video-poster.webp"}
             onError={(e) => console.error("Video load error:", e)}
-            className="h-[99%] w-full !object-cover lg:object-right"
+            className="h-[99%] w-full object-cover! lg:object-right"
           >
             <source src={videoUrl} type={type} />
             Your browser does not support the video tag.
@@ -91,7 +91,7 @@ const VideoOptimizer: React.FC<VideoOptimizerProps> = ({
       )}
 
       <Image
-        className="3xl:bottom-[2%] absolute right-[-10px] bottom-[-2%] z-10 h-[30%] w-[102%]"
+        className="3xl:bottom-[2%] absolute -right-2.5 bottom-[-2%] z-10 h-[30%] w-[102%]"
         src="/images/png/hero-blur-2.png"
         alt="hero-blur"
         width={1300}

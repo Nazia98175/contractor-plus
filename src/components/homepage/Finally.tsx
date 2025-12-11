@@ -146,7 +146,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   quality={80}
                 />
               </div>
-              <div className="flex w-full max-w-[73px] duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 sm:max-w-[60px] md:hidden md:max-w-24 lg:max-w-[88px]">
+              <div className="flex w-full max-w-[73px] duration-300 ease-in-out hover:scale-105! hover:rotate-6! sm:max-w-[60px] md:hidden md:max-w-24 lg:max-w-[88px]">
                 <Image
                   width={100}
                   height={104}
@@ -160,7 +160,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
               </div>
 
               {/* Desktop view */}
-              <div className="hidden w-12 max-w-16 duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 md:flex md:w-full md:max-w-20 lg:max-w-[88px]">
+              <div className="hidden w-12 max-w-16 duration-300 ease-in-out hover:scale-105! hover:rotate-6! md:flex md:w-full md:max-w-20 lg:max-w-[88px]">
                 <Image
                   width={96}
                   height={104}
@@ -172,7 +172,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   quality={80}
                 />
               </div>
-              <div className="hidden w-12 max-w-16 duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 md:flex md:w-full md:max-w-20 lg:max-w-[88px]">
+              <div className="hidden w-12 max-w-16 duration-300 ease-in-out hover:scale-105! hover:rotate-6! md:flex md:w-full md:max-w-20 lg:max-w-[88px]">
                 <Image
                   width={96}
                   height={104}
@@ -184,7 +184,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   quality={80}
                 />
               </div>
-              <div className="hidden w-full max-w-[60px] duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 md:flex md:max-w-24 lg:max-w-[88px]">
+              <div className="hidden w-full max-w-[60px] duration-300 ease-in-out hover:scale-105! hover:rotate-6! md:flex md:max-w-24 lg:max-w-[88px]">
                 <Image
                   width={100}
                   height={104}

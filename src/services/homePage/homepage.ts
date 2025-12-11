@@ -2,7 +2,6 @@ import axiosInstance from "@/lib/axios";
 import { HomePageResponse } from "@/types";
 import { AxiosResponse } from "axios";
 import { notFound } from "next/navigation";
-
 export const getHomePage = async (
   locale: string,
   query: string,

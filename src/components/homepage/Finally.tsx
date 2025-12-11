@@ -76,7 +76,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
           src="/images/webp/finally-mobile-bg.webp"
           alt="finally bg"
           loading="lazy"
-          sizes="100vw"
+          sizes="(max-width: 640px) 390px, (max-width: 1024px) 768px, 3000px"
           quality={75}
         />
 

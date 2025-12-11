@@ -20,9 +20,15 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ obj, index }) => {
       <div className="relative h-[184px] w-full">
         <Image
           src={obj.img}
-          alt={obj.title}
+          alt={obj.title || "Feature image"}
           fill
-          className="xs:object-center object-auto ios-image"
+          className="xs:object-center ios-image object-contain"
+          loading={index === 0 ? "eager" : "lazy"} 
+          priority={index === 0} 
+          quality={80} 
+          sizes="(max-width: 640px) 300px, 
+                 (max-width: 1024px) 400px, 
+                 500px"
         />
       </div>
     </article>

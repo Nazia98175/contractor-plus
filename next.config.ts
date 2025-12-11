@@ -6,6 +6,7 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig: import("next").NextConfig = {
   images: {
     unoptimized: true, // optimization disable
+    qualities: [30, 50, 60, 75, 80, 85],
     remotePatterns: [
       {
         protocol: "http",

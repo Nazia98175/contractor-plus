@@ -20,7 +20,7 @@ const ContractorIndustrySlider = dynamic(
         </div>
       </div>
     ),
-  }
+  },
 );
 
 interface TheIndustryProps {

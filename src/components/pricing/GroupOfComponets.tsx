@@ -5,7 +5,6 @@ import CompleteFeatureList from "./CompleteFeatureList";
 import ComparisonTable from "./ComparisonTable";
 import PricingHero from "./PricingHero";
 import gsap from "gsap";
-import Image from "next/image";
 import LoadingFallback from "../common/LoadingFallback";
 
 interface GroupOfComponentsProps {
@@ -13,8 +12,8 @@ interface GroupOfComponentsProps {
   commonData: any;
   pricingPlans: any;
   reviews: any;
-  pricingData?: any; 
-  pricingComparison?: any[]; 
+  pricingData?: any;
+  pricingComparison?: any[];
 }
 
 const GroupOfComponents: React.FC<GroupOfComponentsProps> = ({

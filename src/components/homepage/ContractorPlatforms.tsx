@@ -67,7 +67,7 @@ const ContractorPlatforms = ({ contractPlatformsData }: any) => {
           )}
         </div>
       </div>
-      <div className="bg-kuroiBlack absolute bottom-[-1px] z-30 h-[3px] w-full"></div>
+      <div className="bg-kuroiBlack absolute -bottom-px z-30 h-[3px] w-full"></div>
     </section>
   );
 };

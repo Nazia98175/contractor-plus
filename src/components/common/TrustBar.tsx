@@ -16,7 +16,7 @@ const TrustBar: React.FC<TrustBarProps> = ({
     >
       <Copy delay={0.1}>
         {showTrustedSection && (
-          <h2 className="section-heading crm-gradient text-center !font-black lg:!font-semibold">
+          <h2 className="section-heading crm-gradient text-center font-black! lg:font-semibold!">
             Trusted by over <strong>50,000</strong> build and service
             contractors
           </h2>
@@ -58,7 +58,7 @@ const TrustBar: React.FC<TrustBarProps> = ({
             ? trustBarImages?.map((item: any, index: number) => (
                 <div
                   key={index}
-                  className="flex !h-[70px] items-center justify-center"
+                  className="flex h-[70px]! items-center justify-center"
                 >
                   <PlatformCard
                     apiData={true}
@@ -70,7 +70,7 @@ const TrustBar: React.FC<TrustBarProps> = ({
             : platforms.map((platform, index) => (
                 <div
                   key={index}
-                  className="flex !h-[70px] items-center justify-center"
+                  className="flex h-[70px]! items-center justify-center"
                 >
                   <PlatformCard platform={platform} />
                 </div>

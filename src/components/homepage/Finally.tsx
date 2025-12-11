@@ -72,7 +72,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
         />
         <Image
           fill
-          className="absolute top-[0px] left-0 z-20 block h-full w-full md:hidden"
+          className="absolute top-0 left-0 z-20 block h-full w-full md:hidden"
           src="/images/webp/finally-mobile-bg.webp"
           alt="finally bg"
           loading="lazy"
@@ -113,8 +113,8 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
           </div>
 
           <div className="relative mt-[45px] flex w-full flex-col-reverse justify-center gap-3 px-3 pb-8 sm:mt-16 md:mt-[83px] lg:flex-row lg:gap-8 lg:px-0 lg:pb-0">
-            <div className="absolute bottom-[-10%] left-0 z-20 hidden h-[160px] w-full bg-white blur-[12px] lg:block"></div>
-            <div className="pointer-events-none absolute -bottom-8 left-0 z-20 hidden h-[160px] w-full lg:block"></div>
+            <div className="absolute bottom-[-10%] left-0 z-20 hidden h-40 w-full bg-white blur-md lg:block"></div>
+            <div className="pointer-events-none absolute -bottom-8 left-0 z-20 hidden h-40 w-full lg:block"></div>
 
             <div
               data-lag="0.8"
@@ -122,7 +122,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
               className="flex flex-row items-center gap-4 lg:flex-col"
             >
               {/* Mobile view */}
-              <div className="flex w-[58px] max-w-[58px] duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 sm:w-12 sm:max-w-16 md:hidden md:w-full md:max-w-20 lg:max-w-[88px]">
+              <div className="flex w-[58px] max-w-[58px] duration-300 ease-in-out hover:scale-105! hover:rotate-6! sm:w-12 sm:max-w-16 md:hidden md:w-full md:max-w-20 lg:max-w-[88px]">
                 <Image
                   width={96}
                   height={104}
@@ -134,7 +134,7 @@ const Finally: React.FC<TheFinallyProps> = ({ finallyC }) => {
                   quality={80}
                 />
               </div>
-              <div className="flex w-[58px] max-w-[58px] duration-300 ease-in-out hover:!scale-105 hover:!rotate-6 sm:w-12 sm:max-w-16 md:hidden md:w-full md:max-w-20 lg:max-w-[88px]">
+              <div className="flex w-[58px] max-w-[58px] duration-300 ease-in-out hover:scale-105! hover:rotate-6! sm:w-12 sm:max-w-16 md:hidden md:w-full md:max-w-20 lg:max-w-[88px]">
                 <Image
                   width={96}
                   height={104}

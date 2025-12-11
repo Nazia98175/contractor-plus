@@ -18,7 +18,7 @@ const Hero = ({
   homePageContent: any;
   commonData: any;
 }) => {
-  const { heroTitle, heroDescription } = homePageContent ?? {};
+  const { heroDescription } = homePageContent ?? {};
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -43,7 +43,7 @@ const Hero = ({
       <HerosectionBackground />
       <div className="relative mx-auto w-full max-w-[1920px] overflow-hidden pt-[269px] pb-10 sm:pb-16 md:pb-20 lg:pt-[100px] lg:pb-[140px] xl:pt-[140px] xl:pb-[163px]">
         <div className="main-container relative z-10 flex items-end">
-          <div className="relative z-30 flex w-full flex-col gap-[6px] md:max-w-[628px] lg:gap-3 xl:gap-6">
+          <div className="relative z-30 flex w-full flex-col gap-1.5 md:max-w-[628px] lg:gap-3 xl:gap-6">
             <Copy animateOnScroll={false} delay={1.1}>
               {/* <AdaptiveHeroTitle
                 title={heroTitle}
@@ -91,7 +91,7 @@ const Hero = ({
                 <FreeTrialButton
                   showIcon={false}
                   text={"Start for FREE"}
-                  className="!w-full"
+                  className="w-full!"
                 />
               </CardReveal>
               <CardReveal className="flex w-fit" distance={50} delay={1.5}>

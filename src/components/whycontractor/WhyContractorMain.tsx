@@ -11,56 +11,56 @@ const CommonFormField = dynamic(
   () => import("@/components/common/CommonFormField"),
   {
     loading: () => <div className="h-[400px] animate-pulse bg-gray-800/20" />,
-  }
+  },
 );
 
 const WhyContractorHero = dynamic(
   () => import("@/components/whycontractor/WhyContractorHero"),
   {
     loading: () => <div className="h-screen animate-pulse bg-gray-800/20" />,
-  }
+  },
 );
 
 const IndustryShifted = dynamic(
   () => import("@/components/whycontractor/IndustryShifted"),
   {
     loading: () => <div className="h-[600px] animate-pulse bg-gray-800/20" />,
-  }
+  },
 );
 
 const AnimationHeader = dynamic(
   () => import("@/components/whycontractor/AnimationHeader"),
   {
     loading: () => <div className="h-[300px] animate-pulse bg-gray-800/20" />,
-  }
+  },
 );
 
 const BloodEnough = dynamic(
   () => import("@/components/whycontractor/BloodEnough"),
   {
     loading: () => <div className="h-[300px] animate-pulse bg-gray-800/20" />,
-  }
+  },
 );
 
 const SeperateSolution = dynamic(
   () => import("@/components/whycontractor/SeperateSolution"),
   {
     loading: () => <div className="h-[600px] animate-pulse bg-gray-800/20" />,
-  }
+  },
 );
 
 const ReverseVideo = dynamic(
   () => import("@/components/whycontractor/ReverseVideo"),
   {
     loading: () => <div className="h-[600px] animate-pulse bg-gray-800/20" />,
-  }
+  },
 );
 
 const VideoBottomPart = dynamic(
   () => import("@/components/whycontractor/VideoBottomPart"),
   {
     loading: () => <div className="h-[400px] animate-pulse bg-gray-800/20" />,
-  }
+  },
 );
 
 const WayToWin = dynamic(() => import("@/components/whycontractor/WayToWin"), {
@@ -71,14 +71,14 @@ const Dashboard = dynamic(
   () => import("@/components/whycontractor/Dashboard"),
   {
     loading: () => <div className="h-[800px] animate-pulse bg-gray-800/20" />,
-  }
+  },
 );
 
 const OperatingSystem = dynamic(
   () => import("@/components/whycontractor/OperatingSystem"),
   {
     loading: () => <div className="h-[600px] animate-pulse bg-gray-800/20" />,
-  }
+  },
 );
 
 interface WhyContractorMainProps {
@@ -155,13 +155,10 @@ const WhyContractorMain: React.FC<WhyContractorMainProps> = ({ data }) => {
         >
           <div className="relative bg-[url('/images/webp/why-contractor-hero-bg.webp')] bg-cover">
             <Image
-              className="absolute left-0 top-0 z-[-1] h-auto w-full"
+              className="absolute top-0 left-0 z-[-1] h-auto w-full"
               src={"/images/webp/why-contractor-hero-bg.webp"}
               height={100}
               width={100}
-              loading="lazy"
-              priority
-              
               alt="WhyContractorHeroImg"
               unoptimized
             />
@@ -179,18 +176,16 @@ const WhyContractorMain: React.FC<WhyContractorMainProps> = ({ data }) => {
           fallback={<div className="h-[2000px] animate-pulse bg-gray-800/20" />}
         >
           <main ref={sectionRef} className="relative">
-            <span className="bg-wallStreet absolute left-1/2 top-[-250px] z-[1] block h-[97%] w-[1px] translate-x-[-50%] sm:top-[-300px]"></span>
+            <span className="bg-wallStreet absolute top-[-250px] left-1/2 z-[1] block h-[97%] w-[1px] translate-x-[-50%] sm:top-[-300px]"></span>
             <span
               ref={redDotRef}
-              className="from-redPigment to-netherworld absolute left-1/2 top-[-250px] z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br sm:top-[-300px]"
+              className="from-redPigment to-netherworld absolute top-[-250px] left-1/2 z-[2] block h-[18px] w-[1px] translate-x-[-50%] rounded-full bg-gradient-to-br sm:top-[-300px]"
             ></span>
             <BloodEnough
               bloodEnough={data?.narrativeFlow?.animationHeader?.[1]}
             />
             <SeperateSolution seperateSolution={data?.seperateSolution} />
-            <ReverseVideo
-              reverseVideo={data?.narrativeFlow?.frictionGrowth}
-            />
+            <ReverseVideo reverseVideo={data?.narrativeFlow?.frictionGrowth} />
             <VideoBottomPart list={data?.narrativeFlow?.list} />
             <WayToWin connectedSystem={data?.connectedSystem} />
           </main>
@@ -216,7 +211,7 @@ const WhyContractorMain: React.FC<WhyContractorMainProps> = ({ data }) => {
         fallback={<div className="h-[400px] animate-pulse bg-gray-800/20" />}
       >
         <div className="pb-14">
-          <div className="mb-8 mt-12 px-2 md:mb-12 xl:mt-[11px]">
+          <div className="mt-12 mb-8 px-2 md:mb-12 xl:mt-[11px]">
             <CommonFormField
               title={data?.emailSign?.title}
               subTitle={data?.emailSign?.subTitle}
@@ -225,7 +220,7 @@ const WhyContractorMain: React.FC<WhyContractorMainProps> = ({ data }) => {
               mobileBtn={data?.commonData?.mobileBtn}
               ncc={data?.commonData?.nccTxt}
               variant={"tertiary"}
-                 showonlybutton={false}
+              showonlybutton={false}
             />
           </div>
         </div>

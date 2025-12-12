@@ -35,7 +35,7 @@ const OurBlogCard: FC<{ article: ResourceHomepage }> = ({ article }) => {
           <img
             className="absolute inset-0 z-0 h-full w-full"
             src="/images/webp/blog-angle2.webp"
-            alt=""
+            alt="blog"
             aria-hidden="true"
           />
           <h3 className="text-winterWay relative z-10 text-base leading-none font-extrabold md:text-lg">

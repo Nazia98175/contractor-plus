@@ -25,7 +25,6 @@ type BlogHeroProps = {
   locale: string;
 };
 
-
 const BlogHero = ({
   blogsList,
   onSearchChange,
@@ -289,35 +288,35 @@ const BlogHero = ({
           id="mountain-1"
           src="/images/mountain/mountain-1.png"
           className="absolute bottom-0 left-0 z-[15] h-[42.5vw] w-full"
-          alt=""
+          alt="mountain-img-1"
           fetchPriority="high"
         />
         <img
           id="mountain-2"
           src="/images/mountain/mountain-2.png"
           className="absolute bottom-0 left-0 z-[14] h-[23vw] w-full origin-bottom"
-          alt=""
+          alt="mountain-img-2"
           fetchPriority="high"
         />
         <img
           id="mountain-3"
           src="/images/mountain/mountain-3.png"
           className="absolute bottom-0 left-0 z-[13] h-[28vw] w-full"
-          alt=""
+          alt="mountain-img-3"
           fetchPriority="high"
         />
         <img
           id="mountain-4"
           src="/images/mountain/mountain-4.png"
           className="absolute bottom-0 left-0 z-[12] h-[40vw] w-full"
-          alt=""
+          alt="mountain-img-4"
           fetchPriority="high"
         />
         <img
           id="mountain-5"
           src="/images/mountain/mountain-5.png"
           className="absolute bottom-0 left-0 z-[11] h-[28vw] w-full"
-          alt=""
+          alt="mountain-img-5"
           fetchPriority="high"
         />
         <div className="absolute bottom-0 z-[11] h-[25vh] w-full bg-white"></div>

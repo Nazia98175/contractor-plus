@@ -1,9 +1,8 @@
 import CardReveal from "../common/CardReveal";
-import { EventDetailIcon } from "../common/Icons";
 
 const PricingCard = ({ pricing }: { pricing: any }) => {
   return (
-    <article className="card-shine-2 !bg-jetBlack h-full w-full overflow-hidden rounded-xl">
+    <article className="card-shine-2 bg-jetBlack! h-full w-full overflow-hidden rounded-xl">
       {/* {pricing?.image && (
         <CardReveal delay={0.4} distance={50}>
           <Image

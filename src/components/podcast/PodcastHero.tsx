@@ -14,12 +14,12 @@ const PodcastHero: FC<{ data: PodcastData }> = ({ data }) => {
         </h4>
       </Copy>
       <Copy delay={0}>
-        <h2 className="main-heading gradient-white mb-4 text-center !font-medium text-transparent">
+        <h2 className="main-heading gradient-white mb-4 text-center font-medium! text-transparent">
           {data?.title ?? ""}
         </h2>
       </Copy>
       <Copy delay={0.4}>
-        <p className="hero-description !text-trolleyGrey my-[26px] text-center">
+        <p className="hero-description text-trolleyGrey! my-[26px] text-center">
           {data?.subTitle ?? ""}
         </p>
       </Copy>
@@ -27,17 +27,18 @@ const PodcastHero: FC<{ data: PodcastData }> = ({ data }) => {
         aria-label="subscribe link"
         href={data?.ctaUrl ?? "/#"}
         target="_blank"
-        className="bg-red-linear primary-btn mx-auto flex h-10 !w-full max-w-[265px] items-center gap-1.5"
+        className="bg-red-linear primary-btn mx-auto flex h-10 w-full! max-w-[265px] items-center gap-1.5"
         type="button"
       >
         {data?.ctaText} <YouTubeIcon2 />
       </Link>
-      <div className="relative mx-auto mb-[-100px] hidden w-full max-w-[1316px] sm:-mb-[160px] sm:block lg:-mb-[200px]">
+      <div className="relative mx-auto mb-[-100px] hidden w-full max-w-[1316px] sm:-mb-40 sm:block lg:-mb-[200px]">
         <Image
           src={data?.image?.url}
           width={1050}
           height={579}
           priority
+          sizes="(max-width: 768px) 90vw, (max-width: 1200px) 75vw, 50vw"
           fetchPriority="high"
           alt="trader-group"
           className="ios-image relative mx-auto max-h-[831px] w-full object-cover"

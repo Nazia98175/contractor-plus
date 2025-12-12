@@ -336,7 +336,7 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({
                                           : "absolute -right-20 -bottom-4"
                                   }`}
                                   src={stat.icon?.url}
-                                  alt=""
+                                  alt="star-icon"
                                 />
                                 <h3 className="py-1 text-end text-xl font-semibold text-white">
                                   {stat.value}
@@ -372,7 +372,7 @@ const ProofWorking: React.FC<ProofWorkingProps> = ({
                                           : "absolute -bottom-4.5 -left-20"
                                   }`}
                                   src={stat.icon?.url}
-                                  alt=""
+                                  alt="star-icon"
                                 />
                                 <h3 className="py-1 text-start text-xl font-semibold text-white">
                                   {stat.value}

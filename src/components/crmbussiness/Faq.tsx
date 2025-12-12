@@ -44,7 +44,7 @@ const Faq: React.FC<Props> = ({
 
   return (
     <section className={`${mainContainerclassName} relative z-20`}>
-      <div className="bg-athenaBlue pointer-events-none absolute top-0 right-0 hidden h-[500px] w-full max-w-[70px] rotate-[35deg] rounded-[10px] opacity-15 blur-[34px] lg:block"></div>
+      <div className="bg-athenaBlue pointer-events-none absolute top-0 right-0 hidden h-[500px] w-full max-w-[70px] rotate-35 rounded-[10px] opacity-15 blur-[34px] lg:block"></div>
       <Copy delay={0.1}>
         <h3
           className={`section-heading text-center ${currentHeading.title} ${TittleClassName}`}

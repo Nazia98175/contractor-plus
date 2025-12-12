@@ -45,13 +45,13 @@ const WhyContractorHero: React.FC<WhyContractorHeroProps> = ({
         </div>
 
         <Copy animateOnScroll={false} delay={0}>
-          <h1 className="main-heading why-contractor-hero white-gray-gradient mb-2 text-center !font-extralight max-sm:mx-auto sm:mb-4">
+          <h1 className="main-heading why-contractor-hero white-gray-gradient mb-2 text-center font-extralight! max-sm:mx-auto sm:mb-4">
             {pageContent?.hero?.title}
           </h1>
         </Copy>
 
         <Copy animateOnScroll={false} delay={0.4}>
-          <p className="hero-description !text-cyanBlue mb-8 text-center sm:mb-[42px]">
+          <p className="hero-description text-cyanBlue! mb-8 text-center sm:mb-[42px]">
             {pageContent?.hero?.subTitle}{" "}
             <span className="text-decemberSky italic">
               {pageContent?.hero?.subTitleItalic}

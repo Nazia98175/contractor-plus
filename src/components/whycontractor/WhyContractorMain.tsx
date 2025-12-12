@@ -159,6 +159,9 @@ const WhyContractorMain: React.FC<WhyContractorMainProps> = ({ data }) => {
               src={"/images/webp/why-contractor-hero-bg.webp"}
               height={100}
               width={100}
+              loading="lazy"
+              priority
+              
               alt="WhyContractorHeroImg"
               unoptimized
             />

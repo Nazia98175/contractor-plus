@@ -70,6 +70,7 @@ const WhyContractorHero: React.FC<WhyContractorHeroProps> = ({
               alt="Decorative background element"
               priority
               quality={60}
+              loading="lazy"
               sizes="(max-width: 768px) 200px, 274px"
             />
           </div>
@@ -84,6 +85,7 @@ const WhyContractorHero: React.FC<WhyContractorHeroProps> = ({
               alt="Decorative background element"
               priority
               quality={60}
+              loading="lazy"
               sizes="(max-width: 768px) 200px, 274px"
             />
           </div>
